@@ -1,0 +1,46 @@
+en colaboración
+
+JESUITES Daiversiar
+educació qu
+de Catalunya
+Formación Profesional
+
+Prueba de síntesis 2021/22-2
+
+Asignatura Código Fecha Hora inicio
+(S) Fundamentos de programación FP.038 17/6/2022 12:00
+tupla
+
+Número: entero;
+Curso: entero;
+grupo: carácter;
+capacidad: entero;
+superficie: real;
+ftupla
+ftipo
+Si la variable “e” es de tipo tEscuela, codifica una función que reciba e y devuelva la capacidad de
+las clases del curso que se le pase mediante un segundo argumento.
+
+(2.5 puntos) (Resolver la pregunta aproximadamente en 5 líneas)
+
+Pregunta 4. En la actividad AA1 se realizaron ejercicios de evaluación de expresiones. Sabiendo
+que las prioridades de los operadores, ordenados de más a menos prioritario, son:
+
+1. - (cambio de signo), no
+2. *, /, div, mod
+3. +, - (resta)
+4. =,%,<,S5,>,>
+5. y
+
+6.0
+
+Calcular justificadamente detallando el orden de evaluación a partir de las siguientes
+declaraciones y asignaciones:
+
+var
+b: boleano;
+
+x, y, z: entero;
+fvar
+
+Página 4 de 5

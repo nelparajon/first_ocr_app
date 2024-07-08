@@ -1,0 +1,61 @@
+.. en colaboración
+) Esu ITES Universitat
+educació Oberta
+, . de Catalunya
+Formación Profesional
+
+Prueba de síntesis 2021/22-2
+
+Asignatura Código Fecha Hora inicio
+(S) Fundamentos de programación FP.038 17/6/2022 12:00
+fmientras
+
+si num>0 entonces
+escribirReal(imc/enteroAReal(num));
+fsi
+falgoritmo
+
+(A) :leer entero();
+
+(B ) :edad >= 20 y edad <= 30;
+(e)
+(D)
+
+Pregunta 2. En las actividades del seminario has trabajado con diferentes estructuras de control y
+las has practicado con C. Indica el siguiente código que imprimirá por consola.
+(2,5 puntos) (Resolver la pregunta aproximadamente 4 líneas)
+
+int i=0, x=0;
+
+for (i=1;i<10;i=1*2X
+x=x+1;
+printf("%i ",x);
+
+)
+printf(“inx = %i ",x);
+
+El siguiente código imprimirá las veces que se repite la variable x desde que ¡< 10 hasta ¡ =i*2, es
+decir, hasta 2, ya que el valor que se le da a la variable ¡ al iniciar la secuencia es 1.
+
+Pregunta 3. En la actividad AA5 se plantearon ejercicios sobre los tipos estructurados de datos. Sea
+el tipo de datos tEscuela, el cual consta de dos campos, uno para almacenar las clases en una tabla
+de tipo tClase, mientras que el campo n_clases se usa para almacenar el número de clases que de
+los cuales se ha guardado información:
+
+tipo
+tEscuela =
+tupla
+clases: tabla[200] de tClase;
+n_clases: entero;
+ftupla
+ftipo
+
+Y el tipo de datos tClase, que está compuesto por 5 campos, numero almacena el número que
+identifica la clase, curso que identifica el curso que la tiene asignada, grupo que indica el grupo
+dentro del curso, capacidad indica la capacidad en alumnos de la clase y superficie indica la
+superficie en metros cuadrados de esta:
+tipo
+
+tClase =
+
+Página 3 de 5

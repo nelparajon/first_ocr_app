@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ocr-pdf"
+version = "0.1.0"
+description = ""
+authors = ["nelparajon <nelparajonsomoano@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pdf2image = "^1.17.0"
+pytesseract = "^0.3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

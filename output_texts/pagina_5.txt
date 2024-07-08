@@ -1,0 +1,24 @@
+.. en colaboración
+JESUITES [Y Papl oca
+educació Oberta
+, . de Catalunya
+Formación Profesional
+
+Prueba de síntesis 2021/22-2
+
+Asignatura Código Fecha Hora inicio
+(S) Fundamentos de programación FP.038 17/6/2022 12:00
+
+el resultado de la expresión siguiente:
+
+bociertoyx — y*m =z
+
+(2.5 puntos) (Resolver la pregunta aproximadamente en 5 líneas)
+
+Primero se realiza la siguiente operación> b o cierto y x- (y * m)=z > bo cierto y x- (4) = z
+Segundo se realiza > b o cierto y (6-4)=z > bo cierto y 2=z
+
+Tercero se realiza b o cierto y 2=zZ > bo cierto y 2=2
+Cuarto > falso o cierto y 2 = 2
+
+Página 5 de 5

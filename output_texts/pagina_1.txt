@@ -1,0 +1,37 @@
+.. en colaboración
+o
+JESsU ITES |] Universitat
+
+77
+educació Oberta
+, . de Catalunya
+Formación Profesional
+
+Prueba de síntesis 2021/22-2
+
+Asignatura Código Fecha Hora inicio
+(S) Fundamentos de programación FP.038 17/6/2022 12:00
+J J J Esta prueba solo pueden realizarla los estudiantes que hayan
+... aprobado la evaluación continua
+
+Ficha técnica de la prueba de síntesis
+
+e  Noesnecesario que escribas tu nombre. Una vez resuelta la prueba final, solo se aceptan documentos
+en formato .doc, .docx (Word) y .pdf.
+
+e Comprueba que el código y el nombre de la asignatura corresponden a la asignatura de la que te has
+matriculado.
+
+e Tiempo total 30 minutos. Se dispone de un tiempo añadido suficiente para la descarga y entrega de la
+prueba.
+
+e  Elvalor numérico de cada pregunta se indica en cada una de ellas.
+
+e ¿Puede consultarse algún material durante la prueba de síntesis? NO ¿Qué materiales están
+permitidos? NINGUNO
+
+e ¿Puede utilizarse calculadora? NO ¿De qué tipo? NINGUNO
+
+e Indicaciones específicas para la realización de esta prueba de síntesis:
+
+Página 1 de 5
