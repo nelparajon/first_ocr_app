@@ -22,6 +22,7 @@ def menu(route_path):
         analyzer.count_words(result_text)
         words = analyzer.words_used(result_text)
         analyzer.words_most_used(words)
+        analyzer.most_used_word_in_each_text(result_text)
 
         print("Proceso completado con éxito")
     except Exception as e:
