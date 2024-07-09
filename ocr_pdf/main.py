@@ -2,6 +2,7 @@ import logging
 from pdf_converter import PDFConverter
 from ocr_producer import OCRProducer
 from analyze_text import AnalyzeText
+from tokenizer import Tokenizer
 
 def menu(route_path):
     try:
@@ -24,12 +25,15 @@ def menu(route_path):
         analyzer.words_most_used(words)
         analyzer.most_used_word_in_each_text(result_text)
 
-        print("Proceso completado con éxito")
+        print("OCR completado con éxito")
     except Exception as e:
         logging.error(f"Error durante el procesamiento de los pdfs {e}")
         raise #lanzar la excepción de nuevo más allá del bloque except
-    
-    
+
+    print("Proceso de Tokenización")
+    tokenizer = Tokenizer()
+    tokenizer.tokenizer_text(result_text)
+   
 if __name__ == '__main__':
-    route_path = r'C:/Users/Nel/Desktop/prueba_fundamentos.pdf'
+    route_path = r'C:/Users/Nel/Desktop/carta de presentación nel parajon somoano.pdf'
     menu(route_path)
