@@ -3,6 +3,7 @@ from pdf_converter import PDFConverter
 from ocr_producer import OCRProducer
 from analyze_text import AnalyzeText
 from tokenizer import Tokenizer
+from stemmer import Stemmer
 
 def menu(route_path):
     try:
@@ -30,9 +31,15 @@ def menu(route_path):
         logging.error(f"Error durante el procesamiento de los pdfs {e}")
         raise #lanzar la excepción de nuevo más allá del bloque except
 
-    print("Proceso de Tokenización")
+    print("**********TOKENIZACIÓN**********")
     tokenizer = Tokenizer()
-    tokenizer.tokenizer_text(result_text)
+    tokenized_text = tokenizer.tokenizer_text(result_text)
+    print("**********ESTEMATIZACIÓN**********")
+    stemmer = Stemmer() #por defecto dentro del constructor de la clase idioma español
+    stemmer.stemming_tokens(tokenized_text)
+
+
+
    
 if __name__ == '__main__':
     route_path = r'C:/Users/Nel/Desktop/carta de presentación nel parajon somoano.pdf'
