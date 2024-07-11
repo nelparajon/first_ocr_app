@@ -19,7 +19,7 @@ class Tokenizer:
             words = word_tokenize(cleaned_text)
             filtered_words = self.filter_words(words)
             self.tokenized_texts.append(filtered_words)
-            print("************TEXTOS FILTRADOS*************")
+            
             print(filtered_words)
 
         print("Tokenización completada con éxito")

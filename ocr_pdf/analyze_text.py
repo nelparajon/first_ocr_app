@@ -67,11 +67,11 @@ class AnalyzeText:
         output_lines = []
         for words in texts:
             fq_dist = FreqDist(words)
-            for mc in fq_dist.most_common():
-                word = mc[0]
-                fq_relative = fq_dist.freq(word)
-                output_lines.append(f"{word}: Frecuencia: {fq_relative} Porcentaje: {fq_relative * 100} %")
-                print(f"{word}: Frecuencia: {fq_relative} Porcentaje: {fq_relative * 100} %")
+            total_words = len(words)
+            for word, freq in fq_dist.most_common():
+                fq_relative = freq / total_words
+                output_lines.append(f"{word}: Frecuencia: {freq} Porcentaje: {fq_relative * 100:.4f} %")
+                print(f"{word}: Frecuencia: {freq} Porcentaje: {fq_relative * 100:.4f} %")
         return output_lines
         
 

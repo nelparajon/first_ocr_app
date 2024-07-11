@@ -36,9 +36,9 @@ def menu(route_path):
     print("**********TOKENIZACIÓN**********")
     tokenizer = Tokenizer()
     tokenized_text = tokenizer.tokenizer_text(result_text)
-    print("**********ESTEMATIZACIÓN**********")
-    stemmer = Stemmer() #por defecto dentro del constructor de la clase idioma español
-    stemmer.stemming_tokens(tokenized_text)
+    #print("**********ESTEMATIZACIÓN**********")
+    #stemmer = Stemmer() #por defecto dentro del constructor de la clase idioma español
+    #stemmer.stemming_tokens(tokenized_text)
 
     lemmatizer = Lemmatizer()
     lemmatizer.lemmatizing_words(tokenized_text)
