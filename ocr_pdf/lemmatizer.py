@@ -1,10 +1,12 @@
 import nltk
+from nltk import pos_tag
 from setup_nltk import setup_nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
 
 class Lemmatizer:
     def __init__(self):
+        setup_nltk()  # Configura NLTK descargando los recursos necesarios
         self.lemmatizer = WordNetLemmatizer()
 
     def get_wordnet_pos(self, treebank_tag):
@@ -20,10 +22,10 @@ class Lemmatizer:
         else:
             return wordnet.NOUN
 
-    def lemmatizing_words(self, texts):
-        lemmatized_texts = []
-        for tokens in texts:
-            pos_tagged_tokens = nltk.pos_tag(tokens)
+    def lemmatizing_words(self, tokenized_texts):
+        lemmatized_texts = []  # Almacenamos los tokens en una lista
+        for tokens in tokenized_texts:
+            pos_tagged_tokens = pos_tag(tokens)  # Etiquetado POS
             lemmatized_words = []
             for word, tag in pos_tagged_tokens:
                 wordnet_pos = self.get_wordnet_pos(tag)
@@ -33,4 +35,8 @@ class Lemmatizer:
         print("*********************LEMMATIZING***************")
         print(lemmatized_texts)
         return lemmatized_texts
+    
+
+
+
 
