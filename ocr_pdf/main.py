@@ -4,6 +4,8 @@ from ocr_producer import OCRProducer
 from analyze_text import AnalyzeText
 from tokenizer import Tokenizer
 from stemmer import Stemmer
+from lemmatizer import Lemmatizer
+from output_analyzed_texts import AnalyzedText
 
 def menu(route_path):
     try:
@@ -19,7 +21,7 @@ def menu(route_path):
 
         print('********************')
         print("Analizando los textos como imagen...")
-        ocr.save_texts(result_text)
+        #ocr.save_texts(result_text)
         analyzer = AnalyzeText()
         analyzer.count_words(result_text)
         words = analyzer.words_used(result_text)
@@ -38,9 +40,16 @@ def menu(route_path):
     stemmer = Stemmer() #por defecto dentro del constructor de la clase idioma español
     stemmer.stemming_tokens(tokenized_text)
 
+    lemmatizer = Lemmatizer()
+    lemmatizer.lemmatizing_words(tokenized_text)
+
+    texto_analizado = analyzer.frecuencia_de_palabras(tokenized_text)
+
+    analyzed_text = AnalyzedText()
+    analyzed_text.save_lemmatized_texts(texto_analizado) 
 
 
    
 if __name__ == '__main__':
-    route_path = r'C:/Users/Nel/Desktop/carta de presentación nel parajon somoano.pdf'
+    route_path = r'C:/Users/Nel/Desktop/prueba_texto_ingles.pdf'
     menu(route_path)

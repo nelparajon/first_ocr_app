@@ -1,4 +1,6 @@
 import os
+import nltk
+from nltk.probability import FreqDist
 
 class AnalyzeText:
     def __init__(self, output_folder='output_texts'):
@@ -60,6 +62,18 @@ class AnalyzeText:
             most_used_words[f"texto_{i}"] = (most_used_word, word_count[most_used_word])
         #print(most_used_words)
         return most_used_words
+    
+    def frecuencia_de_palabras(self, texts):
+        output_lines = []
+        for words in texts:
+            fq_dist = FreqDist(words)
+            for mc in fq_dist.most_common():
+                word = mc[0]
+                fq_relative = fq_dist.freq(word)
+                output_lines.append(f"{word}: Frecuencia: {fq_relative} Porcentaje: {fq_relative * 100} %")
+                print(f"{word}: Frecuencia: {fq_relative} Porcentaje: {fq_relative * 100} %")
+        return output_lines
+        
 
 
 

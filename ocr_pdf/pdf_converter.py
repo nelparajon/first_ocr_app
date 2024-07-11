@@ -26,7 +26,7 @@ class PDFConverter:
             logging.error(f"Error al convertir el archivo.pdf a imágenes: {e}")
             return []
         
-        self.save_images(route_path)
+        #self.save_images(route_path)
         return self.images
     
     #Guardamos las imágenes en una carpeta usando el nombre del archivo

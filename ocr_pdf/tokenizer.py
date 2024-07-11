@@ -9,7 +9,7 @@ class Tokenizer:
     def __init__(self):
         setup_nltk()
         self.tokenized_texts = []
-        self.stop_words = stopwords.words('spanish')
+        self.stop_words = stopwords.words('english')
 
     def tokenizer_text(self, texts):
         self.tokenized_texts = []

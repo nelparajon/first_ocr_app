@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 def setup_nltk():
     #nltk.download("punkt") #tokenizador oraciones
     nltk.download("stopwords") #lista que contiene palabras con poco significado semantico como preposiciones, articulos, etc 
+    nltk.download("wordnet")
 
 def printing_stopwords():
     sw = stopwords.words('spanish')
