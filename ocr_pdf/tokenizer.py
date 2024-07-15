@@ -10,7 +10,7 @@ class Tokenizer:
         setup_nltk()  # Configura NLTK descargando los recursos necesarios
         self.stop_words = set(stopwords.words('english'))  # Usar un set para mejorar la eficiencia en la búsqueda
 
-    def tokenize_texts(self, texts):
+    def tokenize_texts_in_list(self, texts):
         tokenized_texts = []  # Lista para almacenar los textos tokenizados
 
         for text in texts:
@@ -18,6 +18,17 @@ class Tokenizer:
             words = word_tokenize(cleaned_text)  # Tokenizar el texto limpio
             filtered_words = self.filter_words(words)  
             tokenized_texts.append(filtered_words)  
+        print(tokenized_texts)
+        print("Tokenización completada con éxito")
+        
+        return tokenized_texts
+    
+    def tokenize_texts(self, texts):
+        tokenized_texts = []  # Lista para almacenar todas las palabras tokenizadas
+        cleaned_text = self.clean_text(texts)  # Limpiar el texto
+        words = word_tokenize(cleaned_text)  # Tokenizar el texto limpio
+        filtered_words = self.filter_words(words)  
+        tokenized_texts.extend(filtered_words)  # Añadir las palabras filtradas a la lista principal
         print(tokenized_texts)
         print("Tokenización completada con éxito")
         return tokenized_texts

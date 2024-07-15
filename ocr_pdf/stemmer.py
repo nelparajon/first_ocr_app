@@ -10,9 +10,8 @@ class Stemmer:
     def stemming_tokens(self, tokenized_texts):
         stem_tokens = self.stem_tokens = []
         for tokens in tokenized_texts:
-            for token in tokens:
-                stem = self.stemmer.stem(token)
-                stem_tokens.append(stem)
+            stem = self.stemmer.stem(tokens)
+            stem_tokens.append(stem)
         print(stem_tokens)
         print("Estematización completada con éxito")
         return stem_tokens

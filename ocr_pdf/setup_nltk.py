@@ -8,11 +8,8 @@ def setup_nltk():
     nltk.download("wordnet")
     nltk.download('averaged_perceptron_tagger') #recurso para poder etiquetar cada palabra con su tag
 
-def printing_stopwords():
-    sw = stopwords.words('spanish')
-    print(sw)
     
    
 
-printing_stopwords()
+
 

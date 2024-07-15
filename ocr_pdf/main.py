@@ -6,50 +6,70 @@ from tokenizer import Tokenizer
 from stemmer import Stemmer
 from lemmatizer import Lemmatizer
 from output_analyzed_texts import AnalyzedText
+from vectorizer import Vectorizer
 
-def menu(route_path):
-    try:
-        print('********************')
-        print("Convirtiendo los pdf a imágenes...")
-        converter = PDFConverter(route_path)
-        images = converter.convert_to_images(route_path)
+def documents(*file_paths):
+    docs = []
+    for file_path in file_paths:
+        docs.append(file_path)
+    print(docs)
+    return docs
 
-        print('****************')
-        print('Procesando imágenes con OCR pytesseract...')
-        ocr = OCRProducer()
-        result_text = ocr.process_images(images)
+def convert_to_images(docs):
+    print('********************')
+    print("Convirtiendo los pdf a imágenes...")
+    images = []
+    for route in docs:
+        converter = PDFConverter(route)
+        docs_images = converter.convert_to_images(route)
+        images.append(docs_images)
+    print(images)
+    return images
 
-        print('********************')
-        print("Analizando los textos como imagen...")
-        #ocr.save_texts(result_text)
-        analyzer = AnalyzeText()
-        analyzer.count_words(result_text)
-        words = analyzer.words_used(result_text)
-        analyzer.words_most_used(words)
-        analyzer.most_used_word_in_each_text(result_text)
+def process_images(images):
+    result_texts = []
+    for image in images:
+        ocr_producer = OCRProducer()
+        texts = ocr_producer.process_images(image)
+        result_texts.append(texts)
+    print(result_texts)
+    return result_texts
 
-        print("OCR completado con éxito")
-    except Exception as e:
-        logging.error(f"Error durante el procesamiento de los pdfs {e}")
-        raise #lanzar la excepción de nuevo más allá del bloque except
-
-    print("**********TOKENIZACIÓN**********")
+def tokenize_texts(texts):
     tokenizer = Tokenizer()
-    tokenized_text = tokenizer.tokenize_texts(result_text)
-    print("**********ESTEMATIZACIÓN**********")
-    stemmer = Stemmer() #por defecto dentro del constructor de la clase idioma español
-    stemmer.stemming_tokens(tokenized_text)
+    tokens = []
+    for text in texts:
+        text_tokens = tokenizer.tokenize_texts(text)
+        tokens.append(text_tokens)
+    return tokens
 
+def lemmatizing_texts(tokens):
     lemmatizer = Lemmatizer()
-    lemmatizer.lemmatizing_words(tokenized_text)
+    lematized_tokens = []
+    for text in tokens:
+        lem_tokens = lemmatizer.lemmatizing_words(text)
+        lematized_tokens.append(lem_tokens)
+    return lematized_tokens
 
-    texto_analizado = analyzer.frecuencia_de_palabras(tokenized_text)
+def vectorizing_texts(lems):
+    vectorizer = Vectorizer()
+    matrix = vectorizer.vectorize_doc(lems)
+    return matrix
 
-    analyzed_text = AnalyzedText()
-    analyzed_text.save_lemmatized_texts(texto_analizado) 
+
+def menu(docs):
+    pass
 
 
-   
 if __name__ == '__main__':
-    route_path = r'C:/Users/Nel/Desktop/prueba_texto_ingles.pdf'
-    menu(route_path)
+    doc_1 = r'C:/Users/Nel/Desktop/vectorizacion.pdf'
+    doc_2 = r'C:/Users/Nel/Desktop/vectorization_2.pdf'
+    docs = documents(doc_1, doc_2) 
+    print("rutas de los documentos: ", docs)
+    images = convert_to_images(docs)
+    result_text = process_images(images)
+    tokenized_texts =  tokenize_texts(result_text)
+    lem_texts = lemmatizing_texts(tokenized_texts)
+    vectorizer = Vectorizer()
+    vectors = vectorizing_texts(lem_texts)
+    vectorizer.similarity_docs(vectors)

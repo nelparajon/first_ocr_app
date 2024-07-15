@@ -22,7 +22,7 @@ class Lemmatizer:
         else:
             return wordnet.NOUN
 
-    def lemmatizing_words(self, tokenized_texts):
+    def lemmatizing_words_in_list(self, tokenized_texts):
         lemmatized_texts = []  # Almacenamos los tokens en una lista
         for tokens in tokenized_texts:
             pos_tagged_tokens = pos_tag(tokens)  # Etiquetado POS
@@ -35,6 +35,17 @@ class Lemmatizer:
         print("*********************LEMMATIZING***************")
         print(lemmatized_texts)
         return lemmatized_texts
+    
+    def lemmatizing_words(self, tokenized_texts):
+        lemmatized_tokens = []
+        pos_tagged_tokens = pos_tag(tokenized_texts)
+        for word, tag in pos_tagged_tokens:
+            wordnet_pos = self.get_wordnet_pos(tag)
+            lem = self.lemmatizer.lemmatize(word, wordnet_pos)
+            lemmatized_tokens.append(lem)
+        print("*********************LEMMATIZING***************")
+        print(lemmatized_tokens)
+        return lemmatized_tokens
     
 
 

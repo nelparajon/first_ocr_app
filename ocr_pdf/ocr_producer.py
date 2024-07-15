@@ -27,7 +27,9 @@ class OCRProducer:
                 logging.error(f"Error de Tesseract al procesar la imagen: {te}")
                 result_text.append("")
             
-        return result_text
+            combined_text = ' '.join(result_text)
+            print(combined_text)
+        return combined_text
     
     #Para evitar que se acumulen textos, se elimina el contenido del directorio 
     def delete_files(self, output_folder='output_texts'):
