@@ -28,7 +28,7 @@ class OCRProducer:
                 result_text.append("")
             
             combined_text = ' '.join(result_text)
-            print(combined_text)
+            print("TEXTO COMBINADO: \n", combined_text)
         return combined_text
     
     #Para evitar que se acumulen textos, se elimina el contenido del directorio 

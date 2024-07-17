@@ -44,3 +44,4 @@ class Tokenizer:
         text = text.lower()
         cleaned_text = text.translate(str.maketrans("", "", string.punctuation))
         return cleaned_text
+    

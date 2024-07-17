@@ -12,7 +12,7 @@ class PDFConverter:
         if not os.path.exists(self.output_folder):
             os.makedirs(self.output_folder)
 
-    #Función que convierte y retorna los pdf a imágenes verificando previamente si su extensión es .pdf. 
+    #Función que convierte y retorna los pdf a una lista de imágenes verificando previamente si su extensión es .pdf. 
     def convert_to_images(self, route_path):
         if not route_path.endswith('.pdf'):
             raise ValueError("El archivo debe tener una extensión .pdf")

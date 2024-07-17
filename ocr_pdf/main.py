@@ -1,4 +1,3 @@
-import logging
 from pdf_converter import PDFConverter
 from ocr_producer import OCRProducer
 from analyze_text import AnalyzeText
