@@ -4,13 +4,16 @@ import os
 
 # Agregar el directorio principal del proyecto al PYTHONPATH
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'ocr_pdf')))
+
 from ocr_pdf.tokenizer import Tokenizer
+from setup_nltk import setup_nltk
 
 class TokenizerTest(unittest.TestCase):
     def setUp(self):
+        setup_nltk()
         self.tokenizer = Tokenizer()
-        return super().setUp()
-
+        super().setUp()
 
     def test_tokenizer(self):
         text = "Vectorization is a crucial process in the field of Natural Language Processing (NLP)"

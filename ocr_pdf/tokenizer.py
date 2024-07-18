@@ -1,8 +1,11 @@
-import nltk
+import os
+import sys
 from nltk import word_tokenize
-from setup_nltk import setup_nltk
 from nltk.corpus import stopwords
 import string
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from setup_nltk import setup_nltk
 
 class Tokenizer:
 
@@ -44,4 +47,3 @@ class Tokenizer:
         text = text.lower()
         cleaned_text = text.translate(str.maketrans("", "", string.punctuation))
         return cleaned_text
-    

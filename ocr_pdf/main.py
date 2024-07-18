@@ -71,4 +71,5 @@ if __name__ == '__main__':
     lem_texts = lemmatizing_texts(tokenized_texts)
     vectorizer = Vectorizer()
     vectors = vectorizing_texts(lem_texts)
+    print("Vectores: \n", vectors)
     vectorizer.similarity_docs(vectors)

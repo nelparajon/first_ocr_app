@@ -13,7 +13,7 @@ class Vectorizer():
         print(lemmatized_tokens_str)
         count_matrix = self.vectorizer.fit_transform(lemmatized_tokens_str)
         print("COUNT MATRIX: \n", count_matrix.toarray())
-        return count_matrix
+        return count_matrix.toarray()
     
     #comprobacion de la similitud entre textos comparando los cosenos de los vectores
     def similarity_docs(self, docs):

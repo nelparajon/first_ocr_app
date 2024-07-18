@@ -1,6 +1,6 @@
 import nltk
 from nltk import pos_tag
-from setup_nltk import setup_nltk
+from ocr_pdf.setup import setup_nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
 
