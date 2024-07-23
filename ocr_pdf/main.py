@@ -6,6 +6,7 @@ from stemmer import Stemmer
 from lemmatizer import Lemmatizer
 from output_analyzed_texts import AnalyzedText
 from vectorizer import Vectorizer
+from setup_nltk import setup_nltk
 
 def documents(*file_paths):
     docs = []
@@ -61,12 +62,15 @@ def menu(docs):
 
 
 if __name__ == '__main__':
+    setup_nltk()
     doc_1 = r'C:/Users/Nel/Desktop/vectorizacion.pdf'
     doc_2 = r'C:/Users/Nel/Desktop/vectorization_2.pdf'
     docs = documents(doc_1, doc_2) 
     print("rutas de los documentos: ", docs)
     images = convert_to_images(docs)
     result_text = process_images(images)
+    print(result_text)
+    print("\n", type(result_text))
     tokenized_texts =  tokenize_texts(result_text)
     lem_texts = lemmatizing_texts(tokenized_texts)
     vectorizer = Vectorizer()
