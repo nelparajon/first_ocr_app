@@ -24,6 +24,21 @@ class VectorizerTest(unittest.TestCase):
         
         print("Vectorización realizada con éxito")
     
+    def test_vectorize_doc_type_error(self):
+        with self.assertRaises(TypeError) as cm:
+            self.tokenizer.vectorize_doc("Esto no es una lista de tokens")
+        self.assertEqual(str(cm.exception), "Se esperaba una lista de cadenas, pero se recibió str")
+
+        with self.assertRaises(TypeError) as cm:
+            self.tokenizer.vectorize_doc([1, 2, 3])
+        self.assertEqual(str(cm.exception), "Se esperaba una lista de cadenas, pero se recibió list")
+
+    def test_vectorize_doc_value_error(self):
+        with self.assertRaises(ValueError) as cm:
+            self.tokenizer.vectorize_doc(["!!!"])
+        self.assertEqual(str(cm.exception), "Se esperaba una lista de cadenas de tokens, se recibió list")
+
+    
     def test_similarity(self):
         pass
 

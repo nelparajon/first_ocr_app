@@ -39,9 +39,11 @@ def tokenize_texts(texts):
     tokenizer = Tokenizer()
     tokens = []
     for text in texts:
+        print("TEXTOS \n", text)
         text_tokens = tokenizer.tokenize_texts(text)
         tokens.append(text_tokens)
     return tokens
+
 
 def lemmatizing_texts(tokens):
     lemmatizer = Lemmatizer()
