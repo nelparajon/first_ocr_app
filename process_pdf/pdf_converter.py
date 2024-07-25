@@ -39,6 +39,32 @@ class PDFConverter:
             return []
         
         return images
+    
+    def convert_to_images_from_file(self, pdf_file):
+
+        try:
+            images = convert_from_path(pdf_file)
+            logging.debug(f"Successfully converted PDF to images: {images}")
+        except FileNotFoundError as e:
+            logging.error(f"FileNotFoundError: {e}")
+            return []
+        except OSError as e:
+            logging.error(f"OSError: {e}")
+            return []
+        except PDFInfoNotInstalledError as e:
+            logging.error(f"PDFInfoNotInstalledError: {e}")
+            return []
+        except PDFPageCountError as e:
+            logging.error(f"PDFPageCountError: {e}")
+            return []
+        except PDFSyntaxError as e:
+            logging.error(f"PDFSyntaxError: {e}")
+            return []
+        except Exception as e:
+            logging.error(f"Unexpected error: {e}")
+            return []
+        
+        return images
 
     #Guardamos las imágenes en una carpeta usando el nombre del archivo
     def save_images(self, route_path):

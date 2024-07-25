@@ -49,6 +49,7 @@ class Vectorizer():
             return print(f"TypeError: {te}")
         except Exception as e:
             return print(f"Error inesperado al comprobar la similitud: {e}")
+        return cosine_sim
             
 
     def check_shape(self, docs):

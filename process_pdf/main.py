@@ -15,13 +15,13 @@ def documents(*file_paths):
     print(docs)
     return docs
 
-def convert_to_images(docs):
+def convert_to_images_from_file(docs):
     print('********************')
     print("Convirtiendo los pdf a imágenes...")
     images = []
     for route in docs:
         converter = PDFConverter(route)
-        docs_images = converter.convert_to_images(route)
+        docs_images = converter.convert_to_images_from_file(route)
         images.append(docs_images)
     print(images)
     return images
@@ -50,6 +50,7 @@ def lemmatizing_texts(tokens):
     lematized_tokens = []
     for text in tokens:
         lem_tokens = lemmatizer.lemmatizing_words(text)
+        print("*********LEM TOKENS************\n", lem_tokens)
         lematized_tokens.append(lem_tokens)
     print(lematized_tokens)
     return lematized_tokens
@@ -68,9 +69,9 @@ if __name__ == '__main__':
     setup_nltk()
     doc_1 = r'C:/Users/Nel/Desktop/vectorizacion.pdf'
     doc_2 = r'C:/Users/Nel/Desktop/vectorization_2.pdf'
-    """docs = documents(doc_1, doc_2) 
+    docs = documents(doc_1, doc_2) 
     print("rutas de los documentos: ", docs)
-    images = convert_to_images(docs)
+    images = convert_to_images_from_file(docs)
     result_text = process_images(images)
     print(result_text)
     print("\n", type(result_text))
@@ -79,4 +80,4 @@ if __name__ == '__main__':
     vectorizer = Vectorizer()
     vectors = vectorizing_texts(lem_texts)
     print("Vectores: \n", vectors)
-    vectorizer.similarity_docs(vectors)"""
+    vectorizer.similarity_docs(vectors)
