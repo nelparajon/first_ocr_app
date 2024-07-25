@@ -51,6 +51,7 @@ def lemmatizing_texts(tokens):
     for text in tokens:
         lem_tokens = lemmatizer.lemmatizing_words(text)
         lematized_tokens.append(lem_tokens)
+    print(lematized_tokens)
     return lematized_tokens
 
 def vectorizing_texts(lems):
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     setup_nltk()
     doc_1 = r'C:/Users/Nel/Desktop/vectorizacion.pdf'
     doc_2 = r'C:/Users/Nel/Desktop/vectorization_2.pdf'
-    docs = documents(doc_1, doc_2) 
+    """docs = documents(doc_1, doc_2) 
     print("rutas de los documentos: ", docs)
     images = convert_to_images(docs)
     result_text = process_images(images)
@@ -78,4 +79,4 @@ if __name__ == '__main__':
     vectorizer = Vectorizer()
     vectors = vectorizing_texts(lem_texts)
     print("Vectores: \n", vectors)
-    vectorizer.similarity_docs(vectors)
+    vectorizer.similarity_docs(vectors)"""

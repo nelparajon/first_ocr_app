@@ -1,5 +1,6 @@
 import logging
-from pdf2image import convert_from_path
+from pdf2image import convert_from_bytes, convert_from_path
+from pdf2image.exceptions import PDFInfoNotInstalledError, PDFPageCountError, PDFSyntaxError
 import os
 
 #Clase que convierte los pdf a imágenes y las guarda
@@ -14,19 +15,21 @@ class PDFConverter:
 
     #Función que convierte y retorna los pdf a una lista de imágenes verificando previamente si su extensión es .pdf. 
     def convert_to_images(self, route_path):
-        if not route_path.endswith('.pdf'):
-            raise ValueError("El archivo debe tener una extensión .pdf")
+        """if not route_path.endswith('.pdf'):
+            raise ValueError("El archivo debe tener una extensión .pdf") Se pasa esto al método POST que sube el archivo en routes"""
 
         try:
-            self.images = convert_from_path(route_path)
+            self.images = convert_from_bytes(route_path)
         except FileNotFoundError as e:
             logging.error(f"Error al no encontrar el archivo en la ruta especificada {route_path}: {e}")
             return []
         except OSError as e:
             logging.error(f"Error al convertir el archivo.pdf a imágenes: {e}")
             return []
-        
-        #self.save_images(route_path)
+        except (PDFInfoNotInstalledError, PDFPageCountError, PDFSyntaxError) as e:
+            logging.error(f"Error al procesar el archivo PDF: {e}")
+            return []
+    
         return self.images
     
     #Guardamos las imágenes en una carpeta usando el nombre del archivo

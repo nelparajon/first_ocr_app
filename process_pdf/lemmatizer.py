@@ -1,6 +1,6 @@
 import nltk
 from nltk import pos_tag
-from ocr_pdf.setup import setup_nltk
+from process_pdf.setup import setup_nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
 
@@ -35,8 +35,12 @@ class Lemmatizer:
     
     def lemmatizing_words(self, tokenized_texts):
         try:    
-            if not isinstance(tokenized_texts, list) and not all(isinstance(token, str) for token in tokenized_texts):
-                return TypeError("Los tokens deben de ser una lista de cadenas")
+            if not isinstance(tokenized_texts, list):
+                return TypeError(f"Los tokens deben de ser una lista de cadenas, se recibió {type(tokenized_texts).__name__}")
+            
+            if not all(isinstance(token, str) for token in tokenized_texts):
+                raise ValueError("Todos los elementos de la lista deben ser cadenas de texto.")
+
             
             lemmatized_tokens = []
             pos_tagged_tokens = pos_tag(tokenized_texts)

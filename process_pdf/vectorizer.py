@@ -10,28 +10,29 @@ class Vectorizer():
 
     def vectorize_doc(self, lemmatized_tokens):
         
-            if not isinstance(lemmatized_tokens, list) and not all(isinstance(lem, str) for lem in lemmatized_tokens):
-                raise TypeError(f"Se esperaba una lista de cadenas, pero se recibió {type(lemmatized_tokens).__name__}")
-            try:
+        if not isinstance(lemmatized_tokens, list) or not all(isinstance(sublist, list) for sublist in lemmatized_tokens) or not all(isinstance(token, str) for sublist in lemmatized_tokens for token in sublist):
+            raise TypeError(f"Se esperaba una lista de listas de cadenas, se recibió {type(lemmatized_tokens).__name__}")
             
-                #pasamos a una lista los tokens para que estén en el formato que acepta count vectorizer
-                lemmatized_tokens_str = [' '.join(lem) for lem in lemmatized_tokens]
-                print("LEMATIZED TOKENS \n", lemmatized_tokens_str)  
-
-                if not isinstance(lemmatized_tokens, list) and not all(isinstance(lem, str) for lem in lemmatized_tokens_str):
-                    raise ValueError(f"Se esperaba una lista de cadena de tokens, se recibió {type(lemmatized_tokens_str).__name__}") 
-                #print(lemmatized_tokens_str)
-
-                count_matrix = self.vectorizer.fit_transform(lemmatized_tokens_str)
-                print("COUNT MATRIX: \n", count_matrix.toarray())
-                return count_matrix
+        try:
             
-            except TypeError as te:
-                return print(f" Vectorización. TypeError: {te}")
-            except ValueError as ve:
-                return print(f"Vectorización. ValueError. : {ve}")
-            except Exception as e:
-                return print(f"Error inesperado en la vectorización: {e}")
+            #pasamos a una lista los tokens para que estén en el formato que acepta count vectorizer
+            lemmatized_tokens_str = [' '.join(lem) for lem in lemmatized_tokens]
+            print("LEMATIZED TOKENS \n", lemmatized_tokens_str)  
+
+            if not isinstance(lemmatized_tokens, list) or not all(isinstance(lem, str) for lem in lemmatized_tokens_str):
+                raise ValueError(f"Se esperaba una lista de cadena de tokens, se recibió {type(lemmatized_tokens_str).__name__}") 
+            #print(lemmatized_tokens_str)
+
+            count_matrix = self.vectorizer.fit_transform(lemmatized_tokens_str)
+            print("COUNT MATRIX: \n", count_matrix.toarray())
+            return count_matrix
+        
+        except TypeError as te:
+            return print(f" Vectorización. TypeError: {te}")
+        except ValueError as ve:
+            return print(f"Vectorización. ValueError. : {ve}")
+        except Exception as e:
+            return print(f"Error inesperado en la vectorización: {e}")
     
     #comprobacion de la similitud entre textos comparando los cosenos de los vectores
     def similarity_docs(self, docs):

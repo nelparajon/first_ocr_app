@@ -5,7 +5,7 @@ import os
 # Agregar el directorio principal del proyecto al PYTHONPATH
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'ocr_pdf')))
-from ocr_pdf.vectorizer import Vectorizer
+from process_pdf.vectorizer import Vectorizer
 
 class VectorizerTest(unittest.TestCase):
     def setUp(self) -> None:
@@ -26,16 +26,16 @@ class VectorizerTest(unittest.TestCase):
     
     def test_vectorize_doc_type_error(self):
         with self.assertRaises(TypeError) as cm:
-            self.tokenizer.vectorize_doc("Esto no es una lista de tokens")
+            self.vectorizer.vectorize_doc("Esto no es una lista de tokens")
         self.assertEqual(str(cm.exception), "Se esperaba una lista de cadenas, pero se recibió str")
 
         with self.assertRaises(TypeError) as cm:
-            self.tokenizer.vectorize_doc([1, 2, 3])
+            self.vectorizer.vectorize_doc([1, 2, 3])
         self.assertEqual(str(cm.exception), "Se esperaba una lista de cadenas, pero se recibió list")
 
     def test_vectorize_doc_value_error(self):
         with self.assertRaises(ValueError) as cm:
-            self.tokenizer.vectorize_doc(["!!!"])
+            self.vectorizer.vectorize_doc(["!!!"])
         self.assertEqual(str(cm.exception), "Se esperaba una lista de cadenas de tokens, se recibió list")
 
     

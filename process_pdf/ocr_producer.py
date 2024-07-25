@@ -6,8 +6,8 @@ import os
 class OCRProducer:
     def __init__(self):
         #Incluir lo siguiente si no está habilitado la ruta completa de pytesseract al PATH
-        #route_path_ts = pytesseract.pytesseract.tesseract_cmd = r'<full_path_to_your_tesseract_executable>'
-        pass
+        pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+       
         
     #Función que procesa la lista de imágenes de los pdf y los convierte en texto. 
     # Cada texto se pasa como elemento a una lista
@@ -27,8 +27,8 @@ class OCRProducer:
                 logging.error(f"Error de Tesseract al procesar la imagen: {te}")
                 result_text.append("")
             
-            combined_text = ' '.join(result_text)
-            print("TEXTO COMBINADO: \n", combined_text)
+        combined_text = ' '.join(result_text)
+        print("TEXTO COMBINADO: \n", combined_text)
         return combined_text
     
     #Para evitar que se acumulen textos, se elimina el contenido del directorio 
