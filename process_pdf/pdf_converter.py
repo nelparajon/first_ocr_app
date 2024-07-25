@@ -5,8 +5,8 @@ import os
 
 #Clase que convierte los pdf a imágenes y las guarda
 class PDFConverter:
-    def __init__(self, pdf_path, output_folder = 'output_images'):
-        self.pdf_path = pdf_path
+    def __init__(self, output_folder = 'output_images'):
+       
         self.output_folder = output_folder
         
         #se crea el directorio si no existe
@@ -14,24 +14,32 @@ class PDFConverter:
             os.makedirs(self.output_folder)
 
     #Función que convierte y retorna los pdf a una lista de imágenes verificando previamente si su extensión es .pdf. 
-    def convert_to_images(self, route_path):
-        """if not route_path.endswith('.pdf'):
-            raise ValueError("El archivo debe tener una extensión .pdf") Se pasa esto al método POST que sube el archivo en routes"""
+    def convert_to_images(self, pdf_file):
 
         try:
-            self.images = convert_from_bytes(route_path)
+            images = convert_from_bytes(pdf_file)
+            logging.debug(f"Successfully converted PDF to images: {images}")
         except FileNotFoundError as e:
-            logging.error(f"Error al no encontrar el archivo en la ruta especificada {route_path}: {e}")
+            logging.error(f"FileNotFoundError: {e}")
             return []
         except OSError as e:
-            logging.error(f"Error al convertir el archivo.pdf a imágenes: {e}")
+            logging.error(f"OSError: {e}")
             return []
-        except (PDFInfoNotInstalledError, PDFPageCountError, PDFSyntaxError) as e:
-            logging.error(f"Error al procesar el archivo PDF: {e}")
+        except PDFInfoNotInstalledError as e:
+            logging.error(f"PDFInfoNotInstalledError: {e}")
             return []
-    
-        return self.images
-    
+        except PDFPageCountError as e:
+            logging.error(f"PDFPageCountError: {e}")
+            return []
+        except PDFSyntaxError as e:
+            logging.error(f"PDFSyntaxError: {e}")
+            return []
+        except Exception as e:
+            logging.error(f"Unexpected error: {e}")
+            return []
+        
+        return images
+
     #Guardamos las imágenes en una carpeta usando el nombre del archivo
     def save_images(self, route_path):
         for i, image in enumerate(self.images):
