@@ -12,6 +12,7 @@ def create_app():
 
     with app.app_context():
         from database.models.historico import Historico #importacion del modelo
+        from database.db_manager import DbManager
         db.create_all()
         app.register_blueprint(analize)
 
