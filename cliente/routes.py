@@ -1,17 +1,18 @@
 import logging
 import os
 from flask import Flask, jsonify, request, Blueprint
-import numpy as np
-from encoder import Encoder
-from pdf_converter import PDFConverter
-from ocr_producer import OCRProducer
-from tokenizer import Tokenizer
-from lemmatizer import Lemmatizer
-from vectorizer import Vectorizer
+from werkzeug.exceptions import BadRequest, InternalServerError
+#import numpy as np
+from cliente.encoder import Encoder
+from process_pdf.pdf_converter import PDFConverter
+from process_pdf.ocr_producer import OCRProducer
+from process_pdf.tokenizer import Tokenizer
+from process_pdf.lemmatizer import Lemmatizer
+from process_pdf.vectorizer import Vectorizer
 from database.db_manager import DbManager
 
 
-# Configurar que el logging se guarde en un archivo
+#Configurar que el logging se guarde en un archivo
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
                     handlers=[logging.FileHandler("app.log"),
@@ -38,40 +39,35 @@ def upload_file():
 
     logging.debug(f"Datos recibidos en la solicitud post: {data}")
     if 'file_1' not in data or 'file_2' not in data:
-        estado = 400
-        mensaje = "Error con el archivo. No se han encontrado los dos documentos para comparar"
-        return handle_response(estado, mensaje)
-    
-    # Extraemos cada documento en Base64
+        raise BadRequest("Error con el archivo. No se han encontrado los dos documentos para comparar")
+
+
+    # Cada documento en Base64
     encoded_file_1 = data['file_1']
     encoded_file_2 = data['file_2']
-    
+
     try:
         # Decodificación
         decoded_file_1 = Encoder.decode_file(encoded_file_1)
         decoded_file_2 = Encoder.decode_file(encoded_file_2)
         logging.debug("Archivo decodificado correctamente.")
 
-        # Guardamos los archivos decodificados de manera temporal para el análisis de errores
+        # Se guardan los archivos decodificados de manera temporal para el análisis de errores
         with open("temp_1.pdf", "wb") as temp_pdf:
             temp_pdf.write(decoded_file_1)
-        
+
         with open("temp_2.pdf", "wb") as temp_pdf:
             temp_pdf.write(decoded_file_2)
 
-        # Valida que los documentos están en formato PDF
+        # Validación de que los documentos están en formato PDF
         if not Encoder.validate_pdf(decoded_file_1) or not Encoder.validate_pdf(decoded_file_2):
-            estado = 400
-            mensaje = "Los archivos decodificados no parecen ser archivos PDF válidos."
-            return handle_response(estado, mensaje)
+            raise BadRequest("Los archivos decodificados no parecen ser archivos PDF válidos.")
 
         # Si no ocurre ningún error, eliminamos los archivos temporales
         os.remove("temp_1.pdf")
         os.remove("temp_2.pdf")
     except Exception as e:
-        estado = 500
-        mensaje = f"Error al decodificar el archivo: {str(e)}"
-        return handle_response(estado, mensaje)
+        raise InternalServerError(f"Error al decodificar el archivo: {str(e)}")
 
     try:
         # Conversión de los documentos a imágenes
@@ -96,24 +92,17 @@ def upload_file():
         vectors = vectorizer.vectorize_doc(lems)
         similarity = vectorizer.similarity_docs(vectors)
 
-        # Si todo va bien
-        estado = 200
-        mensaje = "Subida y procesamiento de archivos completada."
-        return handle_response(estado, mensaje)
+        # Si todo va bien, se procede a dar el código de estado 200 y un mensaje
+        return handle_response(200, "Subida y procesamiento de archivos completada.")
 
     except Exception as e:
-        estado = 500
-        mensaje = f"Error en la conversión del archivo: {str(e)}"
-        return handle_response(estado, mensaje)
+        raise InternalServerError(f"Error en la conversión del archivo: {str(e)}")
 
-
+#Función que maneja muestra los códigos de estado y su mensaje correspondiente
+#Guardamos esto en la base de dato como histórico
 def handle_response(estado, mensaje):
-    if estado > 200:
-        new_estado = "Solicitud errónea. Código: ", str(estado)
-    else:
-        new_estado = "Solicitud Exitosa. Código:", str(estado)
-    DbManager.save_request(estado, mensaje)
-    return jsonify({"mensaje": mensaje, "estado": estado}), estado
+    DbManager.save_request(f"Solicitud exitosa. Código: {estado}", mensaje)
+    return jsonify({"mensaje": mensaje, "Código": estado}), estado
 
     
 

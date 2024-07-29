@@ -8,7 +8,7 @@ class Historico(db.Model):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     fecha: Mapped[datetime] = mapped_column(nullable=False)
-    estado: Mapped[str] = mapped_column(db.String(20), nullable=False)
+    estado: Mapped[str] = mapped_column(db.String(50), nullable=False)
     #similitud: Mapped[float] = mapped_column(db.Float)
     mensaje: Mapped[str] = mapped_column(db.String(200))
 

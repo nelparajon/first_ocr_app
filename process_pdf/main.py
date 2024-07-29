@@ -1,11 +1,11 @@
-from pdf_converter import PDFConverter
-from ocr_producer import OCRProducer
-from analyze_text import AnalyzeText
-from tokenizer import Tokenizer
-from stemmer import Stemmer
-from lemmatizer import Lemmatizer
-from output_analyzed_texts import AnalyzedText
-from vectorizer import Vectorizer
+from process_pdf.pdf_converter import PDFConverter
+from process_pdf.ocr_producer import OCRProducer
+from process_pdf.analyze_text import AnalyzeText
+from process_pdf.tokenizer import Tokenizer
+from process_pdf.stemmer import Stemmer
+from process_pdf.lemmatizer import Lemmatizer
+from process_pdf.output_analyzed_texts import AnalyzedText
+from process_pdf.vectorizer import Vectorizer
 from setup_nltk import setup_nltk
 
 def documents(*file_paths):
