@@ -23,6 +23,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'ANALIZADOR DE TEXTOS', response.data)
     
+    #comprobación de la funcionalidad principal
     def test_route_analizar_textos(self):
         
 
