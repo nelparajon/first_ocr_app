@@ -10,18 +10,18 @@ class Historico(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     fecha: Mapped[datetime] = mapped_column(nullable=False, default=lambda: Historico.get_local_time())
     estado: Mapped[str] = mapped_column(db.String(50), nullable=False)
-    # similitud: Mapped[float] = mapped_column(db.Float)
     mensaje: Mapped[str] = mapped_column(db.String(200))
+    porcentaje_similitud: Mapped[float] = mapped_column(db.Numeric(5,2))
 
     @staticmethod
     def get_local_time():
         local_time = time.localtime()
         return datetime.fromtimestamp(time.mktime(local_time))
 
-    def __init__(self, estado, mensaje):
+    def __init__(self, estado, mensaje, porcentaje_similitud):
         self.fecha = self.get_local_time()  # Establece la fecha actual por defecto
         self.estado = estado
-        # self.similitud = similitud
+        self.porcentaje_similitud = porcentaje_similitud
         self.mensaje = mensaje
 
     def __str__(self):

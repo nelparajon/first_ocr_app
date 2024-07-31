@@ -97,16 +97,26 @@ def upload_file():
         porcentaje = porcentaje_matrix * 100
 
         #Si todo va bien, se procede a dar el código de estado 200 y un mensaje
-        return handle_response(200, f"Subida y procesamiento de archivos completada. \n Similitud de los documentos: {porcentaje:.2f}%")
+        return handle_response(200, f"Subida y procesamiento de archivos completada.", f"{porcentaje:.2f}")
 
     except Exception as e:
         raise InternalServerError(f"Error en la conversión del archivo: {str(e)}")
+    
+@analize.route('/historico', methods=['GET'])
+def show_historico():
+    if request.method != 'GET':
+        return 405, "Error: método no soportado"
+    
+    data = DbManager.get_historico()
+    return jsonify({'Peticiones': data})
+    
+
 
 #Función que maneja muestra los códigos de estado y su mensaje correspondiente
 #Guardamos esto en la base de dato como histórico
-def handle_response(estado, mensaje):
-    DbManager.save_request(f"Solicitud exitosa. Código: {estado}", mensaje)
-    return jsonify({"mensaje": mensaje, "Código": estado}), estado
+def handle_response(estado, mensaje, similitud):
+    DbManager.save_request(f"Solicitud exitosa. Código: {estado}", mensaje, similitud)
+    return jsonify({"mensaje": mensaje, "Código": estado, "Similitud": f"{similitud}%"}), estado
 
     
 
