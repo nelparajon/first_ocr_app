@@ -4,7 +4,6 @@ from database.db_manager import DbManager
 
 class ErrorHandler:
     
-
     @staticmethod
     def register(app):
         @app.errorhandler(405)

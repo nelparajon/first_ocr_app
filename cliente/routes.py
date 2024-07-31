@@ -1,8 +1,8 @@
 import logging
 import os
 from flask import Flask, jsonify, request, Blueprint
+import numpy as np
 from werkzeug.exceptions import BadRequest, InternalServerError
-#import numpy as np
 from cliente.encoder import Encoder
 from process_pdf.pdf_converter import PDFConverter
 from process_pdf.ocr_producer import OCRProducer
@@ -10,7 +10,6 @@ from process_pdf.tokenizer import Tokenizer
 from process_pdf.lemmatizer import Lemmatizer
 from process_pdf.vectorizer import Vectorizer
 from database.db_manager import DbManager
-
 
 #Configurar que el logging se guarde en un archivo
 logging.basicConfig(level=logging.DEBUG,
@@ -25,12 +24,14 @@ tokenizer = Tokenizer()
 lemmatizer = Lemmatizer()
 vectorizer = Vectorizer()
 
+analyze_service_route = os.getenv('ANALYZE_SERVICE_ROUTE')
+
 
 @analize.route('/')
 def view():
     return '<h1> ANALIZADOR DE TEXTOS<h1>'
 
-@analize.route('/analizar_documentos', methods=['POST'])
+@analize.route(analyze_service_route, methods=['POST'])
 def upload_file():
     if request.method != 'POST':
         return handle_response(405, "Error: método no soportado")
@@ -91,9 +92,12 @@ def upload_file():
         #Vectorización y cálculos de similitud
         vectors = vectorizer.vectorize_doc(lems)
         similarity = vectorizer.similarity_docs(vectors)
+        similarity_array = np.array(similarity)
+        porcentaje_matrix = similarity_array[0,1]
+        porcentaje = porcentaje_matrix * 100
 
         #Si todo va bien, se procede a dar el código de estado 200 y un mensaje
-        return handle_response(200, "Subida y procesamiento de archivos completada.")
+        return handle_response(200, f"Subida y procesamiento de archivos completada. \n Similitud de los documentos: {porcentaje:.2f}%")
 
     except Exception as e:
         raise InternalServerError(f"Error en la conversión del archivo: {str(e)}")
