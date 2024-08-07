@@ -4,12 +4,16 @@ from cliente.routes import analize
 from database.db import db
 from database import config
 from cliente.error_handler import ErrorHandler
+from flask_cors import CORS
+from flask_migrate import Migrate
 
 def create_app(): 
     database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
     if not database_uri:
         raise RuntimeError("La variable de entorno 'SQLALCHEMY_DATABASE_URI' no está definida")
     app = Flask(__name__)
+    CORS(app)
+    migrate = Migrate(app, db)
     app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config.SQLALCHEMY_TRACK_MODIFICATIONS
     app.config['DEBUG'] = config.DEBUG

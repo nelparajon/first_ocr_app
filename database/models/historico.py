@@ -8,6 +8,8 @@ class Historico(db.Model):
     __tablename__ = 'historico'
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    doc1: Mapped[str] = mapped_column(db.String(40), nullable=False)
+    doc2: Mapped[str] = mapped_column(db.String(40), nullable=False)
     fecha: Mapped[datetime] = mapped_column(nullable=False, default=lambda: Historico.get_local_time())
     estado: Mapped[str] = mapped_column(db.String(50), nullable=False)
     mensaje: Mapped[str] = mapped_column(db.String(200))
@@ -18,9 +20,11 @@ class Historico(db.Model):
         local_time = time.localtime()
         return datetime.fromtimestamp(time.mktime(local_time))
 
-    def __init__(self, estado, mensaje, porcentaje_similitud):
+    def __init__(self, estado, doc1, doc2, mensaje, porcentaje_similitud):
         self.fecha = self.get_local_time()  # Establece la fecha actual por defecto
         self.estado = estado
+        self.doc1 = doc1
+        self.doc2 = doc2
         self.porcentaje_similitud = porcentaje_similitud
         self.mensaje = mensaje
 

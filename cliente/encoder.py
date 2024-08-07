@@ -11,18 +11,20 @@ class Encoder:
         self.file_path = file_path
 
     @staticmethod
-    def encode_file_b64(file_path):
-        with open(file_path, "rb") as file:
-            encoded_file = base64.b64encode(file.read()).decode("utf-8")
-            return encoded_file
+    def encode_file_b64(file):
+        file_content = file.read()  # Leemos el contenido del archivo
+        encoded_file = base64.b64encode(file_content).decode("utf-8")
+        return encoded_file
 
     @staticmethod
     def decode_file(encoded_file):
+        if isinstance(encoded_file, str):
+            encoded_file = encoded_file.encode('utf-8')
         missing_padding = len(encoded_file) % 4
         if missing_padding:
-            encoded_file += '=' * (4 - missing_padding)
+            encoded_file += b'=' * (4 - missing_padding)
         return base64.b64decode(encoded_file)
-
+    
     def validate_pdf(pdf_bytes):
         try:
             pdf_reader = PyPDF2.PdfReader(io.BytesIO(pdf_bytes))

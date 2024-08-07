@@ -18,6 +18,8 @@ sqlalchemy = "^2.0.31"
 flask-sqlalchemy = "^3.1.1"
 mysqlclient = "^2.2.4"
 python-dotenv = "^1.0.1"
+flask-cors = "^4.0.1"
+flask-migrate = "^4.0.7"
 
 
 [build-system]
