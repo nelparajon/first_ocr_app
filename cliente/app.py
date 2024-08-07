@@ -12,8 +12,7 @@ def create_app():
     if not database_uri:
         raise RuntimeError("La variable de entorno 'SQLALCHEMY_DATABASE_URI' no está definida")
     app = Flask(__name__)
-    CORS(app)
-    migrate = Migrate(app, db)
+    
     app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config.SQLALCHEMY_TRACK_MODIFICATIONS
     app.config['DEBUG'] = config.DEBUG

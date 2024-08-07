@@ -25,6 +25,7 @@ lemmatizer = Lemmatizer()
 vectorizer = Vectorizer()
 
 analyze_service_route = os.getenv('ANALYZE_SERVICE_ROUTE')
+service_get_historico = os.getenv('GET_HISTORICO')
 
 
 @analize.route('/')
@@ -100,7 +101,7 @@ def analizar_documentos():
     except Exception as e:
         return jsonify({'error': f"Error en la conversión del archivo: {str(e)}"}), 500
     
-@analize.route('/historico', methods=['GET'])
+@analize.route(service_get_historico, methods=['GET'])
 def show_historico():
     if request.method != 'GET':
         return 405, "Error: método no soportado"
