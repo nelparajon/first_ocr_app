@@ -8710,3 +8710,490 @@ can help practitioners choose the right approach for their specific needs.
 2024-08-07 12:31:16,924 INFO  * Debugger PIN: 333-959-984
 2024-08-07 12:31:26,965 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
 2024-08-07 12:31:27,513 INFO  * Restarting with stat
+2024-08-07 12:43:40,511 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-07 12:43:40,511 INFO [33mPress CTRL+C to quit[0m
+2024-08-07 12:43:40,514 INFO  * Restarting with stat
+2024-08-07 12:43:43,392 WARNING  * Debugger is active!
+2024-08-07 12:43:43,401 INFO  * Debugger PIN: 333-959-984
+2024-08-07 12:44:13,918 INFO 127.0.0.1 - - [07/Aug/2024 12:44:13] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:44:14,330 INFO 127.0.0.1 - - [07/Aug/2024 12:44:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-07 12:44:19,412 INFO 127.0.0.1 - - [07/Aug/2024 12:44:19] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:44:19,425 INFO 127.0.0.1 - - [07/Aug/2024 12:44:19] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:44:23,892 INFO 127.0.0.1 - - [07/Aug/2024 12:44:23] "[33mGET /main.13b29f3025e5337b8d9d.hot-update.json HTTP/1.1[0m" 404 -
+2024-08-07 12:44:31,036 INFO 127.0.0.1 - - [07/Aug/2024 12:44:31] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:44:31,354 INFO 127.0.0.1 - - [07/Aug/2024 12:44:31] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:44:42,731 DEBUG The PDF is valid with 3 pages.
+2024-08-07 12:44:42,735 DEBUG The PDF is valid with 3 pages.
+2024-08-07 12:44:42,738 DEBUG Iniciando conversión a imágenes.
+2024-08-07 12:44:43,340 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF32A5B80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF73955B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF7395C70>]
+2024-08-07 12:44:43,898 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF7395D30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF73964B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF7396900>]
+2024-08-07 12:44:43,899 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF32A5B80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF73955B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF7395C70>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF7395D30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF73964B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF7396900>]
+2024-08-07 12:44:54,435 DEBUG Resultado del procesamiento de imágenes a textos. Vectorization in Natural Language Processing
+
+Vectorization is a crucial process in the field of Natural Language Processing (NLP)
+that involves converting text into numerical data that machine learning algorithms can
+process. This step is essential because machine learning models cannot work directly
+with textual data and thus need a numerical representation of words, sentences, and
+documents.
+
+Fundamentals of Vectorization
+
+The primary goal of vectorization is to transform text into a matrix of numbers that
+represent the features of the text in a way that models can interpret. There are several
+vectorization techniques, each with its advantages and disadvantages depending on the
+context and the goal of the analysis.
+
+1. Bag of Words (BoW): This is one of the simplest and most common
+techniques. In BoW, the text is broken down into individual words, and a
+vocabulary of all unique words in the corpus is created. Each document is then
+represented as a vector of word frequencies, where each entry indicates how
+many times a word appears in the document.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF): This technique
+improves on the Bag of Words by considering not only the frequency of words
+but also the importance of a word in the entire corpus. The TF-IDF value of a
+word is higher if it appears frequently in a document but rarely in the rest of the
+corpus, which helps to highlight more informative words.
+
+3. Word Embeddings: Methods like Word2Vec, GloVe, and FastText represent
+words in continuous vector spaces where semantically similar words are close to
+each other. These embeddings capture semantic relationships between words,
+which makes them powerful for various NLP tasks.
+
+Bag of Words (BoW)
+
+The Bag of Words model is straightforward and easy to implement, making it a popular
+choice for many NLP tasks. In this approach, each document is represented as a vector
+of word counts. For example, consider the following two sentences:
+
++ "The cat sat on the mat."
+
++ "The dog sat on the mat."
+The vocabulary would be: ["The", "cat", "sat", "on", "the", "mat", "dog"]. The sentences
+would then be represented as:
+
+, 1,1,1,1,0]
+1,1,1,1,1]
+
+»1,1,1,
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a statistical measure used to evaluate the importance of a word in a document
+relative to a collection of documents (corpus). It combines two measures:
+ + Term Frequency (TF): The number of times a word appears in a document
+divided by the total number of words in the document.
+
++ Inverse Document Frequency (IDF): The logarithm of the total number of
+documents divided by the number of documents containing the word.
+
+The TF-IDF value is calculated as:
+TF-IDF=TFxIDFext(TF-IDFy =WMext(TF] Mimes Mext(IDFyTF-IDF=TFxIDF
+
+This method helps in reducing the weight of common words and increasing the weight
+of rare but important words.
+
+Word Embeddings
+
+Word embeddings are dense vector representations of words where similar words have
+similar vectors. Popular methods to generate word embeddings include:
+
++ Word2Vec: Uses neural networks to learn word associations from a large
+corpus of text.
+
++ GloVe (Global Vectors for Word Representation): Constructs a co-
+occurrence matrix from the corpus and then applies matrix factorization to create
+word vectors.
+
++ FastText: An extension of Word2Vec that represents words as bags of character
+n-grams, which helps capture subword information and handle out-of-
+vocabulary words.
+
+Word embeddings have revolutionized NLP by capturing semantic relationships
+between words. For example, the vectors for "king" and "queen" might have a similar
+relationship as "man" and "woman".
+Applications of Vectorization
+Vectorization techniques are fundamental in various NLP applications, including:
++. Text Classification: Assigning categories to text documents.
++ Sentiment Analysis: Determining the sentiment expressed in a piece of text.
++ Information Retrieval: Finding relevant documents based on a query.
++ Machine Translation: Translating text from one language to another.
+Advantages and Limitations of Vectorization Techniques
+Advantages:
++ Bag of Words and TF-IDF: Simple to implement and interpret, effective for
+many tasks.
++ Word Embeddings: Capture semantic relationships, useful for more complex
+
+NLP tasks.
+
+Limitations:
+ + Bag of Words and TF-IDF: Can result in large and sparse matrices, do not
+capture word meanings or order.
+
++ Word Embeddings: Require significant computational resources to train, may
+need fine-tuning for specific tasks.
+
+Conclusion
+
+Vectorization is a fundamental step in NLP that transforms text into numerical data for
+machine learning models. Techniques like Bag of Words, TF-IDF, and word
+embeddings each offer unique strengths and are chosen based on the specific needs of
+the task at hand. Understanding and effectively applying these vectorization methods is
+crucial for successful NLP applications.
+ - Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+
+2024-08-07 12:44:55,529 INFO 127.0.0.1 - - [07/Aug/2024 12:44:55] "POST /analizar_documentos HTTP/1.1" 200 -
+2024-08-07 12:46:05,925 INFO 127.0.0.1 - - [07/Aug/2024 12:46:05] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:46:06,189 INFO 127.0.0.1 - - [07/Aug/2024 12:46:06] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:46:25,860 DEBUG The PDF is valid with 3 pages.
+2024-08-07 12:46:25,864 DEBUG The PDF is valid with 3 pages.
+2024-08-07 12:46:25,867 DEBUG Iniciando conversión a imágenes.
+2024-08-07 12:46:26,547 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38E9F0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38FCE0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF611C5F0>]
+2024-08-07 12:46:27,240 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38E7E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38FB30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38FC20>]
+2024-08-07 12:46:27,241 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38E9F0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38FCE0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EF611C5F0>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38E7E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38FB30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21EFD38FC20>]
+2024-08-07 12:46:37,044 DEBUG Resultado del procesamiento de imágenes a textos. Vectorization in Natural Language Processing
+
+Vectorization is a crucial process in the field of Natural Language Processing (NLP)
+that involves converting text into numerical data that machine learning algorithms can
+process. This step is essential because machine learning models cannot work directly
+with textual data and thus need a numerical representation of words, sentences, and
+documents.
+
+Fundamentals of Vectorization
+
+The primary goal of vectorization is to transform text into a matrix of numbers that
+represent the features of the text in a way that models can interpret. There are several
+vectorization techniques, each with its advantages and disadvantages depending on the
+context and the goal of the analysis.
+
+1. Bag of Words (BoW): This is one of the simplest and most common
+techniques. In BoW, the text is broken down into individual words, and a
+vocabulary of all unique words in the corpus is created. Each document is then
+represented as a vector of word frequencies, where each entry indicates how
+many times a word appears in the document.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF): This technique
+improves on the Bag of Words by considering not only the frequency of words
+but also the importance of a word in the entire corpus. The TF-IDF value of a
+word is higher if it appears frequently in a document but rarely in the rest of the
+corpus, which helps to highlight more informative words.
+
+3. Word Embeddings: Methods like Word2Vec, GloVe, and FastText represent
+words in continuous vector spaces where semantically similar words are close to
+each other. These embeddings capture semantic relationships between words,
+which makes them powerful for various NLP tasks.
+
+Bag of Words (BoW)
+
+The Bag of Words model is straightforward and easy to implement, making it a popular
+choice for many NLP tasks. In this approach, each document is represented as a vector
+of word counts. For example, consider the following two sentences:
+
++ "The cat sat on the mat."
+
++ "The dog sat on the mat."
+The vocabulary would be: ["The", "cat", "sat", "on", "the", "mat", "dog"]. The sentences
+would then be represented as:
+
+, 1,1,1,1,0]
+1,1,1,1,1]
+
+»1,1,1,
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a statistical measure used to evaluate the importance of a word in a document
+relative to a collection of documents (corpus). It combines two measures:
+ + Term Frequency (TF): The number of times a word appears in a document
+divided by the total number of words in the document.
+
++ Inverse Document Frequency (IDF): The logarithm of the total number of
+documents divided by the number of documents containing the word.
+
+The TF-IDF value is calculated as:
+TF-IDF=TFxIDFext(TF-IDFy =WMext(TF] Mimes Mext(IDFyTF-IDF=TFxIDF
+
+This method helps in reducing the weight of common words and increasing the weight
+of rare but important words.
+
+Word Embeddings
+
+Word embeddings are dense vector representations of words where similar words have
+similar vectors. Popular methods to generate word embeddings include:
+
++ Word2Vec: Uses neural networks to learn word associations from a large
+corpus of text.
+
++ GloVe (Global Vectors for Word Representation): Constructs a co-
+occurrence matrix from the corpus and then applies matrix factorization to create
+word vectors.
+
++ FastText: An extension of Word2Vec that represents words as bags of character
+n-grams, which helps capture subword information and handle out-of-
+vocabulary words.
+
+Word embeddings have revolutionized NLP by capturing semantic relationships
+between words. For example, the vectors for "king" and "queen" might have a similar
+relationship as "man" and "woman".
+Applications of Vectorization
+Vectorization techniques are fundamental in various NLP applications, including:
++. Text Classification: Assigning categories to text documents.
++ Sentiment Analysis: Determining the sentiment expressed in a piece of text.
++ Information Retrieval: Finding relevant documents based on a query.
++ Machine Translation: Translating text from one language to another.
+Advantages and Limitations of Vectorization Techniques
+Advantages:
++ Bag of Words and TF-IDF: Simple to implement and interpret, effective for
+many tasks.
++ Word Embeddings: Capture semantic relationships, useful for more complex
+
+NLP tasks.
+
+Limitations:
+ + Bag of Words and TF-IDF: Can result in large and sparse matrices, do not
+capture word meanings or order.
+
++ Word Embeddings: Require significant computational resources to train, may
+need fine-tuning for specific tasks.
+
+Conclusion
+
+Vectorization is a fundamental step in NLP that transforms text into numerical data for
+machine learning models. Techniques like Bag of Words, TF-IDF, and word
+embeddings each offer unique strengths and are chosen based on the specific needs of
+the task at hand. Understanding and effectively applying these vectorization methods is
+crucial for successful NLP applications.
+ - Vectorization in Natural Language Processing
+
+Vectorization is a crucial process in the field of Natural Language Processing (NLP)
+that involves converting text into numerical data that machine learning algorithms can
+process. This step is essential because machine learning models cannot work directly
+with textual data and thus need a numerical representation of words, sentences, and
+documents.
+
+Fundamentals of Vectorization
+
+The primary goal of vectorization is to transform text into a matrix of numbers that
+represent the features of the text in a way that models can interpret. There are several
+vectorization techniques, each with its advantages and disadvantages depending on the
+context and the goal of the analysis.
+
+1. Bag of Words (BoW): This is one of the simplest and most common
+techniques. In BoW, the text is broken down into individual words, and a
+vocabulary of all unique words in the corpus is created. Each document is then
+represented as a vector of word frequencies, where each entry indicates how
+many times a word appears in the document.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF): This technique
+improves on the Bag of Words by considering not only the frequency of words
+but also the importance of a word in the entire corpus. The TF-IDF value of a
+word is higher if it appears frequently in a document but rarely in the rest of the
+corpus, which helps to highlight more informative words.
+
+3. Word Embeddings: Methods like Word2Vec, GloVe, and FastText represent
+words in continuous vector spaces where semantically similar words are close to
+each other. These embeddings capture semantic relationships between words,
+which makes them powerful for various NLP tasks.
+
+Bag of Words (BoW)
+
+The Bag of Words model is straightforward and easy to implement, making it a popular
+choice for many NLP tasks. In this approach, each document is represented as a vector
+of word counts. For example, consider the following two sentences:
+
++ "The cat sat on the mat."
+
++ "The dog sat on the mat."
+The vocabulary would be: ["The", "cat", "sat", "on", "the", "mat", "dog"]. The sentences
+would then be represented as:
+
+, 1,1,1,1,0]
+1,1,1,1,1]
+
+»1,1,1,
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a statistical measure used to evaluate the importance of a word in a document
+relative to a collection of documents (corpus). It combines two measures:
+ + Term Frequency (TF): The number of times a word appears in a document
+divided by the total number of words in the document.
+
++ Inverse Document Frequency (IDF): The logarithm of the total number of
+documents divided by the number of documents containing the word.
+
+The TF-IDF value is calculated as:
+TF-IDF=TFxIDFext(TF-IDFy =WMext(TF] Mimes Mext(IDFyTF-IDF=TFxIDF
+
+This method helps in reducing the weight of common words and increasing the weight
+of rare but important words.
+
+Word Embeddings
+
+Word embeddings are dense vector representations of words where similar words have
+similar vectors. Popular methods to generate word embeddings include:
+
++ Word2Vec: Uses neural networks to learn word associations from a large
+corpus of text.
+
++ GloVe (Global Vectors for Word Representation): Constructs a co-
+occurrence matrix from the corpus and then applies matrix factorization to create
+word vectors.
+
++ FastText: An extension of Word2Vec that represents words as bags of character
+n-grams, which helps capture subword information and handle out-of-
+vocabulary words.
+
+Word embeddings have revolutionized NLP by capturing semantic relationships
+between words. For example, the vectors for "king" and "queen" might have a similar
+relationship as "man" and "woman".
+Applications of Vectorization
+Vectorization techniques are fundamental in various NLP applications, including:
++. Text Classification: Assigning categories to text documents.
++ Sentiment Analysis: Determining the sentiment expressed in a piece of text.
++ Information Retrieval: Finding relevant documents based on a query.
++ Machine Translation: Translating text from one language to another.
+Advantages and Limitations of Vectorization Techniques
+Advantages:
++ Bag of Words and TF-IDF: Simple to implement and interpret, effective for
+many tasks.
++ Word Embeddings: Capture semantic relationships, useful for more complex
+
+NLP tasks.
+
+Limitations:
+ + Bag of Words and TF-IDF: Can result in large and sparse matrices, do not
+capture word meanings or order.
+
++ Word Embeddings: Require significant computational resources to train, may
+need fine-tuning for specific tasks.
+
+Conclusion
+
+Vectorization is a fundamental step in NLP that transforms text into numerical data for
+machine learning models. Techniques like Bag of Words, TF-IDF, and word
+embeddings each offer unique strengths and are chosen based on the specific needs of
+the task at hand. Understanding and effectively applying these vectorization methods is
+crucial for successful NLP applications.
+
+2024-08-07 12:46:37,153 INFO 127.0.0.1 - - [07/Aug/2024 12:46:37] "POST /analizar_documentos HTTP/1.1" 200 -
+2024-08-07 12:52:16,256 INFO 127.0.0.1 - - [07/Aug/2024 12:52:16] "GET /historico HTTP/1.1" 200 -
+2024-08-07 12:52:16,513 INFO 127.0.0.1 - - [07/Aug/2024 12:52:16] "GET /historico HTTP/1.1" 200 -
