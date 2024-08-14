@@ -1,3 +1,4 @@
+import base64
 import logging
 import os
 from flask import Flask, jsonify, request, Blueprint
@@ -26,6 +27,7 @@ vectorizer = Vectorizer()
 
 analyze_service_route = os.getenv('ANALYZE_SERVICE_ROUTE')
 service_get_historico = os.getenv('GET_HISTORICO')
+upload_files_b64 = os.getenv('UPLOAD_FILES_B64')
 
 
 @analize.route('/')
@@ -54,7 +56,7 @@ def analizar_documentos():
 
         # Validar que los archivos sean PDFs
         if not Encoder.validate_pdf(decoded_pdf1) or not Encoder.validate_pdf(decoded_pdf2):
-            return handle_response(405, f"Subida y procesamiento de archivos completada.", f"{porcentaje:.2f}")
+            return handle_response(405, f"Error al validar el formato de los archivos", 0.0), 405
 
         # Se guardan los archivos decodificados de manera temporal para el análisis de errores
         with open("temp_1.pdf", "wb") as temp_pdf:
@@ -108,7 +110,71 @@ def show_historico():
     
     data = DbManager.get_historico()
     return jsonify({'Peticiones': data})
+
+@analize.route("/analizar_documentos_b64", methods=['POST'])
+def analizar_documentos_base64():
+    data = request.get_json()
+
+    if 'file1' not in data or 'file2' not in data:
+        return jsonify({'error': 'No se encontraron los archivos'}), 400
     
+    file1_base64 = data['file1'].get('content')
+    file2_base64 = data['file2'].get('content')
+    file1_name = data['file1'].get('name')
+    file2_name= data['file2'].get('name')
+
+    if not file1_base64 or not file2_base64:
+         return jsonify({'error': 'El contenido de los archivos no puede estar vacío'}), 400
+    
+    # Depuración
+    print(file1_base64[:100])  #cadena base64
+    print(file2_base64[:100])
+    
+    try:
+        print("Se procede a decodificar los archivos...")
+        #decodificar los archivos
+        decoded_file1 = base64.b64decode(file1_base64, validate=True)
+        print(f"Archivo 1 {file1_name} decodificado")
+        decoded_file2 = base64.b64decode(file2_base64, validate=True)
+        print(f"Archivo 2 {file2_name} decodificado")
+
+        if not Encoder.validate_pdf(decoded_file1) or not Encoder.validate_pdf(decoded_file2):
+            return handle_response(405, file1_name, file2_name, f"Error al validar el formato de los archivos", 0.0), 405
+        
+    except Exception as e:
+        return jsonify({'error': f"Error al decodificar el archivo: {str(e)}"}), 500
+    
+    try:
+        # Conversión de los documentos a imágenes
+        logging.debug("Iniciando conversión a imágenes.")
+        image_1 = converter.convert_to_images(decoded_file1)
+        image_2 = converter.convert_to_images(decoded_file2)
+        logging.debug(f"Resultado de la conversión a imágenes: {image_1} - {image_2}")
+
+        # Procesamiento de las imágenes a cadenas
+        text_1 = producer.process_images(image_1)
+        text_2 = producer.process_images(image_2)
+        logging.debug(f"Resultado del procesamiento de imágenes a textos. {text_1} - {text_2}")
+
+        # Tokenización y Lematización
+        tokens_1 = tokenizer.tokenize_texts(text_1)
+        tokens_2 = tokenizer.tokenize_texts(text_2)
+        lems_1 = lemmatizer.lemmatizing_words(tokens_1)
+        lems_2 = lemmatizer.lemmatizing_words(tokens_2)
+        lems = [lems_1, lems_2]  # Pasamos a una lista todos los lemas para la vectorización
+
+        # Vectorización y cálculos de similitud
+        vectors = vectorizer.vectorize_doc(lems)
+        similarity = vectorizer.similarity_docs(vectors)
+        similarity_array = np.array(similarity)
+        porcentaje_matrix = similarity_array[0, 1]
+        porcentaje = porcentaje_matrix * 100
+
+        # Si todo va bien, se procede a dar el código de estado 200 y un mensaje
+        return handle_response(200, file1_name, file2_name, f"Subida y procesamiento de archivos completada.", f"{porcentaje:.2f}")
+    except Exception as e:
+        return jsonify({'error': f"Error en la conversión del archivo: {str(e)}"}), 500
+
 
 
 #Función que maneja muestra los códigos de estado y su mensaje correspondiente
@@ -117,7 +183,22 @@ def handle_response(estado, doc1, doc2, mensaje, similitud):
     DbManager.save_request(f"Solicitud exitosa. Código: {estado}", doc1, doc2, mensaje, similitud)
     return jsonify({"mensaje": mensaje, "Código": estado, "Similitud": f"{similitud}"}), estado
 
+#genera archivos temporales
+def guardar_archivo_temporal(filename, file_content):
+    # Leer el contenido del archivo fuente
+    with open(file_content, "rb") as original_file:
+        contenido = original_file.read()
+
+    # Crear el nombre del archivo temporal
+    temp_name = f"{filename}_temp"
     
+    # Guardar el contenido en un archivo temporal en el directorio actual
+    with open(temp_name, "wb") as temp_file:
+        temp_file.write(contenido)
+
+    return temp_name
+
+
 
 
     

@@ -17,6 +17,8 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config.SQLALCHEMY_TRACK_MODIFICATIONS
     app.config['DEBUG'] = config.DEBUG
     app.config ['TESTING'] = config.FLASK_TESTING
+    app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  #16 MB
+
 
     db.init_app(app)
 

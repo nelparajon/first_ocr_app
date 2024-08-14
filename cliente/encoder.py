@@ -25,6 +25,24 @@ class Encoder:
             encoded_file += b'=' * (4 - missing_padding)
         return base64.b64decode(encoded_file)
     
+    @staticmethod
+    def decode_file_b64(encoded_file):
+        try:
+            if isinstance(encoded_file, str):
+                encoded_file = encoded_file.encode('utf-8')
+            #Validamos el padding
+            missing_padding = len(encoded_file) % 4
+            if missing_padding:
+                encoded_file += b'=' * (4 - missing_padding)
+
+            #Decodificamos la cadena base64
+            decoded_file = base64.b64decode(encoded_file, validate=True)
+            return decoded_file
+            
+        except Exception as e:
+            raise ValueError(f"Error al decodificar el archivo: {str(e)}")
+
+    
     def validate_pdf(pdf_bytes):
         try:
             pdf_reader = PyPDF2.PdfReader(io.BytesIO(pdf_bytes))

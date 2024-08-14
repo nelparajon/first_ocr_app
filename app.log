@@ -9197,3 +9197,1660 @@ crucial for successful NLP applications.
 2024-08-07 12:46:37,153 INFO 127.0.0.1 - - [07/Aug/2024 12:46:37] "POST /analizar_documentos HTTP/1.1" 200 -
 2024-08-07 12:52:16,256 INFO 127.0.0.1 - - [07/Aug/2024 12:52:16] "GET /historico HTTP/1.1" 200 -
 2024-08-07 12:52:16,513 INFO 127.0.0.1 - - [07/Aug/2024 12:52:16] "GET /historico HTTP/1.1" 200 -
+2024-08-09 16:39:29,235 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 16:39:29,235 INFO [33mPress CTRL+C to quit[0m
+2024-08-09 16:39:29,235 INFO  * Restarting with stat
+2024-08-09 16:39:32,080 WARNING  * Debugger is active!
+2024-08-09 16:39:32,095 INFO  * Debugger PIN: 333-959-984
+2024-08-09 16:40:55,794 DEBUG The PDF is valid with 3 pages.
+2024-08-09 16:40:55,794 DEBUG The PDF is valid with 2 pages.
+2024-08-09 16:40:55,794 DEBUG Iniciando conversión a imágenes.
+2024-08-09 16:40:59,289 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC6007E9F0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC5FF08C20>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC600F26C0>]
+2024-08-09 16:40:59,747 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC6007EBA0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC6007EE10>]
+2024-08-09 16:40:59,747 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC6007E9F0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC5FF08C20>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC600F26C0>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC6007EBA0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1DC6007EE10>]
+2024-08-09 16:41:09,429 DEBUG Resultado del procesamiento de imágenes a textos. Vectorization in Natural Language Processing
+
+Vectorization is a crucial process in the field of Natural Language Processing (NLP)
+that involves converting text into numerical data that machine learning algorithms can
+process. This step is essential because machine learning models cannot work directly
+with textual data and thus need a numerical representation of words, sentences, and
+documents.
+
+Fundamentals of Vectorization
+
+The primary goal of vectorization is to transform text into a matrix of numbers that
+represent the features of the text in a way that models can interpret. There are several
+vectorization techniques, each with its advantages and disadvantages depending on the
+context and the goal of the analysis.
+
+1. Bag of Words (BoW): This is one of the simplest and most common
+techniques. In BoW, the text is broken down into individual words, and a
+vocabulary of all unique words in the corpus is created. Each document is then
+represented as a vector of word frequencies, where each entry indicates how
+many times a word appears in the document.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF): This technique
+improves on the Bag of Words by considering not only the frequency of words
+but also the importance of a word in the entire corpus. The TF-IDF value of a
+word is higher if it appears frequently in a document but rarely in the rest of the
+corpus, which helps to highlight more informative words.
+
+3. Word Embeddings: Methods like Word2Vec, GloVe, and FastText represent
+words in continuous vector spaces where semantically similar words are close to
+each other. These embeddings capture semantic relationships between words,
+which makes them powerful for various NLP tasks.
+
+Bag of Words (BoW)
+
+The Bag of Words model is straightforward and easy to implement, making it a popular
+choice for many NLP tasks. In this approach, each document is represented as a vector
+of word counts. For example, consider the following two sentences:
+
++ "The cat sat on the mat."
+
++ "The dog sat on the mat."
+The vocabulary would be: ["The", "cat", "sat", "on", "the", "mat", "dog"]. The sentences
+would then be represented as:
+
+, 1,1,1,1,0]
+1,1,1,1,1]
+
+»1,1,1,
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a statistical measure used to evaluate the importance of a word in a document
+relative to a collection of documents (corpus). It combines two measures:
+ + Term Frequency (TF): The number of times a word appears in a document
+divided by the total number of words in the document.
+
++ Inverse Document Frequency (IDF): The logarithm of the total number of
+documents divided by the number of documents containing the word.
+
+The TF-IDF value is calculated as:
+TF-IDF=TFxIDFext(TF-IDFy =WMext(TF] Mimes Mext(IDFyTF-IDF=TFxIDF
+
+This method helps in reducing the weight of common words and increasing the weight
+of rare but important words.
+
+Word Embeddings
+
+Word embeddings are dense vector representations of words where similar words have
+similar vectors. Popular methods to generate word embeddings include:
+
++ Word2Vec: Uses neural networks to learn word associations from a large
+corpus of text.
+
++ GloVe (Global Vectors for Word Representation): Constructs a co-
+occurrence matrix from the corpus and then applies matrix factorization to create
+word vectors.
+
++ FastText: An extension of Word2Vec that represents words as bags of character
+n-grams, which helps capture subword information and handle out-of-
+vocabulary words.
+
+Word embeddings have revolutionized NLP by capturing semantic relationships
+between words. For example, the vectors for "king" and "queen" might have a similar
+relationship as "man" and "woman".
+Applications of Vectorization
+Vectorization techniques are fundamental in various NLP applications, including:
++. Text Classification: Assigning categories to text documents.
++ Sentiment Analysis: Determining the sentiment expressed in a piece of text.
++ Information Retrieval: Finding relevant documents based on a query.
++ Machine Translation: Translating text from one language to another.
+Advantages and Limitations of Vectorization Techniques
+Advantages:
++ Bag of Words and TF-IDF: Simple to implement and interpret, effective for
+many tasks.
++ Word Embeddings: Capture semantic relationships, useful for more complex
+
+NLP tasks.
+
+Limitations:
+ + Bag of Words and TF-IDF: Can result in large and sparse matrices, do not
+capture word meanings or order.
+
++ Word Embeddings: Require significant computational resources to train, may
+need fine-tuning for specific tasks.
+
+Conclusion
+
+Vectorization is a fundamental step in NLP that transforms text into numerical data for
+machine learning models. Techniques like Bag of Words, TF-IDF, and word
+embeddings each offer unique strengths and are chosen based on the specific needs of
+the task at hand. Understanding and effectively applying these vectorization methods is
+crucial for successful NLP applications.
+ - Introduction to Vectorization in NLP
+
+Vectorization is an essential step in Natural Language Processing (NLP) that involves
+converting textual data into numerical form. This transformation allows machine
+learning algorithms to process and understand text. Since algorithms require numerical
+input, vectorization bridges the gap between text and machine learning models.
+
+Core Concepts of Vectorization
+
+The aim of vectorization is to translate text into a numerical format that encapsulates its
+features, making it interpretable by models. There are multiple techniques for
+vectorization, each with distinct benefits and limitations, tailored to different analysis
+objectives.
+
+1. Bag of Words (BoW):
+
+o This basic method breaks text into individual words, creating a
+vocabulary from all unique terms in the corpus. Each document is then
+represented as a vector indicating word frequencies.
+
+o Example: For sentences "The bird is flying" and "The plane is flying",
+the vocabulary is ["The", "bird", "is", "flying", "plane"], with vectors [2,
+1, 1, 1, 0] and [2, O, 1, 1, 1] respectively.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF):
+
+o  Enhances BoW by considering word importance. TF-IDF values are
+higher for words that are frequent in a document but rare across the
+corpus.
+
+o  Itcombines:
+
+= Term Frequency (TF): Frequency of a word in a document.
+
+=  Inverse Document Frequency (IDF): Logarithm of the total
+number of documents divided by the number of documents
+containing the word.
+
+o Formula: TF-IDF=TFxIDFtext(TF-IDF) =Wtext(TF) Wimes
+Mext(IDF)TF-IDF=TFxIDF
+
+3. Word Embeddings:
+
+o Techniques like Word2Vec, GloVe, and FastText place words in
+continuous vector spaces where similar words are closer together,
+capturing semantic relationships.
+
+o Word2Vec: Uses neural networks to understand word associations.
+
+o  GloVe: Builds a co-occurrence matrix and applies matrix factorization.
+
+o  FastText: Extends Word2Vec by considering character n-grams, useful
+for handling out-of-vocabulary words.
+
+Bag of Words (BoW)
+
+BoW is simple and effective for many tasks. It creates a vector where each element
+represents the frequency of a word in a document. For instance, given "The quick brown
+fox" and "The quick blue fox", the vocabulary ["The", "quick", "brown", "fox", "blue"]
+yields vectors [1, 1, 1, 1, 0] and [1, 1, 0, 1, 1].
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+ TF-IDF assesses word importance in context. It reduces the impact of common words
+and highlights rare, informative ones. For example, in a corpus where "data" appears
+frequently across documents, its TF-IDF score in any single document will be lower
+compared to a less common term like "algorithm".
+
+Word Embeddings
+
+Embeddings represent words in dense vector spaces, capturing nuanced meanings.
+Techniques include:
+
++ Word2Vec: Trains on large corpora to learn word associations.
++ GloVe: Uses global word co-occurrence statistics.
++ FastText: Models words as character n-grams, beneficial for rare or new words.
+
+Applications of Vectorization
+Vectorization is foundational for various NLP applications, such as:
+
++. Text Classification: Categorizing documents.
+
++ Sentiment Analysis: Extracting sentiment from text.
+
++. Information Retrieval: Searching for relevant documents.
++ Machine Translation: Converting text between languages.
+
+Advantages and Challenges of Vectorization Methods
+Advantages:
+
++ BoW and TF-IDF: Easy to implement and understand, effective for
+straightforward tasks.
+
++ Word Embeddings: Capture semantic relationships, useful for complex NLP
+tasks.
+
+Challenges:
+
++ BoW and TF-IDF: Can produce large, sparse matrices; lack semantic meaning
+and context.
+
++ Word Embeddings: Computationally intensive; require large datasets and fine-
+tuning.
+
+Conclusion
+
+Vectorization is a pivotal process in NLP, converting text to numerical data suitable for
+machine learning. Techniques like BoW, TF-IDF, and word embeddings each offer
+unique advantages, and their application depends on specific task requirements.
+Mastering these methods is key to effective NLP.
+
+2024-08-09 16:41:10,558 INFO 127.0.0.1 - - [09/Aug/2024 16:41:10] "POST /analizar_documentos HTTP/1.1" 200 -
+2024-08-09 16:42:16,891 INFO 127.0.0.1 - - [09/Aug/2024 16:42:16] "GET /historico HTTP/1.1" 200 -
+2024-08-09 16:42:17,149 INFO 127.0.0.1 - - [09/Aug/2024 16:42:17] "GET /historico HTTP/1.1" 200 -
+2024-08-09 16:44:56,154 INFO 127.0.0.1 - - [09/Aug/2024 16:44:56] "GET /historico HTTP/1.1" 200 -
+2024-08-09 16:44:56,413 INFO 127.0.0.1 - - [09/Aug/2024 16:44:56] "GET /historico HTTP/1.1" 200 -
+2024-08-12 16:53:25,909 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-12 16:53:25,909 INFO [33mPress CTRL+C to quit[0m
+2024-08-12 16:53:25,925 INFO  * Restarting with stat
+2024-08-12 16:53:28,739 WARNING  * Debugger is active!
+2024-08-12 16:53:28,755 INFO  * Debugger PIN: 333-959-984
+2024-08-12 17:19:57,003 INFO 127.0.0.1 - - [12/Aug/2024 17:19:57] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:21:11,795 INFO 127.0.0.1 - - [12/Aug/2024 17:21:11] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:21:19,663 INFO 127.0.0.1 - - [12/Aug/2024 17:21:19] "GET /historico HTTP/1.1" 200 -
+2024-08-12 17:21:19,988 INFO 127.0.0.1 - - [12/Aug/2024 17:21:19] "GET /historico HTTP/1.1" 200 -
+2024-08-12 17:21:35,614 INFO 127.0.0.1 - - [12/Aug/2024 17:21:35] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:22:50,784 INFO 127.0.0.1 - - [12/Aug/2024 17:22:50] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:22:51,169 INFO 127.0.0.1 - - [12/Aug/2024 17:22:51] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:22:51,631 INFO 127.0.0.1 - - [12/Aug/2024 17:22:51] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:22:51,814 INFO 127.0.0.1 - - [12/Aug/2024 17:22:51] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:22:51,891 INFO 127.0.0.1 - - [12/Aug/2024 17:22:51] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-12 17:22:51,953 INFO 127.0.0.1 - - [12/Aug/2024 17:22:51] "[33mPOST /analizar_documentos_b64 HTTP/1.1[0m" 404 -
+2024-08-13 10:36:09,094 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-13 10:36:09,094 INFO [33mPress CTRL+C to quit[0m
+2024-08-13 10:36:09,094 INFO  * Restarting with stat
+2024-08-13 10:36:12,188 WARNING  * Debugger is active!
+2024-08-13 10:36:12,204 INFO  * Debugger PIN: 333-959-984
+2024-08-13 10:36:35,635 INFO 127.0.0.1 - - [13/Aug/2024 10:36:35] "[31m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 400 -
+2024-08-13 10:37:25,404 ERROR PDF Read Error: EOF marker not found
+2024-08-13 10:37:25,404 INFO 127.0.0.1 - - [13/Aug/2024 10:37:25] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 10:41:50,390 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 10:41:50,958 INFO  * Restarting with stat
+2024-08-13 10:41:54,136 WARNING  * Debugger is active!
+2024-08-13 10:41:54,142 INFO  * Debugger PIN: 333-959-984
+2024-08-13 10:41:54,338 ERROR PDF Read Error: EOF marker not found
+2024-08-13 10:41:54,386 INFO 127.0.0.1 - - [13/Aug/2024 10:41:54] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 10:46:30,430 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 10:46:30,858 INFO  * Restarting with stat
+2024-08-13 10:46:33,963 WARNING  * Debugger is active!
+2024-08-13 10:46:33,963 INFO  * Debugger PIN: 333-959-984
+2024-08-13 10:46:48,500 ERROR PDF Read Error: EOF marker not found
+2024-08-13 10:46:48,560 INFO 127.0.0.1 - - [13/Aug/2024 10:46:48] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 10:50:08,899 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 10:50:09,491 INFO  * Restarting with stat
+2024-08-13 10:50:12,554 WARNING  * Debugger is active!
+2024-08-13 10:50:12,560 INFO  * Debugger PIN: 333-959-984
+2024-08-13 10:50:12,751 ERROR PDF Read Error: EOF marker not found
+2024-08-13 10:50:12,799 INFO 127.0.0.1 - - [13/Aug/2024 10:50:12] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 10:51:58,247 INFO 127.0.0.1 - - [13/Aug/2024 10:51:58] "GET /historico HTTP/1.1" 200 -
+2024-08-13 10:51:58,460 INFO 127.0.0.1 - - [13/Aug/2024 10:51:58] "GET /historico HTTP/1.1" 200 -
+2024-08-13 10:52:10,491 INFO 127.0.0.1 - - [13/Aug/2024 10:52:10] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 10:54:28,715 INFO 127.0.0.1 - - [13/Aug/2024 10:54:28] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 10:54:33,492 DEBUG The PDF is valid with 3 pages.
+2024-08-13 10:54:33,507 DEBUG The PDF is valid with 2 pages.
+2024-08-13 10:54:33,507 INFO 127.0.0.1 - - [13/Aug/2024 10:54:33] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:02:37,387 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:02:37,974 INFO  * Restarting with stat
+2024-08-13 11:02:41,151 WARNING  * Debugger is active!
+2024-08-13 11:02:41,161 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:02:53,405 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:02:53,889 INFO  * Restarting with stat
+2024-08-13 11:02:56,422 WARNING  * Debugger is active!
+2024-08-13 11:02:56,422 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:02:58,699 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:02:58,699 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:02:58,699 INFO 127.0.0.1 - - [13/Aug/2024 11:02:58] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:05:33,196 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:05:33,196 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:05:33,196 INFO 127.0.0.1 - - [13/Aug/2024 11:05:33] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:05:48,232 INFO 127.0.0.1 - - [13/Aug/2024 11:05:48] "GET /historico HTTP/1.1" 200 -
+2024-08-13 11:05:48,547 INFO 127.0.0.1 - - [13/Aug/2024 11:05:48] "GET /historico HTTP/1.1" 200 -
+2024-08-13 11:05:57,932 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:05:57,932 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:05:57,932 INFO 127.0.0.1 - - [13/Aug/2024 11:05:57] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:12:49,029 INFO 127.0.0.1 - - [13/Aug/2024 11:12:49] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:14:25,389 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:14:25,397 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:14:25,397 INFO 127.0.0.1 - - [13/Aug/2024 11:14:25] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:17:14,196 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:17:14,196 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:17:14,196 INFO 127.0.0.1 - - [13/Aug/2024 11:17:14] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:18:36,737 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:18:37,198 INFO  * Restarting with stat
+2024-08-13 11:18:40,334 WARNING  * Debugger is active!
+2024-08-13 11:18:40,346 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:19:28,304 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:19:28,304 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:19:28,304 INFO 127.0.0.1 - - [13/Aug/2024 11:19:28] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:21:00,802 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:21:01,319 INFO  * Restarting with stat
+2024-08-13 11:21:04,571 WARNING  * Debugger is active!
+2024-08-13 11:21:04,587 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:21:11,043 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 11:21:11,496 INFO  * Restarting with stat
+2024-08-13 11:21:14,761 WARNING  * Debugger is active!
+2024-08-13 11:21:14,761 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:21:20,140 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:21:20,140 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:21:20,155 INFO 127.0.0.1 - - [13/Aug/2024 11:21:20] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:22:15,663 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:22:15,664 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:22:15,664 INFO 127.0.0.1 - - [13/Aug/2024 11:22:15] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:25:25,586 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 11:25:26,021 INFO  * Restarting with stat
+2024-08-13 11:25:29,299 WARNING  * Debugger is active!
+2024-08-13 11:25:29,308 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:25:30,665 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:25:30,665 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:25:30,673 INFO 127.0.0.1 - - [13/Aug/2024 11:25:30] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:29:43,680 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:29:44,246 INFO  * Restarting with stat
+2024-08-13 11:29:47,230 WARNING  * Debugger is active!
+2024-08-13 11:29:47,246 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:29:47,433 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:29:47,433 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:29:47,433 INFO 127.0.0.1 - - [13/Aug/2024 11:29:47] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:33:45,160 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:33:45,168 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:33:45,168 INFO 127.0.0.1 - - [13/Aug/2024 11:33:45] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:35:04,000 INFO 127.0.0.1 - - [13/Aug/2024 11:35:04] "[31m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 400 -
+2024-08-13 11:35:22,018 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:35:22,026 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:35:22,026 INFO 127.0.0.1 - - [13/Aug/2024 11:35:22] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:35:49,917 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:35:50,402 INFO  * Restarting with stat
+2024-08-13 11:35:52,855 WARNING  * Debugger is active!
+2024-08-13 11:35:52,864 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:35:56,601 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:35:57,130 INFO  * Restarting with stat
+2024-08-13 11:35:59,532 WARNING  * Debugger is active!
+2024-08-13 11:35:59,532 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:35:59,690 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:35:59,690 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:35:59,690 INFO 127.0.0.1 - - [13/Aug/2024 11:35:59] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:36:06,531 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:36:06,531 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:36:06,531 INFO 127.0.0.1 - - [13/Aug/2024 11:36:06] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:38:06,095 INFO 127.0.0.1 - - [13/Aug/2024 11:38:06] "GET /historico HTTP/1.1" 200 -
+2024-08-13 11:38:06,362 INFO 127.0.0.1 - - [13/Aug/2024 11:38:06] "GET /historico HTTP/1.1" 200 -
+2024-08-13 11:38:13,838 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:38:13,849 DEBUG The PDF is valid with 2 pages.
+2024-08-13 11:38:13,849 DEBUG Iniciando conversión a imágenes.
+2024-08-13 11:38:16,395 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240B85AB3E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240BA163A40>]
+2024-08-13 11:38:16,755 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240BA184EF0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240BA184F20>]
+2024-08-13 11:38:16,755 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240B85AB3E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240BA163A40>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240BA184EF0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x240BA184F20>]
+2024-08-13 11:38:23,873 DEBUG Resultado del procesamiento de imágenes a textos. Introduction to Vectorization in NLP
+
+Vectorization is an essential step in Natural Language Processing (NLP) that involves
+converting textual data into numerical form. This transformation allows machine
+learning algorithms to process and understand text. Since algorithms require numerical
+input, vectorization bridges the gap between text and machine learning models.
+
+Core Concepts of Vectorization
+
+The aim of vectorization is to translate text into a numerical format that encapsulates its
+features, making it interpretable by models. There are multiple techniques for
+vectorization, each with distinct benefits and limitations, tailored to different analysis
+objectives.
+
+1. Bag of Words (BoW):
+
+o This basic method breaks text into individual words, creating a
+vocabulary from all unique terms in the corpus. Each document is then
+represented as a vector indicating word frequencies.
+
+o Example: For sentences "The bird is flying" and "The plane is flying",
+the vocabulary is ["The", "bird", "is", "flying", "plane"], with vectors [2,
+1, 1, 1, 0] and [2, O, 1, 1, 1] respectively.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF):
+
+o  Enhances BoW by considering word importance. TF-IDF values are
+higher for words that are frequent in a document but rare across the
+corpus.
+
+o  Itcombines:
+
+= Term Frequency (TF): Frequency of a word in a document.
+
+=  Inverse Document Frequency (IDF): Logarithm of the total
+number of documents divided by the number of documents
+containing the word.
+
+o Formula: TF-IDF=TFxIDFtext(TF-IDF) =Wtext(TF) Wimes
+Mext(IDF)TF-IDF=TFxIDF
+
+3. Word Embeddings:
+
+o Techniques like Word2Vec, GloVe, and FastText place words in
+continuous vector spaces where similar words are closer together,
+capturing semantic relationships.
+
+o Word2Vec: Uses neural networks to understand word associations.
+
+o  GloVe: Builds a co-occurrence matrix and applies matrix factorization.
+
+o  FastText: Extends Word2Vec by considering character n-grams, useful
+for handling out-of-vocabulary words.
+
+Bag of Words (BoW)
+
+BoW is simple and effective for many tasks. It creates a vector where each element
+represents the frequency of a word in a document. For instance, given "The quick brown
+fox" and "The quick blue fox", the vocabulary ["The", "quick", "brown", "fox", "blue"]
+yields vectors [1, 1, 1, 1, 0] and [1, 1, 0, 1, 1].
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+ TF-IDF assesses word importance in context. It reduces the impact of common words
+and highlights rare, informative ones. For example, in a corpus where "data" appears
+frequently across documents, its TF-IDF score in any single document will be lower
+compared to a less common term like "algorithm".
+
+Word Embeddings
+
+Embeddings represent words in dense vector spaces, capturing nuanced meanings.
+Techniques include:
+
++ Word2Vec: Trains on large corpora to learn word associations.
++ GloVe: Uses global word co-occurrence statistics.
++ FastText: Models words as character n-grams, beneficial for rare or new words.
+
+Applications of Vectorization
+Vectorization is foundational for various NLP applications, such as:
+
++. Text Classification: Categorizing documents.
+
++ Sentiment Analysis: Extracting sentiment from text.
+
++. Information Retrieval: Searching for relevant documents.
++ Machine Translation: Converting text between languages.
+
+Advantages and Challenges of Vectorization Methods
+Advantages:
+
++ BoW and TF-IDF: Easy to implement and understand, effective for
+straightforward tasks.
+
++ Word Embeddings: Capture semantic relationships, useful for complex NLP
+tasks.
+
+Challenges:
+
++ BoW and TF-IDF: Can produce large, sparse matrices; lack semantic meaning
+and context.
+
++ Word Embeddings: Computationally intensive; require large datasets and fine-
+tuning.
+
+Conclusion
+
+Vectorization is a pivotal process in NLP, converting text to numerical data suitable for
+machine learning. Techniques like BoW, TF-IDF, and word embeddings each offer
+unique advantages, and their application depends on specific task requirements.
+Mastering these methods is key to effective NLP.
+ - Introduction to Vectorization in NLP
+
+Vectorization is an essential step in Natural Language Processing (NLP) that involves
+converting textual data into numerical form. This transformation allows machine
+learning algorithms to process and understand text. Since algorithms require numerical
+input, vectorization bridges the gap between text and machine learning models.
+
+Core Concepts of Vectorization
+
+The aim of vectorization is to translate text into a numerical format that encapsulates its
+features, making it interpretable by models. There are multiple techniques for
+vectorization, each with distinct benefits and limitations, tailored to different analysis
+objectives.
+
+1. Bag of Words (BoW):
+
+o This basic method breaks text into individual words, creating a
+vocabulary from all unique terms in the corpus. Each document is then
+represented as a vector indicating word frequencies.
+
+o Example: For sentences "The bird is flying" and "The plane is flying",
+the vocabulary is ["The", "bird", "is", "flying", "plane"], with vectors [2,
+1, 1, 1, 0] and [2, O, 1, 1, 1] respectively.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF):
+
+o  Enhances BoW by considering word importance. TF-IDF values are
+higher for words that are frequent in a document but rare across the
+corpus.
+
+o  Itcombines:
+
+= Term Frequency (TF): Frequency of a word in a document.
+
+=  Inverse Document Frequency (IDF): Logarithm of the total
+number of documents divided by the number of documents
+containing the word.
+
+o Formula: TF-IDF=TFxIDFtext(TF-IDF) =Wtext(TF) Wimes
+Mext(IDF)TF-IDF=TFxIDF
+
+3. Word Embeddings:
+
+o Techniques like Word2Vec, GloVe, and FastText place words in
+continuous vector spaces where similar words are closer together,
+capturing semantic relationships.
+
+o Word2Vec: Uses neural networks to understand word associations.
+
+o  GloVe: Builds a co-occurrence matrix and applies matrix factorization.
+
+o  FastText: Extends Word2Vec by considering character n-grams, useful
+for handling out-of-vocabulary words.
+
+Bag of Words (BoW)
+
+BoW is simple and effective for many tasks. It creates a vector where each element
+represents the frequency of a word in a document. For instance, given "The quick brown
+fox" and "The quick blue fox", the vocabulary ["The", "quick", "brown", "fox", "blue"]
+yields vectors [1, 1, 1, 1, 0] and [1, 1, 0, 1, 1].
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+ TF-IDF assesses word importance in context. It reduces the impact of common words
+and highlights rare, informative ones. For example, in a corpus where "data" appears
+frequently across documents, its TF-IDF score in any single document will be lower
+compared to a less common term like "algorithm".
+
+Word Embeddings
+
+Embeddings represent words in dense vector spaces, capturing nuanced meanings.
+Techniques include:
+
++ Word2Vec: Trains on large corpora to learn word associations.
++ GloVe: Uses global word co-occurrence statistics.
++ FastText: Models words as character n-grams, beneficial for rare or new words.
+
+Applications of Vectorization
+Vectorization is foundational for various NLP applications, such as:
+
++. Text Classification: Categorizing documents.
+
++ Sentiment Analysis: Extracting sentiment from text.
+
++. Information Retrieval: Searching for relevant documents.
++ Machine Translation: Converting text between languages.
+
+Advantages and Challenges of Vectorization Methods
+Advantages:
+
++ BoW and TF-IDF: Easy to implement and understand, effective for
+straightforward tasks.
+
++ Word Embeddings: Capture semantic relationships, useful for complex NLP
+tasks.
+
+Challenges:
+
++ BoW and TF-IDF: Can produce large, sparse matrices; lack semantic meaning
+and context.
+
++ Word Embeddings: Computationally intensive; require large datasets and fine-
+tuning.
+
+Conclusion
+
+Vectorization is a pivotal process in NLP, converting text to numerical data suitable for
+machine learning. Techniques like BoW, TF-IDF, and word embeddings each offer
+unique advantages, and their application depends on specific task requirements.
+Mastering these methods is key to effective NLP.
+
+2024-08-13 11:38:25,240 INFO 127.0.0.1 - - [13/Aug/2024 11:38:25] "POST /analizar_documentos HTTP/1.1" 200 -
+2024-08-13 11:41:29,371 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:41:29,371 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:41:29,371 INFO 127.0.0.1 - - [13/Aug/2024 11:41:29] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:45:42,573 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:45:42,573 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:45:42,573 INFO 127.0.0.1 - - [13/Aug/2024 11:45:42] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:46:28,468 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 11:46:29,867 INFO  * Restarting with stat
+2024-08-13 11:46:32,060 WARNING  * Debugger is active!
+2024-08-13 11:46:32,076 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:46:41,724 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:46:41,724 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:46:41,724 INFO 127.0.0.1 - - [13/Aug/2024 11:46:41] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:47:23,798 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\app.py', reloading
+2024-08-13 11:47:24,194 INFO  * Restarting with stat
+2024-08-13 11:47:26,703 WARNING  * Debugger is active!
+2024-08-13 11:47:26,703 INFO  * Debugger PIN: 333-959-984
+2024-08-13 11:47:27,625 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:47:27,625 DEBUG The PDF is valid with 3 pages.
+2024-08-13 11:47:27,625 INFO 127.0.0.1 - - [13/Aug/2024 11:47:27] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 11:50:52,379 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 12:13:03,214 INFO 127.0.0.1 - - [13/Aug/2024 12:13:03] "GET /historico HTTP/1.1" 200 -
+2024-08-13 12:13:49,902 DEBUG The PDF is valid with 3 pages.
+2024-08-13 12:13:49,918 DEBUG The PDF is valid with 3 pages.
+2024-08-13 12:13:49,918 DEBUG The PDF is valid with 3 pages.
+2024-08-13 12:13:50,311 INFO  * Restarting with stat
+2024-08-13 12:13:52,681 WARNING  * Debugger is active!
+2024-08-13 12:13:52,697 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:13:52,838 INFO 127.0.0.1 - - [13/Aug/2024 12:13:52] "GET /historico HTTP/1.1" 200 -
+2024-08-13 12:13:52,838 INFO 127.0.0.1 - - [13/Aug/2024 12:13:52] "GET /historico HTTP/1.1" 200 -
+2024-08-13 12:13:52,853 INFO 127.0.0.1 - - [13/Aug/2024 12:13:52] "GET /historico HTTP/1.1" 200 -
+2024-08-13 12:13:52,853 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:13:52,853 DEBUG The PDF is valid with 3 pages.
+2024-08-13 12:13:52,853 DEBUG Iniciando conversión a imágenes.
+2024-08-13 12:13:53,289 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666D121B50>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666CDC5730>]
+2024-08-13 12:13:53,836 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666ED24F80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666ED253D0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666ED25700>]
+2024-08-13 12:13:53,836 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666D121B50>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666CDC5730>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666ED24F80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666ED253D0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2666ED25700>]
+2024-08-13 12:14:01,812 DEBUG Resultado del procesamiento de imágenes a textos. Introduction to Vectorization in NLP
+
+Vectorization is an essential step in Natural Language Processing (NLP) that involves
+converting textual data into numerical form. This transformation allows machine
+learning algorithms to process and understand text. Since algorithms require numerical
+input, vectorization bridges the gap between text and machine learning models.
+
+Core Concepts of Vectorization
+
+The aim of vectorization is to translate text into a numerical format that encapsulates its
+features, making it interpretable by models. There are multiple techniques for
+vectorization, each with distinct benefits and limitations, tailored to different analysis
+objectives.
+
+1. Bag of Words (BoW):
+
+o This basic method breaks text into individual words, creating a
+vocabulary from all unique terms in the corpus. Each document is then
+represented as a vector indicating word frequencies.
+
+o Example: For sentences "The bird is flying" and "The plane is flying",
+the vocabulary is ["The", "bird", "is", "flying", "plane"], with vectors [2,
+1, 1, 1, 0] and [2, O, 1, 1, 1] respectively.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF):
+
+o  Enhances BoW by considering word importance. TF-IDF values are
+higher for words that are frequent in a document but rare across the
+corpus.
+
+o  Itcombines:
+
+= Term Frequency (TF): Frequency of a word in a document.
+
+=  Inverse Document Frequency (IDF): Logarithm of the total
+number of documents divided by the number of documents
+containing the word.
+
+o Formula: TF-IDF=TFxIDFtext(TF-IDF) =Wtext(TF) Wimes
+Mext(IDF)TF-IDF=TFxIDF
+
+3. Word Embeddings:
+
+o Techniques like Word2Vec, GloVe, and FastText place words in
+continuous vector spaces where similar words are closer together,
+capturing semantic relationships.
+
+o Word2Vec: Uses neural networks to understand word associations.
+
+o  GloVe: Builds a co-occurrence matrix and applies matrix factorization.
+
+o  FastText: Extends Word2Vec by considering character n-grams, useful
+for handling out-of-vocabulary words.
+
+Bag of Words (BoW)
+
+BoW is simple and effective for many tasks. It creates a vector where each element
+represents the frequency of a word in a document. For instance, given "The quick brown
+fox" and "The quick blue fox", the vocabulary ["The", "quick", "brown", "fox", "blue"]
+yields vectors [1, 1, 1, 1, 0] and [1, 1, 0, 1, 1].
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+ TF-IDF assesses word importance in context. It reduces the impact of common words
+and highlights rare, informative ones. For example, in a corpus where "data" appears
+frequently across documents, its TF-IDF score in any single document will be lower
+compared to a less common term like "algorithm".
+
+Word Embeddings
+
+Embeddings represent words in dense vector spaces, capturing nuanced meanings.
+Techniques include:
+
++ Word2Vec: Trains on large corpora to learn word associations.
++ GloVe: Uses global word co-occurrence statistics.
++ FastText: Models words as character n-grams, beneficial for rare or new words.
+
+Applications of Vectorization
+Vectorization is foundational for various NLP applications, such as:
+
++. Text Classification: Categorizing documents.
+
++ Sentiment Analysis: Extracting sentiment from text.
+
++. Information Retrieval: Searching for relevant documents.
++ Machine Translation: Converting text between languages.
+
+Advantages and Challenges of Vectorization Methods
+Advantages:
+
++ BoW and TF-IDF: Easy to implement and understand, effective for
+straightforward tasks.
+
++ Word Embeddings: Capture semantic relationships, useful for complex NLP
+tasks.
+
+Challenges:
+
++ BoW and TF-IDF: Can produce large, sparse matrices; lack semantic meaning
+and context.
+
++ Word Embeddings: Computationally intensive; require large datasets and fine-
+tuning.
+
+Conclusion
+
+Vectorization is a pivotal process in NLP, converting text to numerical data suitable for
+machine learning. Techniques like BoW, TF-IDF, and word embeddings each offer
+unique advantages, and their application depends on specific task requirements.
+Mastering these methods is key to effective NLP.
+ - Vectorization in Natural Language Processing
+
+Vectorization is a crucial process in the field of Natural Language Processing (NLP)
+that involves converting text into numerical data that machine learning algorithms can
+process. This step is essential because machine learning models cannot work directly
+with textual data and thus need a numerical representation of words, sentences, and
+documents.
+
+Fundamentals of Vectorization
+
+The primary goal of vectorization is to transform text into a matrix of numbers that
+represent the features of the text in a way that models can interpret. There are several
+vectorization techniques, each with its advantages and disadvantages depending on the
+context and the goal of the analysis.
+
+1. Bag of Words (BoW): This is one of the simplest and most common
+techniques. In BoW, the text is broken down into individual words, and a
+vocabulary of all unique words in the corpus is created. Each document is then
+represented as a vector of word frequencies, where each entry indicates how
+many times a word appears in the document.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF): This technique
+improves on the Bag of Words by considering not only the frequency of words
+but also the importance of a word in the entire corpus. The TF-IDF value of a
+word is higher if it appears frequently in a document but rarely in the rest of the
+corpus, which helps to highlight more informative words.
+
+3. Word Embeddings: Methods like Word2Vec, GloVe, and FastText represent
+words in continuous vector spaces where semantically similar words are close to
+each other. These embeddings capture semantic relationships between words,
+which makes them powerful for various NLP tasks.
+
+Bag of Words (BoW)
+
+The Bag of Words model is straightforward and easy to implement, making it a popular
+choice for many NLP tasks. In this approach, each document is represented as a vector
+of word counts. For example, consider the following two sentences:
+
++ "The cat sat on the mat."
+
++ "The dog sat on the mat."
+The vocabulary would be: ["The", "cat", "sat", "on", "the", "mat", "dog"]. The sentences
+would then be represented as:
+
+, 1,1,1,1,0]
+1,1,1,1,1]
+
+»1,1,1,
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a statistical measure used to evaluate the importance of a word in a document
+relative to a collection of documents (corpus). It combines two measures:
+ + Term Frequency (TF): The number of times a word appears in a document
+divided by the total number of words in the document.
+
++ Inverse Document Frequency (IDF): The logarithm of the total number of
+documents divided by the number of documents containing the word.
+
+The TF-IDF value is calculated as:
+TF-IDF=TFxIDFext(TF-IDFy =WMext(TF] Mimes Mext(IDFyTF-IDF=TFxIDF
+
+This method helps in reducing the weight of common words and increasing the weight
+of rare but important words.
+
+Word Embeddings
+
+Word embeddings are dense vector representations of words where similar words have
+similar vectors. Popular methods to generate word embeddings include:
+
++ Word2Vec: Uses neural networks to learn word associations from a large
+corpus of text.
+
++ GloVe (Global Vectors for Word Representation): Constructs a co-
+occurrence matrix from the corpus and then applies matrix factorization to create
+word vectors.
+
++ FastText: An extension of Word2Vec that represents words as bags of character
+n-grams, which helps capture subword information and handle out-of-
+vocabulary words.
+
+Word embeddings have revolutionized NLP by capturing semantic relationships
+between words. For example, the vectors for "king" and "queen" might have a similar
+relationship as "man" and "woman".
+Applications of Vectorization
+Vectorization techniques are fundamental in various NLP applications, including:
++. Text Classification: Assigning categories to text documents.
++ Sentiment Analysis: Determining the sentiment expressed in a piece of text.
++ Information Retrieval: Finding relevant documents based on a query.
++ Machine Translation: Translating text from one language to another.
+Advantages and Limitations of Vectorization Techniques
+Advantages:
++ Bag of Words and TF-IDF: Simple to implement and interpret, effective for
+many tasks.
++ Word Embeddings: Capture semantic relationships, useful for more complex
+
+NLP tasks.
+
+Limitations:
+ + Bag of Words and TF-IDF: Can result in large and sparse matrices, do not
+capture word meanings or order.
+
++ Word Embeddings: Require significant computational resources to train, may
+need fine-tuning for specific tasks.
+
+Conclusion
+
+Vectorization is a fundamental step in NLP that transforms text into numerical data for
+machine learning models. Techniques like Bag of Words, TF-IDF, and word
+embeddings each offer unique strengths and are chosen based on the specific needs of
+the task at hand. Understanding and effectively applying these vectorization methods is
+crucial for successful NLP applications.
+
+2024-08-13 12:14:02,944 INFO 127.0.0.1 - - [13/Aug/2024 12:14:02] "POST /analizar_documentos HTTP/1.1" 200 -
+2024-08-13 12:14:18,276 DEBUG The PDF is valid with 3 pages.
+2024-08-13 12:14:18,276 DEBUG The PDF is valid with 3 pages.
+2024-08-13 12:14:18,276 INFO 127.0.0.1 - - [13/Aug/2024 12:14:18] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:20:56,869 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 12:20:58,333 INFO  * Restarting with stat
+2024-08-13 12:21:00,544 WARNING  * Debugger is active!
+2024-08-13 12:21:00,544 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:25:29,339 INFO 127.0.0.1 - - [13/Aug/2024 12:25:29] "[31m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 400 -
+2024-08-13 12:25:47,842 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:25:47,842 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:25:47,842 INFO 127.0.0.1 - - [13/Aug/2024 12:25:47] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:27:24,652 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 12:27:25,080 INFO  * Restarting with stat
+2024-08-13 12:27:27,531 WARNING  * Debugger is active!
+2024-08-13 12:27:27,544 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:27:33,238 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:27:33,238 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:27:33,238 INFO 127.0.0.1 - - [13/Aug/2024 12:27:33] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:29:46,469 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 12:29:46,915 INFO  * Restarting with stat
+2024-08-13 12:29:49,495 WARNING  * Debugger is active!
+2024-08-13 12:29:49,503 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:29:49,930 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:29:49,930 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:29:49,930 INFO 127.0.0.1 - - [13/Aug/2024 12:29:49] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:30:49,505 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 12:30:49,995 INFO  * Restarting with stat
+2024-08-13 12:30:52,325 WARNING  * Debugger is active!
+2024-08-13 12:30:52,325 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:30:52,485 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:30:52,485 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:30:52,485 INFO 127.0.0.1 - - [13/Aug/2024 12:30:52] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:30:56,907 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:30:56,907 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:30:56,915 INFO 127.0.0.1 - - [13/Aug/2024 12:30:56] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:38:13,688 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-13 12:38:14,188 INFO  * Restarting with stat
+2024-08-13 12:38:16,693 WARNING  * Debugger is active!
+2024-08-13 12:38:16,702 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:38:17,631 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:38:17,631 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:38:17,631 INFO 127.0.0.1 - - [13/Aug/2024 12:38:17] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:38:35,668 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:38:35,668 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:38:35,668 INFO 127.0.0.1 - - [13/Aug/2024 12:38:35] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:41:01,634 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\app.py', reloading
+2024-08-13 12:41:02,214 INFO  * Restarting with stat
+2024-08-13 12:41:04,697 WARNING  * Debugger is active!
+2024-08-13 12:41:04,712 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:41:05,444 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:41:05,444 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:41:05,444 INFO 127.0.0.1 - - [13/Aug/2024 12:41:05] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:52:43,923 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\app.py', reloading
+2024-08-13 12:52:44,389 INFO  * Restarting with stat
+2024-08-13 12:52:46,832 WARNING  * Debugger is active!
+2024-08-13 12:52:46,847 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:54:44,985 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:54:44,992 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:54:44,992 INFO 127.0.0.1 - - [13/Aug/2024 12:54:44] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:54:50,450 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:54:50,450 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:54:50,458 INFO 127.0.0.1 - - [13/Aug/2024 12:54:50] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 12:55:21,176 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 12:55:21,743 INFO  * Restarting with stat
+2024-08-13 12:55:23,978 WARNING  * Debugger is active!
+2024-08-13 12:55:23,978 INFO  * Debugger PIN: 333-959-984
+2024-08-13 12:55:24,139 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:55:24,145 DEBUG The PDF is valid with 2 pages.
+2024-08-13 12:55:24,145 INFO 127.0.0.1 - - [13/Aug/2024 12:55:24] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 16:19:55,766 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-13 16:19:55,766 INFO [33mPress CTRL+C to quit[0m
+2024-08-13 16:19:55,766 INFO  * Restarting with stat
+2024-08-13 16:19:57,829 WARNING  * Debugger is active!
+2024-08-13 16:19:57,844 INFO  * Debugger PIN: 333-959-984
+2024-08-13 16:20:31,405 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:20:31,412 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:20:31,412 INFO 127.0.0.1 - - [13/Aug/2024 16:20:31] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 16:21:56,749 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:21:56,749 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:21:56,749 INFO 127.0.0.1 - - [13/Aug/2024 16:21:56] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 16:23:31,937 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:23:31,937 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:23:31,937 INFO 127.0.0.1 - - [13/Aug/2024 16:23:31] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-13 16:30:10,661 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 16:30:11,169 INFO  * Restarting with stat
+2024-08-13 16:30:13,717 WARNING  * Debugger is active!
+2024-08-13 16:30:13,734 INFO  * Debugger PIN: 333-959-984
+2024-08-13 16:38:39,467 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-13 16:38:39,976 INFO  * Restarting with stat
+2024-08-13 16:38:42,478 WARNING  * Debugger is active!
+2024-08-13 16:38:42,478 INFO  * Debugger PIN: 333-959-984
+2024-08-13 16:38:42,853 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:38:42,853 DEBUG The PDF is valid with 3 pages.
+2024-08-13 16:38:42,853 INFO 127.0.0.1 - - [13/Aug/2024 16:38:42] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-14 09:24:42,450 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-14 09:24:42,450 INFO [33mPress CTRL+C to quit[0m
+2024-08-14 09:24:42,450 INFO  * Restarting with stat
+2024-08-14 09:24:44,797 WARNING  * Debugger is active!
+2024-08-14 09:24:44,808 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:25:47,084 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading
+2024-08-14 09:25:47,653 INFO  * Restarting with stat
+2024-08-14 09:25:51,093 WARNING  * Debugger is active!
+2024-08-14 09:25:51,101 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:26:12,474 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:26:12,482 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:26:12,482 INFO 127.0.0.1 - - [14/Aug/2024 09:26:12] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-14 09:27:10,401 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-14 09:27:10,872 INFO  * Restarting with stat
+2024-08-14 09:27:13,895 WARNING  * Debugger is active!
+2024-08-14 09:27:13,903 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:27:14,091 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:27:14,091 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:27:14,091 INFO 127.0.0.1 - - [14/Aug/2024 09:27:14] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-14 09:28:26,103 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:28:26,111 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:28:26,111 DEBUG Iniciando conversión a imágenes.
+2024-08-14 09:28:27,220 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F36ECDDF0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F36E7C230>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFE9FA0>]
+2024-08-14 09:28:27,739 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFEA720>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFEA3F0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFEAE70>]
+2024-08-14 09:28:27,739 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F36ECDDF0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F36E7C230>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFE9FA0>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFEA720>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFEA3F0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x21F3AFEAE70>]
+2024-08-14 09:28:38,831 DEBUG Resultado del procesamiento de imágenes a textos. Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+ - Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+
+2024-08-14 09:28:39,971 INFO 127.0.0.1 - - [14/Aug/2024 09:28:39] "POST /analizar_documentos HTTP/1.1" 200 -
+2024-08-14 09:32:17,682 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-14 09:32:18,982 INFO  * Restarting with stat
+2024-08-14 09:32:22,045 WARNING  * Debugger is active!
+2024-08-14 09:32:22,053 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:32:57,456 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-14 09:32:57,901 INFO  * Restarting with stat
+2024-08-14 09:33:00,446 WARNING  * Debugger is active!
+2024-08-14 09:33:00,454 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:33:04,009 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:33:04,009 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:33:04,009 INFO 127.0.0.1 - - [14/Aug/2024 09:33:04] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-14 09:35:17,073 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-14 09:35:17,553 INFO  * Restarting with stat
+2024-08-14 09:35:20,668 WARNING  * Debugger is active!
+2024-08-14 09:35:20,680 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:35:20,862 INFO 127.0.0.1 - - [14/Aug/2024 09:35:20] "[35m[1mPOST /analizar_documentos_b64 HTTP/1.1[0m" 500 -
+2024-08-14 09:37:38,340 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-14 09:37:38,852 INFO  * Restarting with stat
+2024-08-14 09:37:41,819 WARNING  * Debugger is active!
+2024-08-14 09:37:41,827 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:37:42,013 DEBUG Iniciando conversión a imágenes.
+2024-08-14 09:37:42,599 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A32DC5C0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3356750>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3356E10>]
+2024-08-14 09:37:43,048 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3356ED0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3357650>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3357AA0>]
+2024-08-14 09:37:43,049 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A32DC5C0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3356750>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3356E10>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3356ED0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3357650>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x212A3357AA0>]
+2024-08-14 09:37:52,844 DEBUG Resultado del procesamiento de imágenes a textos. Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+ - Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+
+2024-08-14 09:37:53,920 INFO 127.0.0.1 - - [14/Aug/2024 09:37:53] "POST /analizar_documentos_b64 HTTP/1.1" 200 -
+2024-08-14 09:39:49,269 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-14 09:39:50,579 INFO  * Restarting with stat
+2024-08-14 09:39:53,633 WARNING  * Debugger is active!
+2024-08-14 09:39:53,641 INFO  * Debugger PIN: 333-959-984
+2024-08-14 09:40:54,186 DEBUG The PDF is valid with 3 pages.
+2024-08-14 09:40:54,186 DEBUG The PDF is valid with 2 pages.
+2024-08-14 09:40:54,186 DEBUG Iniciando conversión a imágenes.
+2024-08-14 09:40:54,657 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C51280E300>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C512893320>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C5128939E0>]
+2024-08-14 09:40:54,847 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=906x906 at 0x1C51280F590>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=906x906 at 0x1C512891070>]
+2024-08-14 09:40:54,847 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C51280E300>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C512893320>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C5128939E0>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=906x906 at 0x1C51280F590>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=906x906 at 0x1C512891070>]
+2024-08-14 09:41:01,356 DEBUG Resultado del procesamiento de imágenes a textos. Vectorization in Natural Language Processing
+
+Vectorization is a crucial process in the field of Natural Language Processing (NLP)
+that involves converting text into numerical data that machine learning algorithms can
+process. This step is essential because machine learning models cannot work directly
+with textual data and thus need a numerical representation of words, sentences, and
+documents.
+
+Fundamentals of Vectorization
+
+The primary goal of vectorization is to transform text into a matrix of numbers that
+represent the features of the text in a way that models can interpret. There are several
+vectorization techniques, each with its advantages and disadvantages depending on the
+context and the goal of the analysis.
+
+1. Bag of Words (BoW): This is one of the simplest and most common
+techniques. In BoW, the text is broken down into individual words, and a
+vocabulary of all unique words in the corpus is created. Each document is then
+represented as a vector of word frequencies, where each entry indicates how
+many times a word appears in the document.
+
+2. Term Frequency-Inverse Document Frequency (TF-IDF): This technique
+improves on the Bag of Words by considering not only the frequency of words
+but also the importance of a word in the entire corpus. The TF-IDF value of a
+word is higher if it appears frequently in a document but rarely in the rest of the
+corpus, which helps to highlight more informative words.
+
+3. Word Embeddings: Methods like Word2Vec, GloVe, and FastText represent
+words in continuous vector spaces where semantically similar words are close to
+each other. These embeddings capture semantic relationships between words,
+which makes them powerful for various NLP tasks.
+
+Bag of Words (BoW)
+
+The Bag of Words model is straightforward and easy to implement, making it a popular
+choice for many NLP tasks. In this approach, each document is represented as a vector
+of word counts. For example, consider the following two sentences:
+
++ "The cat sat on the mat."
+
++ "The dog sat on the mat."
+The vocabulary would be: ["The", "cat", "sat", "on", "the", "mat", "dog"]. The sentences
+would then be represented as:
+
+, 1,1,1,1,0]
+1,1,1,1,1]
+
+»1,1,1,
+
+Term Frequency-Inverse Document Frequency (TF-IDF)
+
+TF-IDF is a statistical measure used to evaluate the importance of a word in a document
+relative to a collection of documents (corpus). It combines two measures:
+ + Term Frequency (TF): The number of times a word appears in a document
+divided by the total number of words in the document.
+
++ Inverse Document Frequency (IDF): The logarithm of the total number of
+documents divided by the number of documents containing the word.
+
+The TF-IDF value is calculated as:
+TF-IDF=TFxIDFext(TF-IDFy =WMext(TF] Mimes Mext(IDFyTF-IDF=TFxIDF
+
+This method helps in reducing the weight of common words and increasing the weight
+of rare but important words.
+
+Word Embeddings
+
+Word embeddings are dense vector representations of words where similar words have
+similar vectors. Popular methods to generate word embeddings include:
+
++ Word2Vec: Uses neural networks to learn word associations from a large
+corpus of text.
+
++ GloVe (Global Vectors for Word Representation): Constructs a co-
+occurrence matrix from the corpus and then applies matrix factorization to create
+word vectors.
+
++ FastText: An extension of Word2Vec that represents words as bags of character
+n-grams, which helps capture subword information and handle out-of-
+vocabulary words.
+
+Word embeddings have revolutionized NLP by capturing semantic relationships
+between words. For example, the vectors for "king" and "queen" might have a similar
+relationship as "man" and "woman".
+Applications of Vectorization
+Vectorization techniques are fundamental in various NLP applications, including:
++. Text Classification: Assigning categories to text documents.
++ Sentiment Analysis: Determining the sentiment expressed in a piece of text.
++ Information Retrieval: Finding relevant documents based on a query.
++ Machine Translation: Translating text from one language to another.
+Advantages and Limitations of Vectorization Techniques
+Advantages:
++ Bag of Words and TF-IDF: Simple to implement and interpret, effective for
+many tasks.
++ Word Embeddings: Capture semantic relationships, useful for more complex
+
+NLP tasks.
+
+Limitations:
+ + Bag of Words and TF-IDF: Can result in large and sparse matrices, do not
+capture word meanings or order.
+
++ Word Embeddings: Require significant computational resources to train, may
+need fine-tuning for specific tasks.
+
+Conclusion
+
+Vectorization is a fundamental step in NLP that transforms text into numerical data for
+machine learning models. Techniques like Bag of Words, TF-IDF, and word
+embeddings each offer unique strengths and are chosen based on the specific needs of
+the task at hand. Understanding and effectively applying these vectorization methods is
+crucial for successful NLP applications.
+ - O Reglas del juego
+
+A partir de 8 años
+
+OBJETIVO DEL JUEGO: Obtener el máximo de puntos realizando las combinaciones
+impuestas.
+
+Y Generala
+
+2 a 4 jugadores O 15 a 25 minutos
+
+1 1x el número de 1 obtenidos
+2 2 x el número de 2 obtenidos
+3 3 x el número de 3 obtenidos
+4 4 x el número de 4 obtenidos
+BOO ji  5xelnúmerodeS5obtenidos ___
+6 | 6xelnúmerode6obtenidos pbtenidos
+Bono total 1 (Total > 63 = 35) 35 puntos si el Total 1es > 63 puntos
+Mínima total de dados si < 20
+Máxima total de dados si > 20
+Trío = 3 dados a Trío=3dadosiguales____| ______25puntos _______ 25 puntos
+Full = 3 dados iguales + 2 dados iguales 30 puntos
+Escalera corta: 1-2-3-4 o 2-3-4-5 o 3-4-5-6 25 puntos
+Póker: 4 dados iguales 35 puntos
+Escalera larga: 1-2-3-4-5 o 2-3-4-5-6 40 puntos
+Generala: 5 dados iguales 50 puntos
+
+TOTAL 3 SUMA DE LOS PUNTOS OBTENIDOS AQUÍ ARRIBA
+
+PUNTUACIÓN FINAL SUMA TOTAL 1+2 +3
+
+ DESARROLLO DE LA PARTIDA
+
+Cada jugador, en su turno, puede lanzar tres veces los dados para hacer una combinación.
+Cada vez, el jugador puede volver a lanzar todos los dados o conservar una parte.
+Después del tercer lanzamiento, si ha realizado una de las combinaciones, el jugador
+anota los puntos correspondientes.
+
+Si no, anota un O en alguna de las casillas.
+
+La columna y debe realizarse siguiendo el orden del la la generala.
+
+La columna % debe realizarse siguiendo el orden de la generala al 1.
+
+La columna 1 puede realizarse en cualquier orden.
+Nota: Para hacer más corta la partida, se puede optar por no hacer todas las columnas.
+
+FIN DE LA PARTIDA
+
+La partida se termina cuando se completan todas las casillas. Gana el jugador que tenga
+más puntos.
+
+2024-08-14 09:41:02,682 INFO 127.0.0.1 - - [14/Aug/2024 09:41:02] "POST /analizar_documentos_b64 HTTP/1.1" 200 -
+2024-08-14 09:42:26,275 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\encoder.py', reloading

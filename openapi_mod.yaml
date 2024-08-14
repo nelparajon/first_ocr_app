@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: PDF Files Comparison API
+  description: Consiste en un servicio web que compara dos documentos PDF y te devuelve
+              si son similares y con que porcentaje.
+  version: 1.0.0
+servers:
+  - url: https://localhost:5000
+    description: Servidor Local de Desarrollo
+tags:
+  - name: documentComparison
+    description: Compara los documentos y proporciona información al usuario
+  - name: history
+    description: Proporciona un histórico de comparaciones
+paths:
+  /analizar_documentos:
+    post:
+      tags:
+        - documentComparison
+      summary: Comparación de documentos
+      description: Permite la subida de documentos, los compara, y guarda la petición en la base de datos
+      requestBody:
+        description: Documentos a comparar
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file1:
+                  type: string
+                  format: binary
+                  description: Primer documento PDF
+                file2:
+                  type: string
+                  format: binary
+                  description: Segundo documento PDF
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsComparison'
+        '400':
+          description: No se encontraron los documentos
+        '405':
+          description: Método de solicitud sin soporte
+        '500':
+          description: Error interno del servidor
+  /analizar_documentos_base64:
+    post:
+      tags:
+        - documentComparison
+      summary: Comparación de documentos
+      description: Permite la subida de documentos, los compara, y guarda la petición en la base de datos
+      requestBody:
+        description: Documentos a comparar
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file1:
+                  $ref: '#/components/schemas/FileBase64'
+                file2:
+                  $ref: '#/components/schemas/FileBase64'
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsComparison'
+        '400':
+          description: No se encontraron los documentos
+        '405':
+          description: Método de solicitud sin soporte
+        '500':
+          description: Error interno del servidor
+  /historico:
+    get:
+      tags:
+        - history
+      summary: Histórico de comparaciones
+      description: Muestra el histórico de comparaciones con fecha, documentos, similitud y porcentaje de similitud.
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Historico'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Historico'
+        '400':
+          description: Error en la solicitud
+components:
+  schemas:
+    FileBase64:
+      type: object
+      properties:
+        name: 
+          type: string
+        content:
+          type: string
+          description: Contenido del pdf codificado en Base64
+    DocumentsComparison:
+      type: object
+      properties:
+        doc1Name:
+          type: string
+          description: Nombre del primer documento
+        doc2Name:
+          type: string
+          description: Nombre del segundo documento
+        fecha:
+            type: integer
+            format: int64
+            description: Fecha en la que fue realizada la solicitud, timestamp UNIX
+        estado:
+          type: string
+          description: Código de estado de la solicitud
+        mensaje: 
+          type: string
+          description: Mensaje que indica si la solicitud fue exitosa o el error 
+        porcentajeSimilitud:
+          type: number
+          description: porcentaje de la similitud calculada
+    Historico:
+      type: object
+      properties:
+        doc1Name:
+          type: string
+          description: Nombre del primer documento
+        doc2Name:
+          type: string
+          description: Nombre del segundo documento
+        fecha:
+          type: integer
+          format: int64
+          description: Fecha en la que fue realizada la solicitud, en formato timestamp UNIX
+        porcentajeSimilitud:
+          type: number
+          description: Porcentaje de la similitud calculada
