@@ -12,7 +12,7 @@ class Encoder:
 
     @staticmethod
     def encode_file_b64(file):
-        file_content = file.read()  # Leemos el contenido del archivo
+        file_content = file.read() 
         encoded_file = base64.b64encode(file_content).decode("utf-8")
         return encoded_file
 

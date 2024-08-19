@@ -50,24 +50,18 @@ def analizar_documentos():
         pdf1_base64 = Encoder.encode_file_b64(pdf1)
         pdf2_base64 = Encoder.encode_file_b64(pdf2)
 
+        #Imprimir para depuración
+        print("Base64 de PDF1:", pdf1_base64[:-100])
+        print("Base64 de PDF2:", pdf2_base64[:-100])
+
         # Decodificar los archivos base64
         decoded_pdf1 = Encoder.decode_file(pdf1_base64)
         decoded_pdf2 = Encoder.decode_file(pdf2_base64)
 
         # Validar que los archivos sean PDFs
         if not Encoder.validate_pdf(decoded_pdf1) or not Encoder.validate_pdf(decoded_pdf2):
-            return handle_response(405, f"Error al validar el formato de los archivos", 0.0), 405
+            return handle_response(422, pdf1_filename, pdf2_filename, f"Error al validar el formato de los archivos", 0.0)
 
-        # Se guardan los archivos decodificados de manera temporal para el análisis de errores
-        with open("temp_1.pdf", "wb") as temp_pdf:
-            temp_pdf.write(decoded_pdf1)
-
-        with open("temp_2.pdf", "wb") as temp_pdf:
-            temp_pdf.write(decoded_pdf2)
-
-        # Si no ocurre ningún error, eliminamos los archivos temporales
-        os.remove("temp_1.pdf")
-        os.remove("temp_2.pdf")
     except Exception as e:
         return jsonify({'error': f"Error al decodificar el archivo: {str(e)}"}), 500
 
@@ -103,20 +97,23 @@ def analizar_documentos():
     except Exception as e:
         return jsonify({'error': f"Error en la conversión del archivo: {str(e)}"}), 500
     
-@analize.route(service_get_historico, methods=['GET'])
+@analize.route('/historico', methods=['GET'])
 def show_historico():
     if request.method != 'GET':
         return 405, "Error: método no soportado"
-    
-    data = DbManager.get_historico()
-    return jsonify({'Peticiones': data})
+
+    try:
+        data = DbManager.get_historico()
+        return jsonify({'Peticiones': data})
+    except Exception as ex:
+        raise ex
 
 @analize.route("/analizar_documentos_b64", methods=['POST'])
 def analizar_documentos_base64():
     data = request.get_json()
 
     if 'file1' not in data or 'file2' not in data:
-        return jsonify({'error': 'No se encontraron los archivos'}), 400
+        return handle_response(400, None, None, f"Se necesitan dos archivos para comparar", 0.0)
     
     file1_base64 = data['file1'].get('content')
     file2_base64 = data['file2'].get('content')
@@ -124,25 +121,23 @@ def analizar_documentos_base64():
     file2_name= data['file2'].get('name')
 
     if not file1_base64 or not file2_base64:
-         return jsonify({'error': 'El contenido de los archivos no puede estar vacío'}), 400
-    
-    # Depuración
-    print(file1_base64[:100])  #cadena base64
-    print(file2_base64[:100])
-    
+         return handle_response(400, file1_name, file2_name, f"El contenido de los archivos no puede estar vacío", 0.0)
+
     try:
         print("Se procede a decodificar los archivos...")
         #decodificar los archivos
         decoded_file1 = base64.b64decode(file1_base64, validate=True)
-        print(f"Archivo 1 {file1_name} decodificado")
         decoded_file2 = base64.b64decode(file2_base64, validate=True)
-        print(f"Archivo 2 {file2_name} decodificado")
+        
 
         if not Encoder.validate_pdf(decoded_file1) or not Encoder.validate_pdf(decoded_file2):
-            return handle_response(405, file1_name, file2_name, f"Error al validar el formato de los archivos", 0.0), 405
+            return handle_response(405, file1_name, file2_name, f"Error al validar el formato de los archivos", 0.0)
         
+    except ValueError as e:
+        return jsonify({'error': f"Error al decodificar el archivo: {str(e)}"}), 400    
     except Exception as e:
-        return jsonify({'error': f"Error al decodificar el archivo: {str(e)}"}), 500
+        return jsonify({'error': f"Error al decodificddsar el archivo: {str(e)}"}), 500
+    
     
     try:
         # Conversión de los documentos a imágenes
@@ -175,29 +170,15 @@ def analizar_documentos_base64():
     except Exception as e:
         return jsonify({'error': f"Error en la conversión del archivo: {str(e)}"}), 500
 
-
-
-#Función que maneja muestra los códigos de estado y su mensaje correspondiente
-#Guardamos esto en la base de dato como histórico
+#Función que maneja y muestra los códigos de estado y su mensaje correspondiente
+#Guardamos esto en la base de datos en la tabla histórico
 def handle_response(estado, doc1, doc2, mensaje, similitud):
+    #Verifica que los pdf no son none
+    if doc1 is None or doc2 is None:
+        raise ValueError("doc1 y doc2 no pueden ser None.")
+    
     DbManager.save_request(f"Solicitud exitosa. Código: {estado}", doc1, doc2, mensaje, similitud)
     return jsonify({"mensaje": mensaje, "Código": estado, "Similitud": f"{similitud}"}), estado
-
-#genera archivos temporales
-def guardar_archivo_temporal(filename, file_content):
-    # Leer el contenido del archivo fuente
-    with open(file_content, "rb") as original_file:
-        contenido = original_file.read()
-
-    # Crear el nombre del archivo temporal
-    temp_name = f"{filename}_temp"
-    
-    # Guardar el contenido en un archivo temporal en el directorio actual
-    with open(temp_name, "wb") as temp_file:
-        temp_file.write(contenido)
-
-    return temp_name
-
 
 
 

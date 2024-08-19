@@ -48,8 +48,8 @@ class Lemmatizer:
                 wordnet_pos = self.get_wordnet_pos(tag)
                 lem = self.lemmatizer.lemmatize(word, wordnet_pos)
                 lemmatized_tokens.append(lem)
-            print("*********************LEMMATIZING***************")
-            print(lemmatized_tokens)
+            print("LEMATIZACION REALIZADA CON ÉXITO")
+            
             return lemmatized_tokens
         except TypeError as te:
             return print(f"TypeError: {te}")

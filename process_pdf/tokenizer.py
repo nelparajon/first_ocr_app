@@ -75,7 +75,7 @@ class Tokenizer:
 
             tokenized_texts.extend(filtered_words)  # Añadir las palabras filtradas a la lista principal
 
-            print(tokenized_texts)
+            
             print("Tokenización completada con éxito")
             return tokenized_texts
 

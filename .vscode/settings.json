@@ -66,6 +66,7 @@
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true,
   "python.analysis.extraPaths": [
-    "./process_pdf"
+    "./process_pdf",
+    "./cliente"
   ]
 }

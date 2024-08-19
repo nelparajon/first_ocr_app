@@ -22,7 +22,5 @@ class DbManager:
             for historico in peticiones
         ]
         return data
-    
-    def log_error():
-        pass
+
         

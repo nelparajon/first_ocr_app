@@ -17,7 +17,7 @@ class Vectorizer():
             
             #pasamos a una lista los tokens para que estén en el formato que acepta count vectorizer
             lemmatized_tokens_str = [' '.join(lem) for lem in lemmatized_tokens]
-            print("LEMATIZED TOKENS \n", lemmatized_tokens_str)  
+        
 
             if not isinstance(lemmatized_tokens, list) or not all(isinstance(lem, str) for lem in lemmatized_tokens_str):
                 raise ValueError(f"Se esperaba una lista de cadena de tokens, se recibió {type(lemmatized_tokens_str).__name__}") 

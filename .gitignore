@@ -1,3 +1,4 @@
 output_images/
 output_texts/
 __pycache__/
+app.log

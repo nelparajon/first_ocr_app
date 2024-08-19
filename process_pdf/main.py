@@ -23,7 +23,7 @@ def convert_to_images_from_file(docs):
         converter = PDFConverter(route)
         docs_images = converter.convert_to_images_from_file(route)
         images.append(docs_images)
-    print(images)
+    
     return images
 
 def process_images(images):
@@ -32,14 +32,14 @@ def process_images(images):
         ocr_producer = OCRProducer()
         texts = ocr_producer.process_images(image)
         result_texts.append(texts)
-    print(result_texts)
+    
     return result_texts
 
 def tokenize_texts(texts):
     tokenizer = Tokenizer()
     tokens = []
     for text in texts:
-        print("TEXTOS \n", text)
+        
         text_tokens = tokenizer.tokenize_texts(text)
         tokens.append(text_tokens)
     return tokens
@@ -50,7 +50,7 @@ def lemmatizing_texts(tokens):
     lematized_tokens = []
     for text in tokens:
         lem_tokens = lemmatizer.lemmatizing_words(text)
-        print("*********LEM TOKENS************\n", lem_tokens)
+        
         lematized_tokens.append(lem_tokens)
     print(lematized_tokens)
     return lematized_tokens
