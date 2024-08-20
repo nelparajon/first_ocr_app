@@ -18089,3 +18089,248 @@ can help practitioners choose the right approach for their specific needs.
 2024-08-19 17:17:52,269 INFO  * Debugger PIN: 333-959-984
 2024-08-19 17:17:53,796 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\tests\\get_tests.py', reloading
 2024-08-19 17:17:54,279 INFO  * Restarting with stat
+2024-08-19 17:17:57,376 WARNING  * Debugger is active!
+2024-08-19 17:17:57,391 INFO  * Debugger PIN: 333-959-984
+2024-08-20 15:41:36,720 DEBUG The PDF is valid with 3 pages.
+2024-08-20 15:41:36,731 DEBUG The PDF is valid with 3 pages.
+2024-08-20 15:41:36,731 DEBUG Iniciando conversión a imágenes.
+2024-08-20 15:41:37,420 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C541B290>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C541B200>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C541B1D0>]
+2024-08-20 15:41:37,766 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C5419250>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C5419B80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C5419C40>]
+2024-08-20 15:41:37,766 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C541B290>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C541B200>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C541B1D0>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C5419250>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C5419B80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x277C5419C40>]
+2024-08-20 15:41:47,062 DEBUG Resultado del procesamiento de imágenes a textos. Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+ - Sample Text for Lemmatization
+
+Natural Language Processing (NLP) is a fascinating field that combines computer
+science, artificial intelligence, and linguistics to enable computers to understand,
+interpret, and generate human language. One of the key tasks in NLP is text
+preprocessing, which involves preparing and cleaning text data for analysis. Two
+common preprocessing techniques are stemming and lemmatization.
+
+Stemming is the process of reducing a word to its base or root form, typically by
+removing suffixes. For example, the words "running", "ran", and "runs" might all be
+reduced to "run". While stemming is useful, it can be imprecise because it often
+
+involves simply chopping off the ends of words.
+
+Lemmatization, on the other hand, is a more sophisticated process that considers the
+context and part of speech of a word to reduce it to its lemma, or dictionary form. For
+instance, "running" and "ran" would both be lemmatized to "run", but "better" might be
+lemmatized to "good" depending on its use in the sentence.
+
+To illustrate the differences, let”s consider a few examples:
+
++ The word "better" can be an adjective or an adverb. In the sentence "He runs
+better than she does," "better" is an adverb and could be lemmatized to "well".
+
++ The word "fairly" in "He was treated fairly" is an adverb and remains "fairly"
+when lemmatized, as it is already in its base form.
+
+When performing lemmatization, it is crucial to provide the correct part of speech. This
+allows the lemmatizer to apply the appropriate rules and produce accurate results. The
+Natural Language Toolkit (NLTK) is a popular Python library used for NLP tasks,
+including lemmatization. NLTK provides interfaces to over 50 corpora and lexical
+resources, along with a suite of text processing libraries.
+
+In summary, while both stemming and lemmatization aim to reduce words to their base
+forms, lemmatization is generally more accurate because it takes into account the word's
+meaning and part of speech. This makes lemmatization an essential tool in the
+preprocessing stage of many NLP applications.
+
+Introduction to Stemming in Natural Language Processing
+
+Stemming is a crucial preprocessing technique in Natural Language Processing (NLP)
+that involves reducing words to their root or base form. The primary goal of stemming
+is to group words with similar meanings together, which helps in improving the
+performance of various NLP tasks such as information retrieval, text mining, and
+machine learning.
+
+The process of stemming removes affixes from words, typically suffixes, to obtain the
+stem or root form. For example, the words "running", "runner", and "ran" might all be
+reduced to the root word "run". This reduction helps in normalizing the text data,
+
+making it easier to analyze and process.
+
+Types of Stemming Algorithms
+ Several stemming algorithms have been developed over the years, each with its own
+approach and level of complexity. Some of the most commonly used stemming
+algorithms include:
+
+1. Porter Stemmer: Developed by Martin Porter in 1980, the Porter Stemmer is
+one of the most widely used stemming algorithms. It applies a series of rules to
+strip suffixes from words, making it relatively efficient and effective for many
+NLP tasks.
+
+2. Snowball Stemmer: Also developed by Martin Porter, the Snowball Stemmer
+(also known as the Porter2 Stemmer) is an improvement over the original Porter
+Stemmer. It is more versatile and can handle stemming in multiple languages.
+
+3. Lancaster Stemmer: The Lancaster Stemmer, also known as the Paice/Husk
+Stemmer, is an iterative algorithm that applies a series of rules to remove
+suffixes. It is known for being more aggressive than the Porter Stemmer, which
+means it may produce shorter stems.
+
+4. Lovins Stemmer: Developed by Julie Beth Lovins in 1968, the Lovins Stemmer
+was one of the first stemming algorithms. It uses a large list of suffixes and
+applies transformation rules to reduce words to their root forms.
+
+Applications of Stemming
+Stemming is widely used in various NLP applications, including:
+
++. Information Retrieval: Stemming helps in improving the effectiveness of
+search engines by matching related terms. For example, a search for "running"
+will also return results for "run" and "runner".
+
++ Text Mining: In text mining, stemming helps in clustering and classifying
+documents by reducing words to their base forms, thus enhancing the quality of
+the analysis.
+
++ Sentiment Analysis: Stemming assists in sentiment analysis by normalizing
+words, making it easier to detect and analyze sentiments expressed in different
+forms.
+
++ Machine Learning: In machine learning, stemming helps in reducing the
+dimensionality of the feature space by combining related words, thereby
+improving the performance of models.
+
+Advantages and Limitations of Stemming
+Advantages:
++  Reduces the complexity of text data by normalizing words.
++  Improves the performance of various NLP tasks by grouping related words.
++  Helps in reducing the dimensionality of the feature space in machine learning
+applications.
+
+Limitations:
+
++  Stemming can sometimes be too aggressive, leading to stems that are not actual
+words.
+ + It may result in the loss of information, as different words with distinct
+meanings can be reduced to the same stem.
+
++  Stemming algorithms may produce inconsistent results, especially with irregular
+words.
+
+Conclusion
+
+Stemming is a fundamental preprocessing step in NLP that plays a vital role in
+enhancing the performance of various text analysis tasks. While it has its limitations, the
+benefits of reducing words to their base forms make stemming an essential tool in the
+NLP toolkit. Understanding the different stemming algorithms and their applications
+can help practitioners choose the right approach for their specific needs.
+

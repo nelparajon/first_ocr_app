@@ -3,7 +3,6 @@ import logging
 import os
 from flask import Flask, jsonify, request, Blueprint
 import numpy as np
-from werkzeug.exceptions import BadRequest, InternalServerError
 from cliente.encoder import Encoder
 from process_pdf.pdf_converter import PDFConverter
 from process_pdf.ocr_producer import OCRProducer

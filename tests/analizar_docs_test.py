@@ -19,8 +19,8 @@ class TestAnalizarDocumentos(unittest.TestCase):
         self.app = create_app('testing')
         self.app_client = self.app.test_client()
         self.app.testing = True
-        # Ruta al archivo PDF de prueba
-        self.pdf_path = r"C:\Users\Nel\Desktop\lematizacion.pdf"
+        #Ruta al archivo PDF de prueba
+        self.pdf_path = os.path.join(os.path.dirname(__file__), '../docs_pruebas/lematizacion.pdf')
 
         #creamos las tablas en la BD
         with self.app.app_context():
