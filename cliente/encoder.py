@@ -4,6 +4,7 @@ from io import BytesIO
 import io
 import logging
 import PyPDF2
+import cv2
 
 
 class Encoder:
@@ -52,6 +53,12 @@ class Encoder:
         except PyPDF2.errors.PdfReadError as e:
             logging.error(f"PDF Read Error: {e}")
             return False
+        
+    #convertir una imagen en base 64    
+    def encode_image_b64(image):
+        _, buffer = cv2.imencode('.png', image)
+        encoded_image = base64.b64encode(buffer).decode("utf-8")
+        return encoded_image
 
         
             

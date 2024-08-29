@@ -10,6 +10,7 @@ from process_pdf.tokenizer import Tokenizer
 from process_pdf.lemmatizer import Lemmatizer
 from process_pdf.vectorizer import Vectorizer
 from database.db_manager import DbManager
+from process_pdf.process_to_images import ProcessToImages
 
 #Configurar que el logging se guarde en un archivo
 logging.basicConfig(level=logging.DEBUG,
@@ -23,6 +24,7 @@ producer = OCRProducer()
 tokenizer = Tokenizer()
 lemmatizer = Lemmatizer()
 vectorizer = Vectorizer()
+pti = ProcessToImages()
 
 analyze_service_route = os.getenv('ANALYZE_SERVICE_ROUTE')
 service_get_historico = os.getenv('GET_HISTORICO')
@@ -72,8 +74,8 @@ def analizar_documentos():
         logging.debug(f"Resultado de la conversión a imágenes: {image_1} - {image_2}")
 
         # Procesamiento de las imágenes a cadenas
-        text_1 = producer.process_images(image_1)
-        text_2 = producer.process_images(image_2)
+        text_1 = producer.image_to_string(image_1)
+        text_2 = producer.image_to_string(image_2)
         logging.debug(f"Resultado del procesamiento de imágenes a textos. {text_1} - {text_2}")
 
         # Tokenización y Lematización
@@ -146,8 +148,8 @@ def analizar_documentos_base64():
         logging.debug(f"Resultado de la conversión a imágenes: {image_1} - {image_2}")
 
         # Procesamiento de las imágenes a cadenas
-        text_1 = producer.process_images(image_1)
-        text_2 = producer.process_images(image_2)
+        text_1 = producer.image_to_string(image_1)
+        text_2 = producer.image_to_string(image_2)
         logging.debug(f"Resultado del procesamiento de imágenes a textos. {text_1} - {text_2}")
 
         # Tokenización y Lematización
@@ -168,6 +170,98 @@ def analizar_documentos_base64():
         return handle_response(200, file1_name, file2_name, f"Subida y procesamiento de archivos completada.", f"{porcentaje:.2f}")
     except Exception as e:
         return jsonify({'error': f"Error en la conversión del archivo: {str(e)}"}), 500
+
+#ruta que muestra las paginas seleccinadas por el usuario con los parrafos
+#también extrae los parrafos, que el usuario quiere usar en el analisis, en base a sus posiciones en la imagen 
+def process_selected_pages():
+    if 'doc1' not in request.files or 'doc2' not in request.files:
+        return jsonify({'error': 'No se encontraron los archivos'}), 400
+    
+    doc1 = request.files['doc1']
+    doc2 = request.files['doc2']
+
+    #páginas seleccionadas por el usuario
+    selected_pages = request.form.get('selected_pages')
+    if not selected_pages:
+        return jsonify({'error': 'No se seleccionaron páginas o no se encontró nada para mostrar'}), 400
+
+    selected_pages = list(map(int, selected_pages.split(',')))
+
+    if not isinstance(selected_pages, list):
+        return jsonify({"Error: las paginas seleccionadas no son una lista"}), 400
+
+    doc1_decoded = Encoder.decode_file(Encoder.encode_file_b64(doc1))
+    doc2_decoded = Encoder.decode_file(Encoder.encode_file_b64(doc2))
+
+    doc1_images = converter.convert_to_images(doc1_decoded)
+    doc2_images = converter.convert_to_images(doc2_decoded)
+
+    logging.debug(f"IMAGES: {doc1_images}")
+    logging.debug(f"IMAGES: {doc2_images}")
+
+    #si coincide la selección se guarda
+    doc1_only_selected_pages = {}
+    for i, image in enumerate(doc1_images):
+        if i in selected_pages:
+            doc1_only_selected_pages[i] = image
+    
+    logging.debug("SELECTED PAGES:", selected_pages)
+    logging.debug("SELECTE PAGES DOC1: ", doc1_only_selected_pages)
+    
+    doc2_only_selected_pages = {}
+    for i, image in enumerate(doc2_images):
+        if i in selected_pages:
+            doc2_only_selected_pages[i] = image
+    
+    logging.debug("SELECTE PAGES DOC2: ", doc2_only_selected_pages)
+
+    doc1_contours, doc1_positions = pti.extract_image_with_contours(doc1_only_selected_pages)
+    doc2_contours, doc2_positions = pti.extract_image_with_contours(doc2_only_selected_pages)
+    logging.debug(f"dict doc1_contours: {doc1_contours}")
+    logging.debug(f"dict doc1 positions: {doc1_positions}")
+
+    images_with_contours_1 = {}
+    for page, img in doc1_contours.items():
+        images_with_contours_1[page] = Encoder.encode_image_b64(img)
+
+    images_with_contours_2 = {}
+    for page, img in doc2_contours.items():
+        images_with_contours_2[page] = Encoder.encode_image_b64(img)
+
+    result = {
+        'doc1': {
+            'images_with_contours': images_with_contours_1,
+            'contours_positions': doc1_positions
+        },
+        'doc2': {
+            'images_with_contours': images_with_contours_2,
+            'contours_positions': doc2_positions
+        }
+    }
+    
+    return jsonify(result)
+
+
+#ruta que toma los parrafos seleccionados. Por ahora solamente muestra al usuario que parrafos a elegido
+@analize.route('/process_paragraphs', methods=['POST'])
+def get_parrafos():
+    if not request.is_json:
+        return jsonify({"error": "La solicitud debe ser JSON"}), 400
+    
+    data = request.json
+    logging.debug(f"DATA: {data}")
+    logging.debug(f"DATA TYPE: {type(data)}")
+
+    selected_paragraphs = data.get('selected_paragraphs')
+
+    if selected_paragraphs is None:
+        return jsonify({"error": "No se encontró nada en JSON para mostrar"}), 400
+    
+    return jsonify({
+        'message': 'Párrafos recibidos correctamente',
+        'selected_paragraphs': selected_paragraphs
+    })
+
 
 #Función que maneja y muestra los códigos de estado y su mensaje correspondiente
 #Guardamos esto en la base de datos en la tabla histórico

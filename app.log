@@ -18334,3 +18334,2028 @@ benefits of reducing words to their base forms make stemming an essential tool i
 NLP toolkit. Understanding the different stemming algorithms and their applications
 can help practitioners choose the right approach for their specific needs.
 
+2024-08-27 10:29:15,578 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-27 10:29:15,578 INFO [33mPress CTRL+C to quit[0m
+2024-08-27 10:29:15,586 INFO  * Restarting with stat
+2024-08-27 10:29:18,453 WARNING  * Debugger is active!
+2024-08-27 10:29:18,461 INFO  * Debugger PIN: 333-959-984
+2024-08-27 10:44:16,508 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 10:44:17,105 INFO  * Restarting with stat
+2024-08-27 10:44:20,128 WARNING  * Debugger is active!
+2024-08-27 10:44:20,136 INFO  * Debugger PIN: 333-959-984
+2024-08-27 10:47:07,162 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 10:47:07,623 INFO  * Restarting with stat
+2024-08-27 10:47:10,805 WARNING  * Debugger is active!
+2024-08-27 10:47:10,813 INFO  * Debugger PIN: 333-959-984
+2024-08-27 10:47:40,367 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 10:47:40,900 INFO  * Restarting with stat
+2024-08-27 10:47:44,164 WARNING  * Debugger is active!
+2024-08-27 10:47:44,172 INFO  * Debugger PIN: 333-959-984
+2024-08-27 10:54:44,037 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 10:54:44,630 INFO  * Restarting with stat
+2024-08-27 10:54:47,611 WARNING  * Debugger is active!
+2024-08-27 10:54:47,620 INFO  * Debugger PIN: 333-959-984
+2024-08-27 10:56:28,218 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 10:56:28,659 INFO  * Restarting with stat
+2024-08-27 11:06:44,505 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-27 11:06:44,505 INFO [33mPress CTRL+C to quit[0m
+2024-08-27 11:06:44,513 INFO  * Restarting with stat
+2024-08-27 11:06:47,457 WARNING  * Debugger is active!
+2024-08-27 11:06:47,465 INFO  * Debugger PIN: 333-959-984
+2024-08-27 11:06:48,708 DEBUG The PDF is valid with 1 pages.
+2024-08-27 11:06:48,708 DEBUG The PDF is valid with 1 pages.
+2024-08-27 11:06:48,708 DEBUG Iniciando conversión a imágenes.
+2024-08-27 11:06:49,239 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x182FB390710>]
+2024-08-27 11:06:49,738 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x182FB3EAAE0>]
+2024-08-27 11:06:49,738 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x182FB390710>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x182FB3EAAE0>]
+2024-08-27 11:06:53,974 DEBUG Resultado del procesamiento de imágenes a textos. ['JOLP-3rWY-dfdx-b8dr\n\nPuede verificar este documento en https://sede.mjusticia.gob.es Código Seguro de Verificación SD\n\nABCDEFGHIKLMNPORSTUVWXYZabcdefghijkmnopgrstuvwxyz23456789-:\n\nJuego de caracteres del Código Seguro de Verificación:\n\nGERENCIA TERRITORIAL DE JUSTICIA DE ASTURIAS EN OVIEDO\n\nMINISTERIO\nDE LA PRESIDENCIA, JUSTICIA\nY RELACIONES CON LAS CORTES\n\nREGISTRO CENTRAL DE DELINCUENTES SEXUALES Y\nDE TRATA DE SERES HUMANOS\n\nEn el día de la fecha, consultada la Base de Datos del Registro Central de Delincuentes Sexuales y de Trata\nde Seres Humanos, NO CONSTAN antecedentes sexuales relativos a:\n\nNEL PARAJON SOMOANO , con DOCUMENTO 53508180Z\n\nConforme a lo dispuesto en la Decisión Marco 2009/315/JA1 del Consejo de 26 de febrero, relativa a la\norganización y al contenido del intercambio de información de los registros de antecedentes penales entre los\nEstados miembros, tratándose de ciudadanos que ostenten exclusivamente la nacionalidad española, el presente\ncertificado incluye, en su caso, las condenas impuestas por otros Estados miembros de la Unión Europea, en los\nmismos términos en que tales condenas hayan sido notificadas, sin que exista necesariamente una equiparación\nentre los tipos delictivos del Estado de condena y los tipos delictivos nacionales.\n\nA los efectos de trabajar o realizar actividades con menores, los ciudadanos extranjeros o que, además de la\nespañola, ostenten otra nacionalidad, deberán solicitar a las autoridades de su otro país de nacionalidad una\ncertificación en la que se haga constar, en su caso, sus antecedentes penales por delitos de naturaleza sexual.\n\nEl presente certificado refleja la situación del titular interesado/a en la fecha de su expedición y se emite\nexclusivamente a efectos de ACREDITACIÓN.\n\nOviedo, a 27 de mayo de 2024\n\nPag !de1 Ref: 3170774/2024\n\nDocumento firmado\nelectrónicamente\n'] - ['JOLP-3rWY-dfdx-b8dr\n\nPuede verificar este documento en https://sede.mjusticia.gob.es Código Seguro de Verificación SD\n\nABCDEFGHIKLMNPORSTUVWXYZabcdefghijkmnopgrstuvwxyz23456789-:\n\nJuego de caracteres del Código Seguro de Verificación:\n\nGERENCIA TERRITORIAL DE JUSTICIA DE ASTURIAS EN OVIEDO\n\nMINISTERIO\nDE LA PRESIDENCIA, JUSTICIA\nY RELACIONES CON LAS CORTES\n\nREGISTRO CENTRAL DE DELINCUENTES SEXUALES Y\nDE TRATA DE SERES HUMANOS\n\nEn el día de la fecha, consultada la Base de Datos del Registro Central de Delincuentes Sexuales y de Trata\nde Seres Humanos, NO CONSTAN antecedentes sexuales relativos a:\n\nNEL PARAJON SOMOANO , con DOCUMENTO 53508180Z\n\nConforme a lo dispuesto en la Decisión Marco 2009/315/JA1 del Consejo de 26 de febrero, relativa a la\norganización y al contenido del intercambio de información de los registros de antecedentes penales entre los\nEstados miembros, tratándose de ciudadanos que ostenten exclusivamente la nacionalidad española, el presente\ncertificado incluye, en su caso, las condenas impuestas por otros Estados miembros de la Unión Europea, en los\nmismos términos en que tales condenas hayan sido notificadas, sin que exista necesariamente una equiparación\nentre los tipos delictivos del Estado de condena y los tipos delictivos nacionales.\n\nA los efectos de trabajar o realizar actividades con menores, los ciudadanos extranjeros o que, además de la\nespañola, ostenten otra nacionalidad, deberán solicitar a las autoridades de su otro país de nacionalidad una\ncertificación en la que se haga constar, en su caso, sus antecedentes penales por delitos de naturaleza sexual.\n\nEl presente certificado refleja la situación del titular interesado/a en la fecha de su expedición y se emite\nexclusivamente a efectos de ACREDITACIÓN.\n\nOviedo, a 27 de mayo de 2024\n\nPag !de1 Ref: 3170774/2024\n\nDocumento firmado\nelectrónicamente\n']
+2024-08-27 11:06:53,982 INFO 127.0.0.1 - - [27/Aug/2024 11:06:53] "[35m[1mPOST /analizar_documentos HTTP/1.1[0m" 500 -
+2024-08-27 11:09:52,406 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\tokenizer.py', reloading
+2024-08-27 11:09:52,955 INFO  * Restarting with stat
+2024-08-27 11:09:55,619 WARNING  * Debugger is active!
+2024-08-27 11:09:55,627 INFO  * Debugger PIN: 333-959-984
+2024-08-27 11:12:17,939 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\tokenizer.py', reloading
+2024-08-27 11:12:18,471 INFO  * Restarting with stat
+2024-08-27 11:12:21,547 WARNING  * Debugger is active!
+2024-08-27 11:12:21,563 INFO  * Debugger PIN: 333-959-984
+2024-08-27 11:12:23,802 DEBUG The PDF is valid with 1 pages.
+2024-08-27 11:12:23,802 DEBUG The PDF is valid with 1 pages.
+2024-08-27 11:12:23,802 DEBUG Iniciando conversión a imágenes.
+2024-08-27 11:12:24,367 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F575A00740>]
+2024-08-27 11:12:25,068 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F575A6AB70>]
+2024-08-27 11:12:25,068 DEBUG Resultado de la conversión a imágenes: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F575A00740>] - [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F575A6AB70>]
+2024-08-27 11:12:28,911 DEBUG Resultado del procesamiento de imágenes a textos. ['JOLP-3rWY-dfdx-b8dr\n\nPuede verificar este documento en https://sede.mjusticia.gob.es Código Seguro de Verificación SD\n\nABCDEFGHIKLMNPORSTUVWXYZabcdefghijkmnopgrstuvwxyz23456789-:\n\nJuego de caracteres del Código Seguro de Verificación:\n\nGERENCIA TERRITORIAL DE JUSTICIA DE ASTURIAS EN OVIEDO\n\nMINISTERIO\nDE LA PRESIDENCIA, JUSTICIA\nY RELACIONES CON LAS CORTES\n\nREGISTRO CENTRAL DE DELINCUENTES SEXUALES Y\nDE TRATA DE SERES HUMANOS\n\nEn el día de la fecha, consultada la Base de Datos del Registro Central de Delincuentes Sexuales y de Trata\nde Seres Humanos, NO CONSTAN antecedentes sexuales relativos a:\n\nNEL PARAJON SOMOANO , con DOCUMENTO 53508180Z\n\nConforme a lo dispuesto en la Decisión Marco 2009/315/JA1 del Consejo de 26 de febrero, relativa a la\norganización y al contenido del intercambio de información de los registros de antecedentes penales entre los\nEstados miembros, tratándose de ciudadanos que ostenten exclusivamente la nacionalidad española, el presente\ncertificado incluye, en su caso, las condenas impuestas por otros Estados miembros de la Unión Europea, en los\nmismos términos en que tales condenas hayan sido notificadas, sin que exista necesariamente una equiparación\nentre los tipos delictivos del Estado de condena y los tipos delictivos nacionales.\n\nA los efectos de trabajar o realizar actividades con menores, los ciudadanos extranjeros o que, además de la\nespañola, ostenten otra nacionalidad, deberán solicitar a las autoridades de su otro país de nacionalidad una\ncertificación en la que se haga constar, en su caso, sus antecedentes penales por delitos de naturaleza sexual.\n\nEl presente certificado refleja la situación del titular interesado/a en la fecha de su expedición y se emite\nexclusivamente a efectos de ACREDITACIÓN.\n\nOviedo, a 27 de mayo de 2024\n\nPag !de1 Ref: 3170774/2024\n\nDocumento firmado\nelectrónicamente\n'] - ['JOLP-3rWY-dfdx-b8dr\n\nPuede verificar este documento en https://sede.mjusticia.gob.es Código Seguro de Verificación SD\n\nABCDEFGHIKLMNPORSTUVWXYZabcdefghijkmnopgrstuvwxyz23456789-:\n\nJuego de caracteres del Código Seguro de Verificación:\n\nGERENCIA TERRITORIAL DE JUSTICIA DE ASTURIAS EN OVIEDO\n\nMINISTERIO\nDE LA PRESIDENCIA, JUSTICIA\nY RELACIONES CON LAS CORTES\n\nREGISTRO CENTRAL DE DELINCUENTES SEXUALES Y\nDE TRATA DE SERES HUMANOS\n\nEn el día de la fecha, consultada la Base de Datos del Registro Central de Delincuentes Sexuales y de Trata\nde Seres Humanos, NO CONSTAN antecedentes sexuales relativos a:\n\nNEL PARAJON SOMOANO , con DOCUMENTO 53508180Z\n\nConforme a lo dispuesto en la Decisión Marco 2009/315/JA1 del Consejo de 26 de febrero, relativa a la\norganización y al contenido del intercambio de información de los registros de antecedentes penales entre los\nEstados miembros, tratándose de ciudadanos que ostenten exclusivamente la nacionalidad española, el presente\ncertificado incluye, en su caso, las condenas impuestas por otros Estados miembros de la Unión Europea, en los\nmismos términos en que tales condenas hayan sido notificadas, sin que exista necesariamente una equiparación\nentre los tipos delictivos del Estado de condena y los tipos delictivos nacionales.\n\nA los efectos de trabajar o realizar actividades con menores, los ciudadanos extranjeros o que, además de la\nespañola, ostenten otra nacionalidad, deberán solicitar a las autoridades de su otro país de nacionalidad una\ncertificación en la que se haga constar, en su caso, sus antecedentes penales por delitos de naturaleza sexual.\n\nEl presente certificado refleja la situación del titular interesado/a en la fecha de su expedición y se emite\nexclusivamente a efectos de ACREDITACIÓN.\n\nOviedo, a 27 de mayo de 2024\n\nPag !de1 Ref: 3170774/2024\n\nDocumento firmado\nelectrónicamente\n']
+2024-08-27 11:12:28,911 INFO 127.0.0.1 - - [27/Aug/2024 11:12:28] "[35m[1mPOST /analizar_documentos HTTP/1.1[0m" 500 -
+2024-08-27 12:22:16,591 INFO 127.0.0.1 - - [27/Aug/2024 12:22:16] "[33mGET /main.2fe99fa7b919fe9f4d2c.hot-update.json HTTP/1.1[0m" 404 -
+2024-08-27 12:24:06,549 INFO 127.0.0.1 - - [27/Aug/2024 12:24:06] "[31m[1mPOST /extraer_parrafos HTTP/1.1[0m" 400 -
+2024-08-27 12:25:09,322 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:25:09,322 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:25:10,922 INFO 127.0.0.1 - - [27/Aug/2024 12:25:10] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:25:38,928 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:25:38,936 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:25:40,591 INFO 127.0.0.1 - - [27/Aug/2024 12:25:40] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:28:05,861 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:28:06,543 INFO  * Restarting with stat
+2024-08-27 12:28:09,929 WARNING  * Debugger is active!
+2024-08-27 12:28:09,938 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:28:43,217 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:28:43,217 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:28:44,570 INFO 127.0.0.1 - - [27/Aug/2024 12:28:44] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:31:38,426 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:31:38,978 INFO  * Restarting with stat
+2024-08-27 12:31:42,314 WARNING  * Debugger is active!
+2024-08-27 12:31:42,328 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:32:29,834 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:32:30,270 INFO  * Restarting with stat
+2024-08-27 12:32:33,652 WARNING  * Debugger is active!
+2024-08-27 12:32:33,654 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:33:17,431 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:33:18,091 INFO  * Restarting with stat
+2024-08-27 12:33:21,372 WARNING  * Debugger is active!
+2024-08-27 12:33:21,392 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:35:46,880 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:35:46,880 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:35:46,880 INFO 127.0.0.1 - - [27/Aug/2024 12:35:46] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:36:18,546 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 12:36:19,184 INFO  * Restarting with stat
+2024-08-27 12:36:22,592 WARNING  * Debugger is active!
+2024-08-27 12:36:22,603 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:36:22,842 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:36:22,842 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:36:22,842 INFO 127.0.0.1 - - [27/Aug/2024 12:36:22] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:37:12,691 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:37:12,691 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:37:12,691 INFO 127.0.0.1 - - [27/Aug/2024 12:37:12] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:38:51,201 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:38:51,604 INFO  * Restarting with stat
+2024-08-27 12:38:54,397 WARNING  * Debugger is active!
+2024-08-27 12:38:54,405 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:39:09,550 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:39:09,550 DEBUG The PDF is valid with 1 pages.
+2024-08-27 12:39:10,838 INFO 127.0.0.1 - - [27/Aug/2024 12:39:10] "[35m[1mPOST /extraer_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 12:43:56,241 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:43:56,685 INFO  * Restarting with stat
+2024-08-27 12:43:59,921 WARNING  * Debugger is active!
+2024-08-27 12:43:59,929 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:46:21,026 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:46:21,510 INFO  * Restarting with stat
+2024-08-27 12:46:24,625 WARNING  * Debugger is active!
+2024-08-27 12:46:24,641 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:46:58,144 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:46:58,655 INFO  * Restarting with stat
+2024-08-27 12:47:01,757 WARNING  * Debugger is active!
+2024-08-27 12:47:01,765 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:48:02,319 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:48:02,798 INFO  * Restarting with stat
+2024-08-27 12:48:06,102 WARNING  * Debugger is active!
+2024-08-27 12:48:06,110 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:48:39,122 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:48:39,589 INFO  * Restarting with stat
+2024-08-27 12:48:42,019 WARNING  * Debugger is active!
+2024-08-27 12:48:42,027 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:48:47,086 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:48:47,567 INFO  * Restarting with stat
+2024-08-27 12:48:50,807 WARNING  * Debugger is active!
+2024-08-27 12:48:50,823 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:48:53,602 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:48:54,116 INFO  * Restarting with stat
+2024-08-27 12:48:57,534 WARNING  * Debugger is active!
+2024-08-27 12:48:57,550 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:49:59,635 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:50:00,262 INFO  * Restarting with stat
+2024-08-27 12:50:03,498 WARNING  * Debugger is active!
+2024-08-27 12:50:03,514 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:52:36,314 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:52:36,799 INFO  * Restarting with stat
+2024-08-27 12:52:39,501 WARNING  * Debugger is active!
+2024-08-27 12:52:39,509 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:55:15,619 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:55:16,148 INFO  * Restarting with stat
+2024-08-27 12:55:19,388 WARNING  * Debugger is active!
+2024-08-27 12:55:19,396 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:55:35,348 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:55:35,847 INFO  * Restarting with stat
+2024-08-27 12:55:38,476 WARNING  * Debugger is active!
+2024-08-27 12:55:38,484 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:56:33,342 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:56:33,807 INFO  * Restarting with stat
+2024-08-27 12:56:36,345 WARNING  * Debugger is active!
+2024-08-27 12:56:36,353 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:56:40,191 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:56:40,659 INFO  * Restarting with stat
+2024-08-27 12:56:43,820 WARNING  * Debugger is active!
+2024-08-27 12:56:43,828 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:57:57,852 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:57:58,313 INFO  * Restarting with stat
+2024-08-27 12:58:01,521 WARNING  * Debugger is active!
+2024-08-27 12:58:01,542 INFO  * Debugger PIN: 333-959-984
+2024-08-27 12:58:40,318 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 12:58:40,852 INFO  * Restarting with stat
+2024-08-27 12:58:44,192 WARNING  * Debugger is active!
+2024-08-27 12:58:44,200 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:01:24,882 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:01:25,403 INFO  * Restarting with stat
+2024-08-27 13:01:28,733 WARNING  * Debugger is active!
+2024-08-27 13:01:28,741 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:01:42,331 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:01:42,808 INFO  * Restarting with stat
+2024-08-27 13:01:45,485 WARNING  * Debugger is active!
+2024-08-27 13:01:45,494 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:02:36,877 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:02:37,435 INFO  * Restarting with stat
+2024-08-27 13:02:40,728 WARNING  * Debugger is active!
+2024-08-27 13:02:40,736 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:03:03,946 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:03:04,434 INFO  * Restarting with stat
+2024-08-27 13:03:07,557 WARNING  * Debugger is active!
+2024-08-27 13:03:07,573 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:03:50,227 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:03:50,696 INFO  * Restarting with stat
+2024-08-27 13:03:53,313 WARNING  * Debugger is active!
+2024-08-27 13:03:53,321 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:05:13,394 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:05:13,866 INFO  * Restarting with stat
+2024-08-27 13:05:17,114 WARNING  * Debugger is active!
+2024-08-27 13:05:17,122 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:06:15,714 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:06:16,196 INFO  * Restarting with stat
+2024-08-27 13:06:19,464 WARNING  * Debugger is active!
+2024-08-27 13:06:19,472 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:06:33,148 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:06:33,602 INFO  * Restarting with stat
+2024-08-27 13:06:36,838 WARNING  * Debugger is active!
+2024-08-27 13:06:36,846 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:07:11,028 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:07:11,516 INFO  * Restarting with stat
+2024-08-27 13:07:14,428 WARNING  * Debugger is active!
+2024-08-27 13:07:14,436 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:07:44,860 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:07:45,346 INFO  * Restarting with stat
+2024-08-27 13:07:48,810 WARNING  * Debugger is active!
+2024-08-27 13:07:48,818 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:08:32,883 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:08:33,413 INFO  * Restarting with stat
+2024-08-27 13:08:36,503 WARNING  * Debugger is active!
+2024-08-27 13:08:36,519 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:08:38,007 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:08:38,594 INFO  * Restarting with stat
+2024-08-27 13:08:41,735 WARNING  * Debugger is active!
+2024-08-27 13:08:41,743 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:09:35,993 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:09:36,436 INFO  * Restarting with stat
+2024-08-27 13:09:39,044 WARNING  * Debugger is active!
+2024-08-27 13:09:39,052 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:24:59,937 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:25:00,284 INFO  * Restarting with stat
+2024-08-27 13:25:03,421 WARNING  * Debugger is active!
+2024-08-27 13:25:03,429 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:25:13,535 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:25:14,003 INFO  * Restarting with stat
+2024-08-27 13:25:17,249 WARNING  * Debugger is active!
+2024-08-27 13:25:17,258 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:26:17,677 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:26:18,165 INFO  * Restarting with stat
+2024-08-27 13:26:22,527 WARNING  * Debugger is active!
+2024-08-27 13:26:22,545 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:26:38,467 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:26:38,996 INFO  * Restarting with stat
+2024-08-27 13:26:43,317 WARNING  * Debugger is active!
+2024-08-27 13:26:43,334 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:27:04,377 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:27:05,059 INFO  * Restarting with stat
+2024-08-27 13:27:09,577 WARNING  * Debugger is active!
+2024-08-27 13:27:09,593 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:27:35,595 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:27:36,159 INFO  * Restarting with stat
+2024-08-27 13:27:40,376 WARNING  * Debugger is active!
+2024-08-27 13:27:40,392 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:30:05,780 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:30:06,314 INFO  * Restarting with stat
+2024-08-27 13:30:10,507 WARNING  * Debugger is active!
+2024-08-27 13:30:10,524 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:30:32,877 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:30:33,396 INFO  * Restarting with stat
+2024-08-27 13:30:37,836 WARNING  * Debugger is active!
+2024-08-27 13:30:37,844 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:31:13,932 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:31:14,521 INFO  * Restarting with stat
+2024-08-27 13:31:18,839 WARNING  * Debugger is active!
+2024-08-27 13:31:18,855 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:31:42,222 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:31:42,882 INFO  * Restarting with stat
+2024-08-27 13:31:47,305 WARNING  * Debugger is active!
+2024-08-27 13:31:47,321 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:31:55,414 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:31:55,934 INFO  * Restarting with stat
+2024-08-27 13:32:00,027 WARNING  * Debugger is active!
+2024-08-27 13:32:00,043 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:32:15,738 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:32:16,254 INFO  * Restarting with stat
+2024-08-27 13:32:20,468 WARNING  * Debugger is active!
+2024-08-27 13:32:20,485 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:32:24,768 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:32:25,295 INFO  * Restarting with stat
+2024-08-27 13:32:29,426 WARNING  * Debugger is active!
+2024-08-27 13:32:29,434 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:32:48,987 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:32:49,563 INFO  * Restarting with stat
+2024-08-27 13:32:54,041 WARNING  * Debugger is active!
+2024-08-27 13:32:54,058 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:33:45,606 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:33:46,247 INFO  * Restarting with stat
+2024-08-27 13:33:50,602 WARNING  * Debugger is active!
+2024-08-27 13:33:50,618 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:36:32,372 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:36:33,077 INFO  * Restarting with stat
+2024-08-27 13:36:37,428 WARNING  * Debugger is active!
+2024-08-27 13:36:37,444 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:36:48,079 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:36:48,683 INFO  * Restarting with stat
+2024-08-27 13:36:53,208 WARNING  * Debugger is active!
+2024-08-27 13:36:53,224 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:37:03,886 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:37:04,442 INFO  * Restarting with stat
+2024-08-27 13:37:08,802 WARNING  * Debugger is active!
+2024-08-27 13:37:08,810 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:37:32,169 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:37:32,877 INFO  * Restarting with stat
+2024-08-27 13:37:37,067 WARNING  * Debugger is active!
+2024-08-27 13:37:37,075 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:38:15,667 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:38:16,309 INFO  * Restarting with stat
+2024-08-27 13:38:20,615 WARNING  * Debugger is active!
+2024-08-27 13:38:20,632 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:38:35,232 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:38:35,904 INFO  * Restarting with stat
+2024-08-27 13:38:40,307 WARNING  * Debugger is active!
+2024-08-27 13:38:40,323 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:39:04,899 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:39:05,413 INFO  * Restarting with stat
+2024-08-27 13:39:09,776 WARNING  * Debugger is active!
+2024-08-27 13:39:09,792 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:40:19,589 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:40:20,140 INFO  * Restarting with stat
+2024-08-27 13:40:24,508 WARNING  * Debugger is active!
+2024-08-27 13:40:24,524 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:41:32,906 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:41:33,485 INFO  * Restarting with stat
+2024-08-27 13:41:37,826 WARNING  * Debugger is active!
+2024-08-27 13:41:37,842 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:42:01,369 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:42:02,103 INFO  * Restarting with stat
+2024-08-27 13:42:06,363 WARNING  * Debugger is active!
+2024-08-27 13:42:06,380 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:42:33,731 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:42:34,324 INFO  * Restarting with stat
+2024-08-27 13:42:38,824 WARNING  * Debugger is active!
+2024-08-27 13:42:38,839 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:42:41,788 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:42:42,221 INFO  * Restarting with stat
+2024-08-27 13:42:46,525 WARNING  * Debugger is active!
+2024-08-27 13:42:46,533 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:43:18,853 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:43:19,462 INFO  * Restarting with stat
+2024-08-27 13:43:23,944 WARNING  * Debugger is active!
+2024-08-27 13:43:23,961 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:45:13,508 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:45:14,050 INFO  * Restarting with stat
+2024-08-27 13:45:18,417 WARNING  * Debugger is active!
+2024-08-27 13:45:18,428 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:46:27,996 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:46:28,610 INFO  * Restarting with stat
+2024-08-27 13:46:33,066 WARNING  * Debugger is active!
+2024-08-27 13:46:33,077 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:48:13,057 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:48:13,725 INFO  * Restarting with stat
+2024-08-27 13:48:18,088 WARNING  * Debugger is active!
+2024-08-27 13:48:18,105 INFO  * Debugger PIN: 333-959-984
+2024-08-27 13:48:46,737 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 13:48:47,232 INFO  * Restarting with stat
+2024-08-27 13:48:51,656 WARNING  * Debugger is active!
+2024-08-27 13:48:51,674 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:44:19,539 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:44:19,769 INFO  * Restarting with stat
+2024-08-27 15:44:21,600 WARNING  * Debugger is active!
+2024-08-27 15:44:21,608 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:45:56,096 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:45:56,343 INFO  * Restarting with stat
+2024-08-27 15:45:58,300 WARNING  * Debugger is active!
+2024-08-27 15:45:58,306 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:48:11,558 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:48:11,817 INFO  * Restarting with stat
+2024-08-27 15:48:13,643 WARNING  * Debugger is active!
+2024-08-27 15:48:13,650 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:49:08,214 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:49:08,452 INFO  * Restarting with stat
+2024-08-27 15:49:10,265 WARNING  * Debugger is active!
+2024-08-27 15:49:10,271 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:50:39,167 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:50:39,408 INFO  * Restarting with stat
+2024-08-27 15:50:41,234 WARNING  * Debugger is active!
+2024-08-27 15:50:41,240 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:51:29,203 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:51:29,410 INFO  * Restarting with stat
+2024-08-27 15:51:31,315 WARNING  * Debugger is active!
+2024-08-27 15:51:31,322 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:51:45,983 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:51:46,182 INFO  * Restarting with stat
+2024-08-27 15:51:48,146 WARNING  * Debugger is active!
+2024-08-27 15:51:48,153 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:52:17,283 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:52:17,500 INFO  * Restarting with stat
+2024-08-27 15:52:19,382 WARNING  * Debugger is active!
+2024-08-27 15:52:19,389 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:52:20,700 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:52:20,926 INFO  * Restarting with stat
+2024-08-27 15:52:22,756 WARNING  * Debugger is active!
+2024-08-27 15:52:22,763 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:54:27,193 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:54:27,420 INFO  * Restarting with stat
+2024-08-27 15:54:29,304 WARNING  * Debugger is active!
+2024-08-27 15:54:29,310 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:54:50,628 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:54:50,848 INFO  * Restarting with stat
+2024-08-27 15:54:52,676 WARNING  * Debugger is active!
+2024-08-27 15:54:52,682 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:54:55,119 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:54:55,354 INFO  * Restarting with stat
+2024-08-27 15:54:57,197 WARNING  * Debugger is active!
+2024-08-27 15:54:57,203 INFO  * Debugger PIN: 333-959-984
+2024-08-27 15:56:07,382 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 15:56:07,609 INFO  * Restarting with stat
+2024-08-27 15:56:09,519 WARNING  * Debugger is active!
+2024-08-27 15:56:09,525 INFO  * Debugger PIN: 333-959-984
+2024-08-27 16:00:49,995 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 16:00:50,211 INFO  * Restarting with stat
+2024-08-27 16:00:51,995 WARNING  * Debugger is active!
+2024-08-27 16:00:52,001 INFO  * Debugger PIN: 333-959-984
+2024-08-27 16:14:56,048 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 16:14:56,277 INFO  * Restarting with stat
+2024-08-27 16:14:58,124 WARNING  * Debugger is active!
+2024-08-27 16:14:58,131 INFO  * Debugger PIN: 333-959-984
+2024-08-27 16:16:22,594 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 16:16:22,801 INFO  * Restarting with stat
+2024-08-27 16:16:24,590 WARNING  * Debugger is active!
+2024-08-27 16:16:24,597 INFO  * Debugger PIN: 333-959-984
+2024-08-27 16:17:08,063 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 16:17:08,283 INFO  * Restarting with stat
+2024-08-27 16:17:10,047 WARNING  * Debugger is active!
+2024-08-27 16:17:10,053 INFO  * Debugger PIN: 333-959-984
+2024-08-27 16:43:00,274 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 16:43:00,508 INFO  * Restarting with stat
+2024-08-27 16:43:02,347 WARNING  * Debugger is active!
+2024-08-27 16:43:02,355 INFO  * Debugger PIN: 333-959-984
+2024-08-27 16:43:34,745 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 16:43:34,955 INFO  * Restarting with stat
+2024-08-27 16:43:36,818 WARNING  * Debugger is active!
+2024-08-27 16:43:36,826 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:13:11,602 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\ocr_producer.py', reloading
+2024-08-27 17:13:11,839 INFO  * Restarting with stat
+2024-08-27 17:13:13,647 WARNING  * Debugger is active!
+2024-08-27 17:13:13,654 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:14:00,484 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 17:14:00,688 INFO  * Restarting with stat
+2024-08-27 17:14:02,503 WARNING  * Debugger is active!
+2024-08-27 17:14:02,511 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:14:27,140 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 17:14:27,323 INFO  * Restarting with stat
+2024-08-27 17:14:29,166 WARNING  * Debugger is active!
+2024-08-27 17:14:29,174 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:15:39,173 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 17:15:39,403 INFO  * Restarting with stat
+2024-08-27 17:15:41,201 WARNING  * Debugger is active!
+2024-08-27 17:15:41,208 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:16:16,903 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 17:16:17,115 INFO  * Restarting with stat
+2024-08-27 17:16:18,897 WARNING  * Debugger is active!
+2024-08-27 17:16:18,904 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:18:25,612 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-27 17:18:25,852 INFO  * Restarting with stat
+2024-08-27 17:18:27,626 WARNING  * Debugger is active!
+2024-08-27 17:18:27,632 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:20:08,742 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-27 17:20:08,742 INFO [33mPress CTRL+C to quit[0m
+2024-08-27 17:20:08,743 INFO  * Restarting with stat
+2024-08-27 17:20:10,442 WARNING  * Debugger is active!
+2024-08-27 17:20:10,450 INFO  * Debugger PIN: 333-959-984
+2024-08-27 17:22:41,836 INFO 127.0.0.1 - - [27/Aug/2024 17:22:41] "[35m[1mPOST /get_parrafos HTTP/1.1[0m" 500 -
+2024-08-27 18:54:10,541 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-27 18:54:11,006 INFO  * Restarting with stat
+2024-08-27 18:54:17,665 WARNING  * Debugger is active!
+2024-08-27 18:54:17,673 INFO  * Debugger PIN: 333-959-984
+2024-08-28 11:40:08,984 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-28 11:40:08,992 INFO [33mPress CTRL+C to quit[0m
+2024-08-28 11:40:08,992 INFO  * Restarting with stat
+2024-08-28 11:40:11,992 WARNING  * Debugger is active!
+2024-08-28 11:40:12,008 INFO  * Debugger PIN: 333-959-984
+2024-08-28 11:47:54,557 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 11:47:54,849 INFO  * Restarting with stat
+2024-08-28 11:47:57,947 WARNING  * Debugger is active!
+2024-08-28 11:47:57,956 INFO  * Debugger PIN: 333-959-984
+2024-08-28 11:48:27,492 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 11:48:27,784 INFO  * Restarting with stat
+2024-08-28 11:48:30,930 WARNING  * Debugger is active!
+2024-08-28 11:48:30,938 INFO  * Debugger PIN: 333-959-984
+2024-08-28 11:48:45,933 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 11:48:46,250 INFO  * Restarting with stat
+2024-08-28 11:48:49,474 WARNING  * Debugger is active!
+2024-08-28 11:48:49,491 INFO  * Debugger PIN: 333-959-984
+2024-08-28 11:50:06,834 INFO 127.0.0.1 - - [28/Aug/2024 11:50:06] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 11:55:47,547 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 11:55:47,877 INFO  * Restarting with stat
+2024-08-28 11:55:50,935 WARNING  * Debugger is active!
+2024-08-28 11:55:50,951 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:19:44,208 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:19:44,499 INFO  * Restarting with stat
+2024-08-28 12:19:47,584 WARNING  * Debugger is active!
+2024-08-28 12:19:47,592 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:22:32,268 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:22:32,543 INFO  * Restarting with stat
+2024-08-28 12:22:35,712 WARNING  * Debugger is active!
+2024-08-28 12:22:35,720 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:24:44,309 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:24:44,598 INFO  * Restarting with stat
+2024-08-28 12:24:47,835 WARNING  * Debugger is active!
+2024-08-28 12:24:47,846 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:25:16,265 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 12:25:16,532 INFO  * Restarting with stat
+2024-08-28 12:25:19,723 WARNING  * Debugger is active!
+2024-08-28 12:25:19,731 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:25:21,363 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F8BB775730>]
+2024-08-28 12:25:21,939 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F8BB7DEEA0>]
+2024-08-28 12:25:22,047 INFO 127.0.0.1 - - [28/Aug/2024 12:25:22] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 12:29:07,459 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 12:29:07,967 INFO  * Restarting with stat
+2024-08-28 12:29:11,042 WARNING  * Debugger is active!
+2024-08-28 12:29:11,059 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:29:11,903 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F5A8135610>]
+2024-08-28 12:29:12,533 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F5A819BF80>]
+2024-08-28 12:29:12,572 INFO 127.0.0.1 - - [28/Aug/2024 12:29:12] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 12:36:59,982 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:37:00,319 INFO  * Restarting with stat
+2024-08-28 12:37:03,504 WARNING  * Debugger is active!
+2024-08-28 12:37:03,513 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:37:04,366 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x24322E95280>]
+2024-08-28 12:37:04,967 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x24322EFACF0>]
+2024-08-28 12:37:05,008 INFO 127.0.0.1 - - [28/Aug/2024 12:37:05] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 12:38:10,320 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:38:10,666 INFO  * Restarting with stat
+2024-08-28 12:38:13,734 WARNING  * Debugger is active!
+2024-08-28 12:38:13,743 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:38:14,703 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x22F857153D0>]
+2024-08-28 12:38:15,338 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x22F8577ADB0>]
+2024-08-28 12:38:15,338 DEBUG Formato de imagen: <class 'list'>
+2024-08-28 12:38:15,375 INFO 127.0.0.1 - - [28/Aug/2024 12:38:15] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 12:38:48,512 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:38:49,066 INFO  * Restarting with stat
+2024-08-28 12:38:52,297 WARNING  * Debugger is active!
+2024-08-28 12:38:52,305 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:44:30,643 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 12:44:31,091 INFO  * Restarting with stat
+2024-08-28 12:44:34,597 WARNING  * Debugger is active!
+2024-08-28 12:44:34,605 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:44:35,570 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2A982218D10>]
+2024-08-28 12:44:36,164 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2A98227E7B0>]
+2024-08-28 12:44:36,164 DEBUG Formato de imagen: <class 'list'>
+2024-08-28 12:44:36,461 INFO 127.0.0.1 - - [28/Aug/2024 12:44:36] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 12:47:46,694 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:47:46,991 INFO  * Restarting with stat
+2024-08-28 12:47:50,051 WARNING  * Debugger is active!
+2024-08-28 12:47:50,067 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:47:54,569 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2718AD19310>]
+2024-08-28 12:47:55,152 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2718AD7EA50>]
+2024-08-28 12:47:55,152 DEBUG Formato de imagen: <class 'list'>
+2024-08-28 12:47:55,390 DEBUG Formato de doc1_iamge_contours: <class 'tuple'>
+2024-08-28 12:47:55,398 INFO 127.0.0.1 - - [28/Aug/2024 12:47:55] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 12:48:49,544 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:48:49,863 INFO  * Restarting with stat
+2024-08-28 12:48:52,956 WARNING  * Debugger is active!
+2024-08-28 12:48:52,964 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:54:14,055 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:54:14,352 INFO  * Restarting with stat
+2024-08-28 12:54:17,450 WARNING  * Debugger is active!
+2024-08-28 12:54:17,458 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:56:05,918 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:56:06,437 INFO  * Restarting with stat
+2024-08-28 12:56:09,825 WARNING  * Debugger is active!
+2024-08-28 12:56:09,841 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:56:30,858 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:56:31,336 INFO  * Restarting with stat
+2024-08-28 12:56:34,607 WARNING  * Debugger is active!
+2024-08-28 12:56:34,615 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:57:34,138 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:57:34,365 INFO  * Restarting with stat
+2024-08-28 12:57:36,220 WARNING  * Debugger is active!
+2024-08-28 12:57:36,227 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:57:59,873 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:58:00,117 INFO  * Restarting with stat
+2024-08-28 12:58:02,013 WARNING  * Debugger is active!
+2024-08-28 12:58:02,020 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:58:26,765 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 12:58:26,975 INFO  * Restarting with stat
+2024-08-28 12:58:28,850 WARNING  * Debugger is active!
+2024-08-28 12:58:28,858 INFO  * Debugger PIN: 333-959-984
+2024-08-28 12:59:40,534 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2D5717958E0>]
+2024-08-28 12:59:41,025 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2D5717FEC90>]
+2024-08-28 12:59:41,025 DEBUG Formato de imagen: <class 'list'>
+2024-08-28 12:59:41,188 DEBUG Formato de doc1_image_contours: <class 'tuple'>
+2024-08-28 12:59:41,215 INFO 127.0.0.1 - - [28/Aug/2024 12:59:41] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 13:01:00,846 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:01:01,119 INFO  * Restarting with stat
+2024-08-28 13:01:02,971 WARNING  * Debugger is active!
+2024-08-28 13:01:02,978 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:03:38,283 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:03:38,520 INFO  * Restarting with stat
+2024-08-28 13:03:40,458 WARNING  * Debugger is active!
+2024-08-28 13:03:40,465 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:03:42,898 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:03:43,156 INFO  * Restarting with stat
+2024-08-28 13:03:45,020 WARNING  * Debugger is active!
+2024-08-28 13:03:45,028 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:05:01,144 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:05:01,384 INFO  * Restarting with stat
+2024-08-28 13:05:03,224 WARNING  * Debugger is active!
+2024-08-28 13:05:03,232 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:05:26,806 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:05:27,045 INFO  * Restarting with stat
+2024-08-28 13:05:28,896 WARNING  * Debugger is active!
+2024-08-28 13:05:28,902 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:06:08,211 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:06:08,440 INFO  * Restarting with stat
+2024-08-28 13:06:10,318 WARNING  * Debugger is active!
+2024-08-28 13:06:10,325 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:09:21,471 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:09:21,713 INFO  * Restarting with stat
+2024-08-28 13:09:23,658 WARNING  * Debugger is active!
+2024-08-28 13:09:23,665 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:09:32,750 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:09:32,984 INFO  * Restarting with stat
+2024-08-28 13:09:34,766 WARNING  * Debugger is active!
+2024-08-28 13:09:34,773 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:09:57,272 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:09:57,503 INFO  * Restarting with stat
+2024-08-28 13:09:59,398 WARNING  * Debugger is active!
+2024-08-28 13:09:59,405 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:10:55,441 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:10:55,656 INFO  * Restarting with stat
+2024-08-28 13:10:57,485 WARNING  * Debugger is active!
+2024-08-28 13:10:57,493 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:11:17,802 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:11:18,026 INFO  * Restarting with stat
+2024-08-28 13:11:19,869 WARNING  * Debugger is active!
+2024-08-28 13:11:19,876 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:14:44,004 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:14:44,220 INFO  * Restarting with stat
+2024-08-28 13:14:46,026 WARNING  * Debugger is active!
+2024-08-28 13:14:46,032 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:20:55,867 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:20:56,092 INFO  * Restarting with stat
+2024-08-28 13:20:57,984 WARNING  * Debugger is active!
+2024-08-28 13:20:57,991 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:21:31,604 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:21:31,828 INFO  * Restarting with stat
+2024-08-28 13:21:33,729 WARNING  * Debugger is active!
+2024-08-28 13:21:33,736 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:22:16,395 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 13:22:16,636 INFO  * Restarting with stat
+2024-08-28 13:22:18,584 WARNING  * Debugger is active!
+2024-08-28 13:22:18,591 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:22:22,495 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x24C463B0BF0>]
+2024-08-28 13:22:22,979 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x24C463B0C20>]
+2024-08-28 13:22:22,981 INFO 127.0.0.1 - - [28/Aug/2024 13:22:22] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 13:23:54,994 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 13:23:55,256 INFO  * Restarting with stat
+2024-08-28 13:23:57,146 WARNING  * Debugger is active!
+2024-08-28 13:23:57,153 INFO  * Debugger PIN: 333-959-984
+2024-08-28 13:57:39,840 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x267E34119A0>]
+2024-08-28 13:57:40,340 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x267E347E9C0>]
+2024-08-28 13:57:40,342 INFO 127.0.0.1 - - [28/Aug/2024 13:57:40] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 15:57:47,215 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x267E34A0AA0>]
+2024-08-28 15:57:47,860 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x267E34A0620>]
+2024-08-28 15:57:47,863 INFO 127.0.0.1 - - [28/Aug/2024 15:57:47] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:02:09,788 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x267E34A13A0>]
+2024-08-28 16:02:10,400 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x267E34A17C0>]
+2024-08-28 16:02:10,408 INFO 127.0.0.1 - - [28/Aug/2024 16:02:10] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:12:03,801 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:12:04,580 INFO  * Restarting with stat
+2024-08-28 16:12:12,610 WARNING  * Debugger is active!
+2024-08-28 16:12:12,618 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:18:06,852 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x225D42C08F0>]
+2024-08-28 16:18:07,478 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x225D432FAA0>]
+2024-08-28 16:18:07,486 DEBUG dict doc1_contours: {}
+2024-08-28 16:18:07,486 DEBUG dict doc1 positions: {}
+2024-08-28 16:18:07,486 INFO 127.0.0.1 - - [28/Aug/2024 16:18:07] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:19:47,777 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:19:48,283 INFO  * Restarting with stat
+2024-08-28 16:19:51,485 WARNING  * Debugger is active!
+2024-08-28 16:19:51,501 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:20:03,348 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F7ADF10C20>]
+2024-08-28 16:20:03,865 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F7ADF7F980>]
+2024-08-28 16:20:03,873 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1F7ADF10C20>]
+2024-08-28 16:20:03,873 DEBUG dict doc1_contours: {}
+2024-08-28 16:20:03,873 DEBUG dict doc1 positions: {}
+2024-08-28 16:20:03,873 INFO 127.0.0.1 - - [28/Aug/2024 16:20:03] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:21:34,110 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:21:34,585 INFO  * Restarting with stat
+2024-08-28 16:21:37,926 WARNING  * Debugger is active!
+2024-08-28 16:21:37,934 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:21:53,761 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x23409B11460>]
+2024-08-28 16:21:54,412 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x23409B7AF30>]
+2024-08-28 16:21:54,421 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x23409B11460>]
+2024-08-28 16:21:54,500 INFO 127.0.0.1 - - [28/Aug/2024 16:21:54] "[35m[1mPOST /get_pages HTTP/1.1[0m" 500 -
+2024-08-28 16:24:18,536 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 16:24:19,013 INFO  * Restarting with stat
+2024-08-28 16:24:22,321 WARNING  * Debugger is active!
+2024-08-28 16:24:22,329 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:24:33,708 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 16:24:34,191 INFO  * Restarting with stat
+2024-08-28 16:24:36,676 WARNING  * Debugger is active!
+2024-08-28 16:24:36,684 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:24:54,735 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B3B11C0>]
+2024-08-28 16:24:55,334 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B41E510>]
+2024-08-28 16:24:55,334 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B3B11C0>]
+2024-08-28 16:24:55,677 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 16:24:55,677 DEBUG dict doc1 positions: {1: [{'x': 416, 'y': 166, 'width': 439, 'height': 102}]}
+2024-08-28 16:24:55,693 INFO 127.0.0.1 - - [28/Aug/2024 16:24:55] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:26:42,433 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B4480E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B4480B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B448500>]
+2024-08-28 16:26:42,939 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B448470>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B4484D0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B4486E0>]
+2024-08-28 16:26:42,939 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B4480E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B4480B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E39B448500>]
+2024-08-28 16:26:43,773 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 3: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 16:26:43,773 DEBUG dict doc1 positions: {1: [{'x': 228, 'y': 1430, 'width': 1185, 'height': 125}, {'x': 328, 'y': 777, 'width': 1090, 'height': 547}, {'x': 228, 'y': 585, 'width': 1172, 'height': 163}, {'x': 228, 'y': 277, 'width': 1164, 'height': 195}], 2: [{'x': 329, 'y': 1851, 'width': 1059, 'height': 156}, {'x': 329, 'y': 1505, 'width': 1040, 'height': 162}, {'x': 229, 'y': 1197, 'width': 1157, 'height': 124}, {'x': 328, 'y': 850, 'width': 1096, 'height': 317}, {'x': 328, 'y': 195, 'width': 1037, 'height': 163}], 3: [{'x': 228, 'y': 470, 'width': 1180, 'height': 201}, {'x': 328, 'y': 195, 'width': 1070, 'height': 163}]}
+2024-08-28 16:26:43,813 INFO 127.0.0.1 - - [28/Aug/2024 16:26:43] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:27:27,187 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 16:27:27,485 INFO  * Restarting with stat
+2024-08-28 16:27:30,514 WARNING  * Debugger is active!
+2024-08-28 16:27:30,522 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:30:23,710 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:30:24,165 INFO  * Restarting with stat
+2024-08-28 16:30:27,375 WARNING  * Debugger is active!
+2024-08-28 16:30:27,383 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:30:52,162 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:30:52,722 INFO  * Restarting with stat
+2024-08-28 16:30:55,861 WARNING  * Debugger is active!
+2024-08-28 16:30:55,869 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:31:14,768 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:31:15,237 INFO  * Restarting with stat
+2024-08-28 16:31:18,374 WARNING  * Debugger is active!
+2024-08-28 16:31:18,382 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:31:27,266 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:31:27,723 INFO  * Restarting with stat
+2024-08-28 16:31:30,925 WARNING  * Debugger is active!
+2024-08-28 16:31:30,933 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:31:42,015 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 16:31:42,553 INFO  * Restarting with stat
+2024-08-28 16:31:45,822 WARNING  * Debugger is active!
+2024-08-28 16:31:45,830 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:32:02,273 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 16:32:02,751 INFO  * Restarting with stat
+2024-08-28 16:32:06,029 WARNING  * Debugger is active!
+2024-08-28 16:32:06,037 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:32:48,236 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF18B1700>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF08ACB60>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF191EB70>]
+2024-08-28 16:32:48,802 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF191EEA0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF191EDE0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF191FA40>]
+2024-08-28 16:32:48,802 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF18B1700>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF08ACB60>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1AAF191EB70>]
+2024-08-28 16:32:49,470 DEBUG dict doc1_contours: {2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 3: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 16:32:49,470 DEBUG dict doc1 positions: {2: [{'x': 329, 'y': 1742, 'width': 1049, 'height': 163}, {'x': 328, 'y': 1084, 'width': 1082, 'height': 470}, {'x': 328, 'y': 349, 'width': 1095, 'height': 547}, {'x': 229, 'y': 195, 'width': 1139, 'height': 125}], 3: [{'x': 228, 'y': 470, 'width': 1196, 'height': 201}, {'x': 329, 'y': 195, 'width': 1089, 'height': 156}]}
+2024-08-28 16:32:49,495 INFO 127.0.0.1 - - [28/Aug/2024 16:32:49] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 16:33:16,370 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 16:33:16,845 INFO  * Restarting with stat
+2024-08-28 16:33:20,006 WARNING  * Debugger is active!
+2024-08-28 16:33:20,014 INFO  * Debugger PIN: 333-959-984
+2024-08-28 16:33:44,103 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555BA0CB0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555BA0EC0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555BA1580>]
+2024-08-28 16:33:44,634 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555C0BDD0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555C0AE70>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555C0BE00>]
+2024-08-28 16:33:44,634 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555BA0CB0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555BA0EC0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1E555BA1580>]
+2024-08-28 16:33:45,245 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 16:33:45,254 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1742, 'width': 1049, 'height': 163}, {'x': 328, 'y': 1084, 'width': 1082, 'height': 470}, {'x': 328, 'y': 349, 'width': 1095, 'height': 547}, {'x': 229, 'y': 195, 'width': 1139, 'height': 125}], 2: [{'x': 228, 'y': 470, 'width': 1196, 'height': 201}, {'x': 329, 'y': 195, 'width': 1089, 'height': 156}]}
+2024-08-28 16:33:45,280 INFO 127.0.0.1 - - [28/Aug/2024 16:33:45] "POST /get_pages HTTP/1.1" 200 -
+2024-08-28 17:30:13,944 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 17:30:14,509 INFO  * Restarting with stat
+2024-08-28 17:30:16,926 WARNING  * Debugger is active!
+2024-08-28 17:30:16,942 INFO  * Debugger PIN: 333-959-984
+2024-08-28 17:36:59,548 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 17:37:00,061 INFO  * Restarting with stat
+2024-08-28 17:37:02,575 WARNING  * Debugger is active!
+2024-08-28 17:37:02,577 INFO  * Debugger PIN: 333-959-984
+2024-08-28 17:38:26,740 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 17:38:27,005 INFO  * Restarting with stat
+2024-08-28 17:38:29,357 WARNING  * Debugger is active!
+2024-08-28 17:38:29,365 INFO  * Debugger PIN: 333-959-984
+2024-08-28 17:59:48,106 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 17:59:48,551 INFO  * Restarting with stat
+2024-08-28 17:59:51,094 WARNING  * Debugger is active!
+2024-08-28 17:59:51,102 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:16:47,972 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:16:48,206 INFO  * Restarting with stat
+2024-08-28 18:16:50,267 WARNING  * Debugger is active!
+2024-08-28 18:16:50,275 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:18:19,689 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:18:19,928 INFO  * Restarting with stat
+2024-08-28 18:18:21,867 WARNING  * Debugger is active!
+2024-08-28 18:18:21,874 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:19:39,143 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:19:39,376 INFO  * Restarting with stat
+2024-08-28 18:19:41,280 WARNING  * Debugger is active!
+2024-08-28 18:19:41,287 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:20:08,272 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:20:08,513 INFO  * Restarting with stat
+2024-08-28 18:20:10,301 WARNING  * Debugger is active!
+2024-08-28 18:20:10,307 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:21:15,020 INFO 127.0.0.1 - - [28/Aug/2024 18:21:15] "[33mGET /main.9941116aae602421aab5.hot-update.json HTTP/1.1[0m" 404 -
+2024-08-28 18:22:10,213 INFO 127.0.0.1 - - [28/Aug/2024 18:22:10] "[33mGET /main.72f8a6f06475092c84ec.hot-update.json HTTP/1.1[0m" 404 -
+2024-08-28 18:22:24,136 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2AB00740A70>]
+2024-08-28 18:22:24,511 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2AB007AECF0>]
+2024-08-28 18:22:24,511 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2AB00740A70>]
+2024-08-28 18:22:24,511 DEBUG dict doc1_contours: {}
+2024-08-28 18:22:24,512 DEBUG dict doc1 positions: {}
+2024-08-28 18:22:24,514 INFO 127.0.0.1 - - [28/Aug/2024 18:22:24] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-28 18:24:51,441 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 18:24:51,670 INFO  * Restarting with stat
+2024-08-28 18:24:53,523 WARNING  * Debugger is active!
+2024-08-28 18:24:53,530 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:25:04,924 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-28 18:25:05,157 INFO  * Restarting with stat
+2024-08-28 18:25:07,074 WARNING  * Debugger is active!
+2024-08-28 18:25:07,081 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:26:01,391 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x25C3DC61130>]
+2024-08-28 18:26:01,763 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x25C3DCCE9C0>]
+2024-08-28 18:26:01,763 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x25C3DC61130>]
+2024-08-28 18:26:01,763 DEBUG dict doc1_contours: {}
+2024-08-28 18:26:01,763 DEBUG dict doc1 positions: {}
+2024-08-28 18:26:01,765 INFO 127.0.0.1 - - [28/Aug/2024 18:26:01] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-28 18:26:42,000 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:26:42,200 INFO  * Restarting with stat
+2024-08-28 18:26:44,094 WARNING  * Debugger is active!
+2024-08-28 18:26:44,102 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:26:58,862 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:26:59,117 INFO  * Restarting with stat
+2024-08-28 18:27:01,017 WARNING  * Debugger is active!
+2024-08-28 18:27:01,024 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:27:21,297 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:27:21,540 INFO  * Restarting with stat
+2024-08-28 18:27:23,392 WARNING  * Debugger is active!
+2024-08-28 18:27:23,399 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:27:40,366 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:27:40,559 INFO  * Restarting with stat
+2024-08-28 18:27:42,447 WARNING  * Debugger is active!
+2024-08-28 18:27:42,455 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:28:50,685 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:28:50,945 INFO  * Restarting with stat
+2024-08-28 18:28:52,800 WARNING  * Debugger is active!
+2024-08-28 18:28:52,807 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:29:18,311 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A67B4140>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681E5A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681EC60>]
+2024-08-28 18:29:18,612 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681FB00>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681ED20>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681F980>]
+2024-08-28 18:29:18,612 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A67B4140>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681E5A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681EC60>]
+2024-08-28 18:29:18,613 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681FB00>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681ED20>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x217A681F980>]
+2024-08-28 18:29:18,687 DEBUG SELECTE PAGES DOC1: 
+2024-08-28 18:29:18,691 INFO 127.0.0.1 - - [28/Aug/2024 18:29:18] "[35m[1mPOST /get_paragraphs HTTP/1.1[0m" 500 -
+2024-08-28 18:29:51,011 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:29:51,253 INFO  * Restarting with stat
+2024-08-28 18:29:53,112 WARNING  * Debugger is active!
+2024-08-28 18:29:53,119 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:29:56,009 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37BB0FE0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37BB1370>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1EBA0>]
+2024-08-28 18:29:56,311 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1EED0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1EE10>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1FA40>]
+2024-08-28 18:29:56,311 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37BB0FE0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37BB1370>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1EBA0>]
+2024-08-28 18:29:56,313 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1EED0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1EE10>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x28C37C1FA40>]
+2024-08-28 18:29:56,337 DEBUG SELECTE PAGES DOC1: 
+2024-08-28 18:29:56,337 DEBUG SELECTE PAGES DOC2: 
+2024-08-28 18:29:56,563 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 18:29:56,564 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1742, 'width': 1049, 'height': 163}, {'x': 328, 'y': 1084, 'width': 1082, 'height': 470}, {'x': 328, 'y': 349, 'width': 1095, 'height': 547}, {'x': 229, 'y': 195, 'width': 1139, 'height': 125}], 2: [{'x': 228, 'y': 470, 'width': 1196, 'height': 201}, {'x': 329, 'y': 195, 'width': 1089, 'height': 156}]}
+2024-08-28 18:29:56,710 INFO 127.0.0.1 - - [28/Aug/2024 18:29:56] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-28 18:54:34,777 INFO 127.0.0.1 - - [28/Aug/2024 18:54:34] "[33mPOST /process_parrafos HTTP/1.1[0m" 404 -
+2024-08-28 18:56:06,070 INFO 127.0.0.1 - - [28/Aug/2024 18:56:06] "[35m[1mPOST /process_paragraphs HTTP/1.1[0m" 500 -
+2024-08-28 18:56:49,119 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-28 18:56:49,419 INFO  * Restarting with stat
+2024-08-28 18:56:53,639 WARNING  * Debugger is active!
+2024-08-28 18:56:53,646 INFO  * Debugger PIN: 333-959-984
+2024-08-28 18:56:56,396 INFO 127.0.0.1 - - [28/Aug/2024 18:56:56] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:00:42,641 INFO 127.0.0.1 - - [28/Aug/2024 19:00:42] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:01:51,715 INFO 127.0.0.1 - - [28/Aug/2024 19:01:51] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:02:31,612 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F221B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8E7B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8EE70>]
+2024-08-28 19:02:31,920 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8EF30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8EC00>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8F980>]
+2024-08-28 19:02:31,920 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F221B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8E7B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8EE70>]
+2024-08-28 19:02:31,921 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8EF30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8EC00>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A5F8F980>]
+2024-08-28 19:02:32,012 DEBUG SELECTE PAGES DOC1: 
+2024-08-28 19:02:32,013 DEBUG SELECTE PAGES DOC2: 
+2024-08-28 19:02:32,257 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 19:02:32,259 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1742, 'width': 1049, 'height': 163}, {'x': 328, 'y': 1084, 'width': 1082, 'height': 470}, {'x': 328, 'y': 349, 'width': 1095, 'height': 547}, {'x': 229, 'y': 195, 'width': 1139, 'height': 125}], 2: [{'x': 228, 'y': 470, 'width': 1196, 'height': 201}, {'x': 329, 'y': 195, 'width': 1089, 'height': 156}]}
+2024-08-28 19:02:32,406 INFO 127.0.0.1 - - [28/Aug/2024 19:02:32] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:02:40,444 INFO 127.0.0.1 - - [28/Aug/2024 19:02:40] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:04:07,487 INFO 127.0.0.1 - - [28/Aug/2024 19:04:07] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:23:26,568 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3A000>]
+2024-08-28 19:23:26,936 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3A420>]
+2024-08-28 19:23:26,936 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3A000>]
+2024-08-28 19:23:26,937 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3A420>]
+2024-08-28 19:23:27,002 DEBUG dict doc1_contours: {}
+2024-08-28 19:23:27,003 DEBUG dict doc1 positions: {}
+2024-08-28 19:23:27,005 INFO 127.0.0.1 - - [28/Aug/2024 19:23:27] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:23:43,847 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3AEA0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3AED0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3ABD0>]
+2024-08-28 19:23:44,257 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3A1E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3AC00>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3ACF0>]
+2024-08-28 19:23:44,257 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3AEA0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3AED0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3ABD0>]
+2024-08-28 19:23:44,258 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3A1E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3AC00>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x193A7B3ACF0>]
+2024-08-28 19:23:44,278 DEBUG SELECTE PAGES DOC1: 
+2024-08-28 19:23:44,279 DEBUG SELECTE PAGES DOC2: 
+2024-08-28 19:23:44,527 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-28 19:23:44,528 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1742, 'width': 1049, 'height': 163}, {'x': 328, 'y': 1084, 'width': 1082, 'height': 470}, {'x': 328, 'y': 349, 'width': 1095, 'height': 547}, {'x': 229, 'y': 195, 'width': 1139, 'height': 125}], 2: [{'x': 228, 'y': 470, 'width': 1196, 'height': 201}, {'x': 329, 'y': 195, 'width': 1089, 'height': 156}]}
+2024-08-28 19:23:44,671 INFO 127.0.0.1 - - [28/Aug/2024 19:23:44] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-28 19:23:53,874 INFO 127.0.0.1 - - [28/Aug/2024 19:23:53] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 09:40:18,373 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-29 09:40:18,373 INFO [33mPress CTRL+C to quit[0m
+2024-08-29 09:40:18,373 INFO  * Restarting with stat
+2024-08-29 09:40:21,253 WARNING  * Debugger is active!
+2024-08-29 09:40:21,269 INFO  * Debugger PIN: 333-959-984
+2024-08-29 09:40:52,402 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C099825400>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987E4B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987EB70>]
+2024-08-29 09:40:53,034 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987EC30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987F7A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987F800>]
+2024-08-29 09:40:53,042 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C099825400>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987E4B0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987EB70>]
+2024-08-29 09:40:53,042 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987EC30>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987F7A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09987F800>]
+2024-08-29 09:40:53,166 DEBUG SELECTE PAGES DOC1: 
+2024-08-29 09:40:53,166 DEBUG SELECTE PAGES DOC2: 
+2024-08-29 09:40:53,591 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-29 09:40:53,591 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1742, 'width': 1049, 'height': 163}, {'x': 328, 'y': 1084, 'width': 1082, 'height': 470}, {'x': 328, 'y': 349, 'width': 1095, 'height': 547}, {'x': 229, 'y': 195, 'width': 1139, 'height': 125}], 2: [{'x': 228, 'y': 470, 'width': 1196, 'height': 201}, {'x': 329, 'y': 195, 'width': 1089, 'height': 156}]}
+2024-08-29 09:40:53,806 INFO 127.0.0.1 - - [29/Aug/2024 09:40:53] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-29 09:41:03,401 INFO 127.0.0.1 - - [29/Aug/2024 09:41:03] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 09:46:42,425 INFO 127.0.0.1 - - [29/Aug/2024 09:46:42] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 09:59:29,004 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B4527E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452A50>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452AE0>]
+2024-08-29 09:59:29,481 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452540>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B4528A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452C00>]
+2024-08-29 09:59:29,481 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B4527E0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452A50>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452AE0>]
+2024-08-29 09:59:29,481 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452540>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B4528A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B452C00>]
+2024-08-29 09:59:29,505 DEBUG SELECTE PAGES DOC1: 
+2024-08-29 09:59:29,505 DEBUG SELECTE PAGES DOC2: 
+2024-08-29 09:59:29,665 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-29 09:59:29,673 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1851, 'width': 1059, 'height': 156}, {'x': 329, 'y': 1505, 'width': 1040, 'height': 162}, {'x': 229, 'y': 1197, 'width': 1157, 'height': 124}, {'x': 328, 'y': 850, 'width': 1096, 'height': 317}, {'x': 229, 'y': 735, 'width': 1172, 'height': 86}, {'x': 228, 'y': 542, 'width': 1169, 'height': 86}, {'x': 328, 'y': 195, 'width': 1037, 'height': 163}]}
+2024-08-29 09:59:29,809 INFO 127.0.0.1 - - [29/Aug/2024 09:59:29] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-29 09:59:59,913 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B450DD0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B450C80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B450FB0>]
+2024-08-29 10:00:00,398 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B4522A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B451250>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B451BB0>]
+2024-08-29 10:00:00,398 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B450DD0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B450C80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B450FB0>]
+2024-08-29 10:00:00,398 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B4522A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B451250>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x1C09B451BB0>]
+2024-08-29 10:00:00,422 DEBUG SELECTE PAGES DOC1: 
+2024-08-29 10:00:00,422 DEBUG SELECTE PAGES DOC2: 
+2024-08-29 10:00:00,744 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-29 10:00:00,752 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1851, 'width': 1059, 'height': 156}, {'x': 329, 'y': 1505, 'width': 1040, 'height': 162}, {'x': 229, 'y': 1197, 'width': 1157, 'height': 124}, {'x': 328, 'y': 850, 'width': 1096, 'height': 317}, {'x': 229, 'y': 735, 'width': 1172, 'height': 86}, {'x': 228, 'y': 542, 'width': 1169, 'height': 86}, {'x': 328, 'y': 195, 'width': 1037, 'height': 163}], 2: [{'x': 228, 'y': 470, 'width': 1180, 'height': 201}, {'x': 328, 'y': 195, 'width': 1070, 'height': 163}]}
+2024-08-29 10:00:00,962 INFO 127.0.0.1 - - [29/Aug/2024 10:00:00] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:00:12,640 INFO 127.0.0.1 - - [29/Aug/2024 10:00:12] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:01:12,156 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:01:12,736 INFO  * Restarting with stat
+2024-08-29 10:01:19,298 WARNING  * Debugger is active!
+2024-08-29 10:01:19,306 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:01:35,527 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:01:36,125 INFO  * Restarting with stat
+2024-08-29 10:01:39,135 WARNING  * Debugger is active!
+2024-08-29 10:01:39,143 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:01:50,533 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A316A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C937A293A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9EB10>]
+2024-08-29 10:01:50,988 DEBUG Successfully converted PDF to images: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9EE40>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9ED80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9FA40>]
+2024-08-29 10:01:50,988 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A316A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C937A293A0>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9EB10>]
+2024-08-29 10:01:50,988 DEBUG IMAGES: [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9EE40>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9ED80>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=1654x2339 at 0x2C938A9FA40>]
+2024-08-29 10:01:51,041 DEBUG SELECTE PAGES DOC1: 
+2024-08-29 10:01:51,041 DEBUG SELECTE PAGES DOC2: 
+2024-08-29 10:01:51,343 DEBUG dict doc1_contours: {1: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8), 2: array([[[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)}
+2024-08-29 10:01:51,343 DEBUG dict doc1 positions: {1: [{'x': 329, 'y': 1851, 'width': 1059, 'height': 156}, {'x': 329, 'y': 1505, 'width': 1040, 'height': 162}, {'x': 229, 'y': 1197, 'width': 1157, 'height': 124}, {'x': 328, 'y': 850, 'width': 1096, 'height': 317}, {'x': 229, 'y': 735, 'width': 1172, 'height': 86}, {'x': 228, 'y': 542, 'width': 1169, 'height': 86}, {'x': 328, 'y': 195, 'width': 1037, 'height': 163}], 2: [{'x': 228, 'y': 470, 'width': 1180, 'height': 201}, {'x': 328, 'y': 195, 'width': 1070, 'height': 163}]}
+2024-08-29 10:01:51,516 INFO 127.0.0.1 - - [29/Aug/2024 10:01:51] "POST /get_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:02:01,148 DEBUG DATA: {'selected_paragraphs': {'doc1': ['1-0', '2-0'], 'doc2': ['1-0', '2-0']}}
+2024-08-29 10:02:01,148 DEBUG DATA TYPE: <class 'dict'>
+2024-08-29 10:02:01,148 INFO 127.0.0.1 - - [29/Aug/2024 10:02:01] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:08:37,303 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:08:37,928 INFO  * Restarting with stat
+2024-08-29 10:08:41,030 WARNING  * Debugger is active!
+2024-08-29 10:08:41,038 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:08:56,097 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:08:56,382 INFO  * Restarting with stat
+2024-08-29 10:08:59,458 WARNING  * Debugger is active!
+2024-08-29 10:08:59,466 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:09:31,192 DEBUG DATA: {'selected_paragraphs': {'doc1': ['1-0', '1-1'], 'doc2': ['2-0', '2-1']}}
+2024-08-29 10:09:31,192 DEBUG DATA TYPE: <class 'dict'>
+2024-08-29 10:09:31,192 INFO 127.0.0.1 - - [29/Aug/2024 10:09:31] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:09:31,192 DEBUG DATA: {'selected_paragraphs': {'doc1': ['1-0', '1-1'], 'doc2': ['2-0', '2-1']}}
+2024-08-29 10:09:31,192 DEBUG DATA TYPE: <class 'dict'>
+2024-08-29 10:09:31,200 INFO 127.0.0.1 - - [29/Aug/2024 10:09:31] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:12:38,183 DEBUG DATA: {'selected_paragraphs': {'doc1': ['1-0', '1-1'], 'doc2': ['2-0', '2-1']}}
+2024-08-29 10:12:38,183 DEBUG DATA TYPE: <class 'dict'>
+2024-08-29 10:12:38,183 INFO 127.0.0.1 - - [29/Aug/2024 10:12:38] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:13:58,184 DEBUG DATA: {'selected_paragraphs': {'doc1': ['1-0', '1-1'], 'doc2': ['2-0', '2-1']}}
+2024-08-29 10:13:58,184 DEBUG DATA TYPE: <class 'dict'>
+2024-08-29 10:13:58,184 INFO 127.0.0.1 - - [29/Aug/2024 10:13:58] "POST /process_paragraphs HTTP/1.1" 200 -
+2024-08-29 10:14:58,293 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:14:58,772 INFO  * Restarting with stat
+2024-08-29 10:15:01,442 WARNING  * Debugger is active!
+2024-08-29 10:15:01,450 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:15:25,943 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:15:26,418 INFO  * Restarting with stat
+2024-08-29 10:15:28,924 WARNING  * Debugger is active!
+2024-08-29 10:15:28,932 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:15:37,641 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:15:38,166 INFO  * Restarting with stat
+2024-08-29 10:15:41,339 WARNING  * Debugger is active!
+2024-08-29 10:15:41,355 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:16:14,947 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:16:15,475 INFO  * Restarting with stat
+2024-08-29 10:16:18,685 WARNING  * Debugger is active!
+2024-08-29 10:16:18,704 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:16:41,304 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:16:41,826 INFO  * Restarting with stat
+2024-08-29 10:16:44,988 WARNING  * Debugger is active!
+2024-08-29 10:16:44,999 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:17:10,033 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:17:10,470 INFO  * Restarting with stat
+2024-08-29 10:17:13,673 WARNING  * Debugger is active!
+2024-08-29 10:17:13,681 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:17:39,317 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:17:39,771 INFO  * Restarting with stat
+2024-08-29 10:17:43,042 WARNING  * Debugger is active!
+2024-08-29 10:17:43,058 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:18:08,094 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:18:08,601 INFO  * Restarting with stat
+2024-08-29 10:18:11,798 WARNING  * Debugger is active!
+2024-08-29 10:18:11,806 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:18:24,470 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:18:25,061 INFO  * Restarting with stat
+2024-08-29 10:18:28,155 WARNING  * Debugger is active!
+2024-08-29 10:18:28,163 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:18:37,169 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\process_pdf\\process_to_images.py', reloading
+2024-08-29 10:18:37,638 INFO  * Restarting with stat
+2024-08-29 10:18:41,025 WARNING  * Debugger is active!
+2024-08-29 10:18:41,041 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:20:14,479 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:20:15,041 INFO  * Restarting with stat
+2024-08-29 10:20:18,236 WARNING  * Debugger is active!
+2024-08-29 10:20:18,252 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:21:07,544 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:21:07,995 INFO  * Restarting with stat
+2024-08-29 10:21:11,149 WARNING  * Debugger is active!
+2024-08-29 10:21:11,165 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:29:31,488 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:29:31,911 INFO  * Restarting with stat
+2024-08-29 10:29:34,483 WARNING  * Debugger is active!
+2024-08-29 10:29:34,491 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:29:45,666 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:29:46,176 INFO  * Restarting with stat
+2024-08-29 10:29:48,780 WARNING  * Debugger is active!
+2024-08-29 10:29:48,788 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:30:27,690 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:30:28,227 INFO  * Restarting with stat
+2024-08-29 10:30:31,291 WARNING  * Debugger is active!
+2024-08-29 10:30:31,307 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:30:54,846 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:30:55,348 INFO  * Restarting with stat
+2024-08-29 10:30:58,549 WARNING  * Debugger is active!
+2024-08-29 10:30:58,557 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:31:07,467 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:31:08,047 INFO  * Restarting with stat
+2024-08-29 10:31:11,139 WARNING  * Debugger is active!
+2024-08-29 10:31:11,147 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:31:34,942 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:31:35,513 INFO  * Restarting with stat
+2024-08-29 10:31:38,722 WARNING  * Debugger is active!
+2024-08-29 10:31:38,732 INFO  * Debugger PIN: 333-959-984
+2024-08-29 10:31:53,645 INFO  * Detected change in 'C:\\Users\\Nel\\Desktop\\koinsys\\ocr_pdf\\cliente\\routes.py', reloading
+2024-08-29 10:31:54,172 INFO  * Restarting with stat

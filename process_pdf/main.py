@@ -1,6 +1,5 @@
 from process_pdf.pdf_converter import PDFConverter
 from process_pdf.ocr_producer import OCRProducer
-from process_pdf.analyze_text import AnalyzeText
 from process_pdf.tokenizer import Tokenizer
 from process_pdf.stemmer import Stemmer
 from process_pdf.lemmatizer import Lemmatizer
