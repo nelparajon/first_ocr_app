@@ -54,7 +54,7 @@ from setup_nltk import setup_nltk
 
 class Tokenizer:
     def __init__(self):
-        self.stop_words = set(stopwords.words('english'))  # Usar un set para mejorar la eficiencia en la búsqueda, no admite duplicados
+        self.stop_words = set(stopwords.words('english'))  #Usar un set para mejorar la eficiencia en la búsqueda, no admite duplicados
 
     def tokenize_texts(self, texts):
         try:
@@ -64,18 +64,16 @@ class Tokenizer:
 
             tokenized_texts = []  # Lista para almacenar todas las palabras tokenizadas
 
-            
             cleaned_text = self.clean_text(texts)
 
             if not cleaned_text:
                 raise ValueError("El texto no está limpio de signos de puntuación, caracteres especiales y mayúsculas. Tokenización fallida.")
 
-            words = word_tokenize(cleaned_text)  # Tokenizar el texto limpio
+            words = word_tokenize(cleaned_text)  #Tokenizar el texto
             filtered_words = self.filter_words(words)
 
-            tokenized_texts.extend(filtered_words)  # Añadir las palabras filtradas a la lista principal
+            tokenized_texts.extend(filtered_words)  #Añadir las palabras filtradas a la lista principal
 
-            
             print("Tokenización completada con éxito")
             return tokenized_texts
 
@@ -85,6 +83,37 @@ class Tokenizer:
         except Exception as e:
             print(f"Error inesperado en la tokenización: {e}")
             raise  # Volver a lanzar la excepción
+
+    def get_tokens(self, texts):
+        try:
+            if not isinstance(texts, list):
+                    raise TypeError(f"Se esperaba una cadena, pero se recibió {type(texts).__name__}")
+            tokenized_texts = []
+            for t in texts:
+               
+                if not isinstance(t, str):
+                    raise TypeError(f"Se esperaba una cadena dentro de la lista, pero se recibió {type(t).__name__}")
+
+                cleaned_text = self.clean_text(t)
+
+                if not cleaned_text:
+                    raise ValueError("El texto no está limpio de signos de puntuación, caracteres especiales y mayúsculas. Tokenización fallida.")
+
+                words = word_tokenize(cleaned_text)  # Tokenizar el texto limpio
+                filtered_words = self.filter_words(words)
+
+                tokenized_texts.append(filtered_words)  
+
+            print("Tokenización completada con éxito")
+            return tokenized_texts
+
+        except (TypeError, ValueError, RuntimeError) as e:
+            print(f"Error: {e}")  # Manejar errores específicos
+            raise  # Volver a lanzar la excepción
+        except Exception as e:
+            print(f"Error inesperado en la tokenización: {e}")
+            raise  # Volver a lanzar la excepción
+
 
     def filter_words(self, words):
         filtered_words = []

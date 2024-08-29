@@ -58,6 +58,36 @@ class Lemmatizer:
         except Exception as e:
             return print(f"Error inesperado en la lematización: {e}")
     
+    def lem_Words(self, token_texts):
+        try:
+               
+            if not isinstance(token_texts, list):
+                return TypeError(f"Los tokens deben de ser una lista de cadenas, se recibió {type(token_texts).__name__}")
+            
+            if not all(isinstance(tokens, list) and all(isinstance(t, str) for t in tokens) for tokens in token_texts):
+                raise ValueError("Todos los elementos de la lista deben ser listas de cadenas de texto.")
+            lemmatized_tokens = []
+            for tokens in token_texts:
+                lems_list = [] 
+                pos_tagged_tokens = pos_tag(tokens)
+                for word, tag in pos_tagged_tokens:
+                    wordnet_pos = self.get_wordnet_pos(tag)
+                    lem = self.lemmatizer.lemmatize(word, wordnet_pos)
+                    lems_list.append(lem)
+                lemmatized_tokens.append(lems_list)
+                print("LEMATIZACION REALIZADA CON ÉXITO")
+                
+            return lemmatized_tokens
+        except TypeError as te:
+            return print(f"TypeError: {te}")
+        except ValueError as ve:
+            return print(f"ValueError: {ve}")
+        except Exception as e:
+            return print(f"Error inesperado en la lematización: {e}")
+
+
+
+    
 
 
 
