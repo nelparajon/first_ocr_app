@@ -1,6 +1,8 @@
 import logging
+import numpy as np
 import pytesseract
 import os
+from PIL import Image
 
 #Clase que usa pytesseract para OCR
 class OCRProducer:
@@ -47,6 +49,20 @@ class OCRProducer:
                 result_text.append("")
 
         return result_text
+    
+    def img_to_txt(self, image):
+        # Verificar si la imagen es una matriz NumPy (por ejemplo, obtenida de OpenCV)
+        if not isinstance(image, np.ndarray):
+            raise TypeError("La imagen debe estar en formato NumPy para el procesamiento")
+        
+        # Aplicar OCR usando pytesseract directamente en la imagen NumPy
+        img_txt = pytesseract.image_to_string(image)
+        
+        return img_txt
+
+
+    
+        
     
     
 
