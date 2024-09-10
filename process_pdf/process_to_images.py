@@ -28,6 +28,7 @@ class ProcessToImages:
         
         print(images)
         return images
+    
     #para pruebas
     def convert_complete_pdf_to_image(self, file):
         imgs = convert_from_bytes(file)
