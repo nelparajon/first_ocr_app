@@ -2,7 +2,9 @@ import os
 import sys
 import cv2
 import numpy as np
+
 import pytesseract
+
 from pdf2image import convert_from_bytes, convert_from_path
 from PIL import Image
 
@@ -11,7 +13,7 @@ from process_pdf.ocr_producer import OCRProducer
 from cliente.encoder import Encoder
 
 class ProcessToImages:
-    
+
     def __init__(self, output_dir='./output_images'):
         self.output_dir = output_dir
         if not os.path.exists(self.output_dir):
@@ -42,11 +44,14 @@ class ProcessToImages:
             image = np.array(image)
         cv2.imwrite(os.path.join(self.output_dir, f'{name}.png'), image)
 
+
     def save_images(self, images):
         for i, image in enumerate(images.items()):
             if not isinstance(image, np.ndarray):
                 image = np.array(image)
             cv2.imwrite(os.path.join(self.output_dir, f'{i}'))
+
+
 
     #se convierte en un array numpy para poder escalar a grises
     def image_to_nparray(self, image):
@@ -70,7 +75,7 @@ class ProcessToImages:
         #verificamos si la imagen es valida, es decir, no es none o no tiene canales RGB
         if img is None or img.size == 0:
             raise ValueError("La imagen está vacía o es None, no se puede convertir a escala de grises.")
-        #verificamos cuantos canales tiene y la convertimos a escala de grises (!=2) cuando sea necesario 
+
         if len(img.shape) == 3:
             if img.shape[2] == 4:
                 img = cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
@@ -85,6 +90,7 @@ class ProcessToImages:
 
     #threshold otsu automatico
     def thresh_otsu(self, image):
+
         try:
             if image is None:
                 raise ValueError("La imagen proporcionada es None.")
@@ -178,6 +184,22 @@ class ProcessToImages:
         except Exception as ex:
             print(f"Ocurrió un error inesperado durante el desenfoque de la imagen: {ex}")
             raise
+
+    
+    #invierte el binario de la imagen
+    def invert_image(self, image):
+        inverted_image = cv2.bitwise_not(image)
+        return inverted_image
+    
+    #comprueba los contornos
+    def search_contours(self, image):
+        contours, _ = cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        return contours
+    #añade blur a la imagen para procesarla
+    def blur_image(self, image):
+        img_gray = cv2.GaussianBlur(image, (7, 7), 0)
+        return img_gray
+
     
     def kernel_image(self, image):
         img_k = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
@@ -241,8 +263,6 @@ class ProcessToImages:
                 print(f"Contorno descartado por no estar en la zona central.")
 
         return valid_contours
-    
-    
 
     #funcion para añadir contornos a la imagen del documento
     #retorna la imagen además de las posiciones de los contornos para su posterior uso (quizás sea mejor separar ambas funcionalidades)
@@ -279,6 +299,7 @@ class ProcessToImages:
                 print(f"No se encontraron contornos válidos en la página {page_num}.")
 
         return images_with_contours, contours_positions
+
 
     
     #hacemos un filtrado de los contornos para descartar cuáles son títulos y cuáles no
@@ -477,3 +498,4 @@ if __name__ == '__main__':
     images, titulos = pti.extraer_titulos(images)
     titulos_y_parrafos_images = pti.extraer_texto_titulos(images, titulos)
     print(titulos_y_parrafos_images)
+

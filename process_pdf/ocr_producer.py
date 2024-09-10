@@ -50,6 +50,7 @@ class OCRProducer:
 
         return result_text
     
+<<<<<<< HEAD
     def img_to_txt(self, image):
         # Verificar si la imagen es una matriz NumPy (por ejemplo, obtenida de OpenCV)
         if not isinstance(image, np.ndarray):
@@ -64,6 +65,8 @@ class OCRProducer:
     
         
     
+=======
+>>>>>>> 089649fbbfb88d98f084186113935d3d564d5157
     
 
 
