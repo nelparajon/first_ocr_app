@@ -51,15 +51,53 @@ class OCRProducer:
         return result_text
     
 
-    def img_to_txt(self, image):
-        # Verificar si la imagen es una matriz NumPy (por ejemplo, obtenida de OpenCV)
-        if not isinstance(image, np.ndarray):
-            raise TypeError("La imagen debe estar en formato NumPy para el procesamiento")
+    def ocr_to_img(self, image):
+        """
+        Aplica OCR con pytesseract a una imagen en formato NumPy y devuelve el texto extraído.
         
-        # Aplicar OCR usando pytesseract directamente en la imagen NumPy
-        img_txt = pytesseract.image_to_string(image)
+        Args:
+            image: Imagen en formato NumPy array o PIL.
         
-        return img_txt
+        Returns:
+            Texto extraído tras aplicar OCR.
+        
+        Raises:
+            TypeError: Si la imagen no está en formato NumPy array.
+            ValueError: Si la imagen está vacía o no es válida para el procesamiento de OCR.
+            TesseractError: Si ocurre un error en el procesamiento de pytesseract.
+        """
+        try:
+            # Verificar si la imagen es un NumPy array
+            if not isinstance(image, (np.ndarray, Image.Image)):
+                # Si la imagen no es ni NumPy array ni PIL Image, lanzar una excepción
+                raise TypeError("La imagen debe estar en formato NumPy array o PIL Image para el procesamiento.")
+
+            # Aplicar OCR usando pytesseract
+            img_txt = pytesseract.image_to_string(image)
+
+            # Verificar si el texto es vacío o inválido
+            if not img_txt:
+                raise ValueError(f"No se pudo extraer texto de la imagen. Verifique la calidad de la imagen o el formato.")
+
+            return img_txt.strip()
+
+        except TypeError as te:
+            print(f"Error de tipo: {str(te)}")
+            raise
+
+        except ValueError as ve:
+            print(f"Error de valor: {str(ve)}")
+            raise
+
+        except pytesseract.TesseractError as te:
+            print(f"Error de Tesseract: {str(te)}")
+            raise
+
+        except Exception as e:
+            print(f"Error inesperado: {str(e)}")
+            raise
+
+    
 
     
 
