@@ -164,6 +164,8 @@ class ProcessToImages:
             cv2.error: Si ocurre un error con OpenCV durante la conversión.
         """
         try:
+            if not isinstance(image, (np.ndarray, Image.Image)):
+                raise TypeError("La imagen no está en un formato soportado. Debe ser un NumPy array o una imagen de PIL.")
             # Convertir la imagen a NumPy array si es necesario
             img = self.image_to_nparray(image)
             
@@ -221,13 +223,22 @@ class ProcessToImages:
             Exception: Para cualquier otro error inesperado.
         """
         try:
+            # Verificar si la imagen es None
             if image is None:
                 raise ValueError("La imagen proporcionada es None.")
-            if not isinstance(image, (np.ndarray,)):
+            
+            # Verificar si la imagen es un array de NumPy
+            if not isinstance(image, np.ndarray):
                 raise TypeError("El tipo de dato de la imagen no es válido. Se esperaba un numpy.ndarray.")
             
+            # Verificar si la imagen está vacía
+            if image.size == 0:
+                raise ValueError("La imagen está vacía.")
+            
+            # Aplicar umbralización de Otsu
             _, img_otsu = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
             return img_otsu
+
         except cv2.error as e:
             print(f"Error de OpenCV durante la umbralización: {e}")
             raise
@@ -240,6 +251,7 @@ class ProcessToImages:
         except Exception as ex:
             print(f"Ocurrió un error inesperado: {ex}")
             raise
+
     
     #invierte el binario de la imagen
     def invert_image(self, image):
@@ -258,24 +270,27 @@ class ProcessToImages:
             cv2.error: Si ocurre un error con OpenCV durante el proceso de inversión.
             Exception: Para cualquier otro error inesperado.
         """
+        
         try:
             if image is None:
                 raise ValueError("No existe ninguna imagen para invertir su binario")
             if not isinstance(image, (np.ndarray,)):
                 raise TypeError("El tipo de dato de la imagen no es válido. Se esperaba un numpy.ndarray.")
+            if image.size == 0:
+                raise ValueError("La imagen está vacía.")
+            
             inverted_image = cv2.bitwise_not(image)
             return inverted_image
+
         except cv2.error as e:
             print(f"error de opencv durante el proceso de inversión del binario de la imagen: {e}")
-            raise
-        except ValueError as ve:
-            print(f"Valor incorrecto durante el proceso de inversión del binario de la imagen:{ve}")
             raise
         except TypeError as te:
             print(f"Tipo de dato incorrecto durante el proceso de inversión del binario de la imagen:{te}")
             raise
         except Exception as ex:
             print(f"Error inesperado durante el proceso de inversión del binario de la imagen: {ex}")
+            raise
     
     #comprueba los contornos
     def search_contours(self, image):
@@ -317,6 +332,7 @@ class ProcessToImages:
         except Exception as ex:
             print(f"Ocurrió un error durante la busqueda de contornos: {ex}")
             raise
+
     #añade blur a la imagen para procesarla
     def blur_image(self, image):
         """
@@ -531,6 +547,9 @@ class ProcessToImages:
             Exception: Para cualquier otro error inesperado.
         """
         try:
+            if not images:
+                raise ValueError("El diccionario de imágenes no puede estar vacío")
+            
             images_with_contours = {}
             contours_positions = {}
 
@@ -642,7 +661,6 @@ class ProcessToImages:
             else:
                 print(f"Contorno descartado por no cumplir con las medidas relativas (w={w}, h={h}).")
                 
-        
         return valid_titles
     
     def extraer_titulos(self, images):
@@ -666,6 +684,8 @@ class ProcessToImages:
             Exception: Para cualquier otro error inesperado.
         """
         try:
+            if not images:
+                raise ValueError("El diccionario de imágenes está vacío.")
             image_with_titles = {}
             titles_position = {}
 
@@ -755,6 +775,8 @@ class ProcessToImages:
             Exception: Para cualquier otro error inesperado.
         """
         try:
+            if not images:
+                raise ValueError("El diccionario de imágenes está vacío.")
             print("Procesando títulos en las imágenes...")
             images_with_titles, titles_position = self.extraer_titulos(images)
 
@@ -763,7 +785,7 @@ class ProcessToImages:
 
             for page_num, image_with_paragraphs in images_with_paragraphs.items():
                 image_name = f'pagina_{page_num}_procesada'
-                self.save_single_image(image_with_paragraphs, image_name)
+                
 
             return images_with_paragraphs, titles_position, paragraphs_position
 
