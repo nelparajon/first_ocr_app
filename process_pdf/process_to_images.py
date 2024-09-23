@@ -65,24 +65,6 @@ class ProcessToImages:
             print(f"Ha ocurrido un error inesperado: {e}")
             raise
 
-    
-    #para pruebas
-    def convert_complete_pdf_to_image(self, file):
-        """ 
-        Convierte un documento PDF en formato de bytes en un diccionario de imágenes
-        Args:
-            file(bytes): documento PDF en formato bytes
-        Return:
-            dict: diccionario donde las claves son el número de página y los valores son las imágenes correspondientes.
-        """
-        
-        imgs = convert_from_bytes(file)
-        images = {}
-        for i,img in enumerate(imgs):
-            images[i + 1] = img
-        
-        print(images)
-        return images
 
     #pruebas para las imagenes de los parrafos
     def save_single_image(self, image, name):
@@ -129,7 +111,6 @@ class ProcessToImages:
         except Exception as e:
             print(f"Ha ocurrido un error inesperado al guardar la imagen: {str(e)}")
             raise
-
 
 
     #se convierte en un array numpy para poder escalar a grises
@@ -251,8 +232,7 @@ class ProcessToImages:
         except Exception as ex:
             print(f"Ocurrió un error inesperado: {ex}")
             raise
-
-    
+   
     #invierte el binario de la imagen
     def invert_image(self, image):
         """
@@ -374,8 +354,7 @@ class ProcessToImages:
         except Exception as ex:
             print(f"Ocurrió un error inesperado durante el desenfoque de la imagen: {ex}")
             raise
-
-    
+ 
     def kernel_image(self, image):
         """
         Genera un kernel de convolución en forma de rectángulo para operaciones morfológicas.
@@ -452,7 +431,162 @@ class ProcessToImages:
             print(f"Error inesperado durante la dilatación: {ex}")
             raise
     
-    
+    def correct_illumination(self, image):
+        """
+        Corrige las variaciones de iluminación en la imagen utilizando la técnica de sustracción de fondo.
+
+        Args:
+            image (np.ndarray): Imagen en escala de grises.
+
+        Returns:
+            np.ndarray: Imagen con la iluminación corregida.
+        """
+        try:
+            # Aplicar filtro morfológico para obtener la imagen de fondo
+            kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (15, 15))
+            background = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
+
+            # Restar el fondo de la imagen original
+            corrected_image = cv2.subtract(background, image)
+            corrected_image = cv2.normalize(corrected_image, None, 0, 255, cv2.NORM_MINMAX)
+            return corrected_image
+
+        except Exception as e:
+            print(f"Error al corregir la iluminación: {e}")
+            raise
+
+    def adaptive_threshold(self, image):
+        """
+        Aplica umbralización que se adapta a la imagen proporcionada
+
+        Args:
+            image (np.ndarray): Imagen en escala de grises.
+
+        Returns:
+            np.ndarray: Imagen binarizada usando umbralización adaptativa.
+        """
+        try:
+            adaptive_thresh = cv2.adaptiveThreshold(
+                image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 15, 8
+            )
+            return adaptive_thresh
+
+        except Exception as e:
+            print(f"Error al aplicar umbralización adaptativa: {e}")
+            raise
+
+    def correccion_inclinacion(self, image):
+        """
+        Corrige la inclinación de la imagen utilizando.
+
+        Args:
+            image (np.ndarray): Imagen binarizada.
+
+        Returns:
+            np.ndarray: Imagen corregida sin inclinación.
+        """
+        try:
+            coords = np.column_stack(np.where(image > 0))
+            angle = cv2.minAreaRect(coords)[-1]
+            if angle < -45:
+                angle = -(90 + angle)
+            else:
+                angle = -angle
+
+            (h, w) = image.shape[:2]
+            center = (w // 2, h // 2)
+            M = cv2.getRotationMatrix2D(center, angle, 1.0)
+            rotated = cv2.warpAffine(image, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+            print(f"Ángulo de rotación: {angle:.3f} grados")
+            return rotated
+
+        except Exception as e:
+            print(f"Error al corregir la inclinación: {e}")
+            raise
+
+    def aplicar_nitidez(self, image):
+        """
+        Aplica un filtro para mejorar la nitidez de la imagen.
+
+        Args:
+            image (np.ndarray): Imagen en escala de grises.
+
+        Returns:
+            np.ndarray: Imagen con mayor nitidez.
+        """
+        try:
+            kernel = np.array([[0, -1, 0],
+                            [-1, 5, -1],
+                            [0, -1, 0]])
+            sharpened = cv2.filter2D(image, -1, kernel)
+            return sharpened
+
+        except Exception as e:
+            print(f"Error al aplicar filtro de nitidez: {e}")
+            raise
+
+    def remove_noise(self, image):
+        """
+        Elimina pequeños puntos o ruido en la imagen mediante operaciones morfológicas. Estas operaciones aplican erosion
+        y dilatación para eliminar el ruido.
+
+        Args:
+            image (np.ndarray): Imagen binarizada.
+
+        Returns:
+            np.ndarray: Imagen sin ruido.
+        """
+        try:
+            kernel = np.ones((3, 3), np.uint8)
+            opening = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel, iterations=1)
+            return opening
+
+        except Exception as e:
+            print(f"Error al eliminar ruido: {e}")
+            raise
+
+    def find_contours_hierarchy(self, image):
+        """
+        Busca todos los contornos en una imagen binarizada, incluyendo sus jerarquías.
+
+        Args:
+            image (np.ndarray): Imagen binarizada en formato NumPy array.
+
+        Returns:
+            list: Lista de contornos encontrados en la imagen.
+            ndarray: Jerarquía de los contornos.
+
+        Raises:
+            ValueError: Si la imagen es None, no está en escala de grises o es inválida.
+            TypeError: Si la imagen no es un numpy.ndarray.
+            cv2.error: Si ocurre un error con OpenCV durante la búsqueda de contornos.
+            Exception: Para cualquier otro error inesperado.
+        """
+        try:
+            if image is None:
+                raise ValueError("La imagen proporcionada no existe.")
+            if not isinstance(image, (np.ndarray,)):
+                raise TypeError("El tipo de dato de la imagen no es válido. Se esperaba un numpy.ndarray.")
+            
+            if len(image.shape) != 2:
+                raise ValueError("La imagen proporcionada no está en escala de grises.")
+            
+            # Usar RETR_TREE para obtener todos los contornos y su jerarquía
+            contours, hierarchy = cv2.findContours(image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+            return contours, hierarchy
+        except cv2.error as e:
+            print(f"Error de OpenCV durante la búsqueda de contornos: {e}")
+            raise
+        except ValueError as ve:
+            print(f"Valor incorrecto durante la búsqueda de contornos: {ve}")
+            raise
+        except TypeError as te:
+            print(f"Tipo incorrecto durante la búsqueda de contornos: {te}")
+            raise
+        except Exception as ex:
+            print(f"Ocurrió un error durante la búsqueda de contornos: {ex}")
+            raise
+
 
     #filtra los contornos para extraer los parrafos correcto teniendo en cuenta, tamaño y posicion en la imagen
     def filter_paragraph_contours(self, image, contours, min_x=150, min_y=80):
@@ -613,11 +747,6 @@ class ProcessToImages:
             print(f"Error inesperado durante el procesamiento de la imagen: {ex}")
             raise
 
-
-    
-    #hacemos un filtrado de los contornos para descartar cuáles son títulos y cuáles no
-    #para esto usamos el tamaño altura y ancho. Un título en principio será mas ancho que alto
-    #además, pueden estar en negrita por tanto ajustamos un threshold y una variable para el calculo de la densidad y las comparamos
     def filter_title_contours(self, image, contours, min_width_ratio=0.12, max_height_ratio=0.07, density_threshold=0.25):
         """
         Filtra los contornos que corresponden a títulos según su tamaño relativo y densidad de píxeles negros.
@@ -644,7 +773,6 @@ class ProcessToImages:
             x, y, w, h = cv2.boundingRect(contour)
             print(f"Contorno encontrado en ({x}, {y}), ancho: {w}, alto: {h}")
             
-            # Condiciones mejoradas para detectar los títulos
             if w > min_width_ratio * image_w and h < max_height_ratio * image_h:
                 # Extraer la región del contorno
                 region_contour = image[y:y+h, x:x+w]
@@ -752,7 +880,6 @@ class ProcessToImages:
         except Exception as ex:
             print(f"Error inesperado durante el procesamiento de la imagen: {ex}")
             raise
-    
     
     def process_document(self, images):
         """
@@ -894,16 +1021,249 @@ class ProcessToImages:
             print(f"Error inesperado durante la extracción de bloques secuenciales: {ex}")
             raise
 
+    def is_column_non_empty(self, image, threshold=10):
+        """
+        Checks if the column image contains text by analyzing the pixel values.
+        
+        Args:
+            image (np.ndarray): The column image to check.
+            threshold (int): Minimum number of non-zero pixels to consider the column as non-empty.
+        
+        Returns:
+            bool: True if the column is non-empty, False otherwise.
+        """
+        try:
+            # Convert to grayscale
+            gray_image = self.convert_to_gray(image)
+            # Apply thresholding to binarize the image
+            _, thresh_image = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            # Invert the image to make text white on black background
+            inverted_image = cv2.bitwise_not(thresh_image)
+            # Count non-zero pixels (which represent text)
+            non_zero_pixels = cv2.countNonZero(inverted_image)
+            if non_zero_pixels > threshold:
+                return True
+            else:
+                return False
+        except Exception as ex:
+            print(f"Error checking if column is non-empty: {ex}")
+            return False
+
+    def extract_column_images(self, images):
+        """
+        Extracts the column images from the provided images, skipping empty columns.
+
+        Args:
+            images (dict): Dictionary of images in NumPy array format, where keys are the page numbers.
+
+        Returns:
+            dict: Dictionary of non-empty column images, with keys as (page_num, 'left' or 'right').
+        """
+        column_images = {}
+        for page_num, image in images.items():
+            if isinstance(image, Image.Image):
+                image = np.array(image)
+            elif not isinstance(image, np.ndarray):
+                raise TypeError(f"La imagen en la página {page_num} no es un numpy.ndarray ni una PIL.Image.")
+
+            height, width = image.shape[:2]
+
+            # Split into left and right columns
+            left_column = image[:, :width // 2]
+            right_column = image[:, width // 2:]
+
+            # Check if left column contains text
+            if self.is_column_non_empty(left_column):
+                column_images[(page_num, 'left')] = left_column
+                print(f"La columna izquierda en la página {page_num} contiene texto y será procesada.")
+            else:
+                print(f"La columna izquierda en la página {page_num} está vacía y será omitida.")
+
+            # Check if right column contains text
+            if self.is_column_non_empty(right_column):
+                column_images[(page_num, 'right')] = right_column
+                print(f"La columna derecha en la página {page_num} contiene texto y será procesada.")
+            else:
+                print(f"La columna derecha en la página {page_num} está vacía y será omitida.")
+
+        return column_images
+
+    
+    def filter_column_title_contours(self, image, contours, min_width_ratio=0.05, max_height_ratio=0.05, density_threshold=0.10):
+        """
+        Filtra los contornos que corresponden a títulos según su tamaño relativo y densidad de píxeles negros.
+        Se ha ajustado el ratio de ancho y altura para detectar mejor los títulos.
+        
+        Args:
+            image: La imagen original en la que se buscan los títulos.
+            contours: Los contornos detectados en la imagen procesada.
+            min_width_ratio: Relación mínima de ancho en función del ancho total de la imagen.
+            max_height_ratio: Relación máxima de altura en función de la altura total de la imagen.
+            density_threshold: Umbral de densidad de píxeles negros para identificar títulos.
+        
+        Returns:
+            valid_titles: Lista de contornos que corresponden a títulos válidos.
+        """
+        if isinstance(image, Image.Image):
+            image = np.array(image)
+        
+        image_h, image_w = image.shape[:2]
+        print(f"Altura de la imagen: {image_h}, Ancho de la imagen: {image_w}")
+
+        valid_titles = []
+        for contour in contours:
+            x, y, w, h = cv2.boundingRect(contour)
+            print(f"Contorno encontrado en ({x}, {y}), ancho: {w}, alto: {h}")
+            
+            if w > min_width_ratio * image_w and h < max_height_ratio * image_h:
+                # Extraer la región del contorno
+                region_contour = image[y:y+h, x:x+w]
+                # Calcular la densidad de píxeles negros (0 representa negro en imágenes binarizadas)
+                pixel_density = np.sum(region_contour == 0) / (w * h)
+                print(f"Densidad de píxeles: {pixel_density}")
+                
+                # Filtrar por densidad de píxeles negros
+                if pixel_density > density_threshold:
+                    valid_titles.append((x, y, w, h))
+                    print(f"Contorno válido como título: ({x}, {y}), ancho: {w}, alto: {h}")
+                else:
+                    print(f"Contorno descartado por baja densidad de píxeles: {pixel_density}")
+            else:
+                print(f"Contorno descartado por no cumplir con las medidas relativas (w={w}, h={h}).")
+                
+        return valid_titles
+    
+    def extract_title_positions(self, images):
+        """
+        Extracts the positions of the titles in the provided images.
+
+        Args:
+            images (dict): Dictionary of images (column images), where keys are tuples like (page_num, 'left' or 'right').
+
+        Returns:
+            dict: Dictionary of title positions for each column image.
+        """
+        try:
+            if not images:
+                raise ValueError("El diccionario de imágenes está vacío.")
+            
+            titles_position = {}
+
+            for (page_num, column_side), image in images.items():
+                # Verify the image is a numpy.ndarray
+                if isinstance(image, Image.Image):
+                    image = np.array(image)
+                elif not isinstance(image, np.ndarray):
+                    raise TypeError(f"La imagen en la página {page_num}, columna {column_side} no es un numpy.ndarray ni una PIL.Image.")
+
+                # Convertir la imagen a escala de grises
+                gray_img = self.convert_to_gray(image)
+
+                # Aplicar desenfoque y umbralización Otsu
+                blur_img = self.blur_image(gray_img)
+                thresh_img = self.thresh_otsu(blur_img)
+
+                # Invertir la imagen binaria
+                inv_img = self.invert_image(thresh_img)
+
+                # Crear kernel para dilatación y aplicar dilatación a la imagen
+                kernel = self.kernel_image(inv_img)
+                dilate = self.dilate_image(inv_img, kernel)
+
+                # Buscar contornos en la imagen dilatada
+                contours = self.search_contours(dilate)
+                
+                # Filtrar los contornos que corresponden a títulos válidos
+                valid_titles = self.filter_column_title_contours(image, contours)
+
+                # Guardar las posiciones de los títulos
+                if valid_titles:
+                    positions = [{'x': x, 'y': y, 'width': w, 'height': h} for x, y, w, h in valid_titles]
+                    titles_position[page_num] = positions
+                    print(f"Títulos extraídos con éxito en la página {page_num}")
+
+                    # Dibujar los rectángulos en los contornos de títulos
+                    for x, y, w, h in valid_titles:
+                        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+                    # Guardar la imagen con los contornos dibujados
+                    self.save_single_image(image, f"titles_page_{page_num}.png")
+                else:
+                    print(f"No se encontraron contornos válidos en la página {page_num}.")
+            
+            return titles_position
+
+        except TypeError as te:
+            print(f"Error de tipo: {te}")
+            raise
+
+        except ValueError as ve:
+            print(f"Error de valor: {ve}")
+            raise
+
+        except cv2.error as e:
+            print(f"Error de OpenCV durante el procesamiento de la imagen: {e}")
+            raise
+
+        except Exception as ex:
+            print(f"Error inesperado durante la extracción de posiciones de títulos: {ex}")
+            raise
+
+    
+    def draw_rectangles_on_titles(self, column_images, titles_position):
+        """
+        Draws rectangles around the titles in the column images.
+
+        Args:
+            column_images (dict): Dictionary of column images in NumPy array format.
+            titles_position (dict): Dictionary with positions of the title contours.
+
+        Returns:
+            list: List of images with rectangles drawn around the titles.
+        """
+        images_with_rectangles = []
+
+        for (page_num, column_side), image in column_images.items():
+            # Verify that the image is a numpy.ndarray
+            if not isinstance(image, np.ndarray):
+                raise TypeError(f"La imagen en la columna {column_side} de la página {page_num} no es un numpy.ndarray.")
+
+            # Create a copy of the image to draw rectangles
+            image_with_rects = np.array(image)
+
+            # Get title positions for this column if any
+            positions = titles_position.get((page_num, column_side), [])
+
+            # Draw rectangles around titles
+            for title_position in positions:
+                x = title_position['x']
+                y = title_position['y']
+                w = title_position['width']
+                h = title_position['height']
+                cv2.rectangle(image_with_rects, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+            # Optionally save or process the image
+            self.save_single_image(image_with_rects, f"titles_page_{page_num}_{column_side}")
+
+            images_with_rectangles.append(image_with_rects)
+
+        return images_with_rectangles
+
+
+
 if __name__ == '__main__':
     pti = ProcessToImages()
     ocr = OCRProducer()
-    doc1 = './docs_pruebas/jardineria.pdf'
+    doc1 = './docs_pruebas/doc_scan2.pdf'
     images = pti.convert_pdf_to_image_from_file(doc1)
     """image_parrafos, positions = pti.extract_image_with_contours(images)
     images, titulos = pti.extraer_titulos(images)
-    titulos_y_parrafos_images = pti.extraer_texto_titulos(images, titulos)"""
+    titulos_y_parrafos_images = pti.extraer_texto_titulos(images, titulos)
     images, t_pos, p_pos = pti.process_document(images)
-    bloques = pti.extraer_bloques_secuenciales(images, t_pos, p_pos)
+    bloques = pti.extraer_bloques_secuenciales(images, t_pos, p_pos)"""
+    column_images = pti.extract_column_images(images)
+    titles_position = pti.extract_title_positions(column_images)
+    pti.draw_rectangles_on_titles(column_images, titles_position)
     
     
 
