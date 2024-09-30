@@ -145,6 +145,7 @@ class ProcessToImages:
             cv2.error: Si ocurre un error con OpenCV durante la conversión.
         """
         try:
+            self.save_single_image(image, "imagen_original")
             if not isinstance(image, (np.ndarray, Image.Image)):
                 raise TypeError("La imagen no está en un formato soportado. Debe ser un NumPy array o una imagen de PIL.")
             # Convertir la imagen a NumPy array si es necesario
@@ -587,7 +588,6 @@ class ProcessToImages:
             print(f"Ocurrió un error durante la búsqueda de contornos: {ex}")
             raise
 
-
     #filtra los contornos para extraer los parrafos correcto teniendo en cuenta, tamaño y posicion en la imagen
     def filter_paragraph_contours(self, image, contours, min_x=150, min_y=80):
         """
@@ -909,9 +909,6 @@ class ProcessToImages:
 
             print("Procesando párrafos en las imágenes con contornos de títulos...")
             images_with_paragraphs, paragraphs_position = self.extract_image_with_contours(images_with_titles)
-
-            for page_num, image_with_paragraphs in images_with_paragraphs.items():
-                image_name = f'pagina_{page_num}_procesada'
                 
 
             return images_with_paragraphs, titles_position, paragraphs_position
@@ -1051,15 +1048,17 @@ class ProcessToImages:
 
     def extract_column_images(self, images):
         """
-        Extracts the column images from the provided images, skipping empty columns.
+        Extracts the column images from the provided images sequentially, skipping empty columns.
 
         Args:
             images (dict): Dictionary of images in NumPy array format, where keys are the page numbers.
 
         Returns:
-            dict: Dictionary of non-empty column images, with keys as (page_num, 'left' or 'right').
+            dict: Dictionary of non-empty column images, with keys as sequential integers.
         """
         column_images = {}
+        column_index = 0
+
         for page_num, image in images.items():
             if isinstance(image, Image.Image):
                 image = np.array(image)
@@ -1074,22 +1073,24 @@ class ProcessToImages:
 
             # Check if left column contains text
             if self.is_column_non_empty(left_column):
-                column_images[(page_num, 'left')] = left_column
+                column_images[column_index] = left_column
                 print(f"La columna izquierda en la página {page_num} contiene texto y será procesada.")
+                self.save_single_image(left_column, f"column_{column_index}.png")
+                column_index += 1
             else:
                 print(f"La columna izquierda en la página {page_num} está vacía y será omitida.")
 
             # Check if right column contains text
             if self.is_column_non_empty(right_column):
-                column_images[(page_num, 'right')] = right_column
+                column_images[column_index] = right_column
                 print(f"La columna derecha en la página {page_num} contiene texto y será procesada.")
+                column_index += 1
             else:
                 print(f"La columna derecha en la página {page_num} está vacía y será omitida.")
 
         return column_images
-
     
-    def filter_column_title_contours(self, image, contours, min_width_ratio=0.05, max_height_ratio=0.05, density_threshold=0.10):
+    def filter_columns_title_contours(self, image, contours, min_width_ratio=0.08, max_height_ratio=0.07, density_threshold=0.15):
         """
         Filtra los contornos que corresponden a títulos según su tamaño relativo y densidad de píxeles negros.
         Se ha ajustado el ratio de ancho y altura para detectar mejor los títulos.
@@ -1125,36 +1126,44 @@ class ProcessToImages:
                 # Filtrar por densidad de píxeles negros
                 if pixel_density > density_threshold:
                     valid_titles.append((x, y, w, h))
-                    print(f"Contorno válido como título: ({x}, {y}), ancho: {w}, alto: {h}")
-                else:
-                    print(f"Contorno descartado por baja densidad de píxeles: {pixel_density}")
             else:
                 print(f"Contorno descartado por no cumplir con las medidas relativas (w={w}, h={h}).")
                 
         return valid_titles
     
-    def extract_title_positions(self, images):
+    def dibujar_titulos_columnas(self, column_images):
         """
-        Extracts the positions of the titles in the provided images.
+        Procesa cada página de la lista de imágenes para extraer las posiciones de los títulos mediante
+        técnicas de procesamiento de imágenes y detección de contornos.
 
         Args:
-            images (dict): Dictionary of images (column images), where keys are tuples like (page_num, 'left' or 'right').
+            images (dict): Diccionario donde las claves son los números de página y los valores son las imágenes 
+                        en formato NumPy array.
 
         Returns:
-            dict: Dictionary of title positions for each column image.
+            tuple:
+                dict: Diccionario de imágenes con los contornos de los títulos dibujados.
+                dict: Diccionario de posiciones de los títulos ({'x', 'y', 'width', 'height'}) por cada página.
+
+        Raises:
+            TypeError: Si alguna imagen no es un numpy.ndarray.
+            ValueError: Si las imágenes están vacías o no pueden ser procesadas.
+            cv2.error: Si ocurre un error con OpenCV durante el procesamiento de la imagen.
+            Exception: Para cualquier otro error inesperado.
         """
         try:
-            if not images:
+            if not column_images:
                 raise ValueError("El diccionario de imágenes está vacío.")
-            
+            image_with_titles = {}
             titles_position = {}
 
-            for (page_num, column_side), image in images.items():
-                # Verify the image is a numpy.ndarray
+            # Procesar cada imagen en el diccionario
+            for page_num, image in column_images.items():
+                # Verificar que la imagen es un numpy.ndarray
                 if isinstance(image, Image.Image):
                     image = np.array(image)
                 elif not isinstance(image, np.ndarray):
-                    raise TypeError(f"La imagen en la página {page_num}, columna {column_side} no es un numpy.ndarray ni una PIL.Image.")
+                    raise TypeError(f"La imagen en la página {page_num} no es un numpy.ndarray ni una PIL.Image.")
 
                 # Convertir la imagen a escala de grises
                 gray_img = self.convert_to_gray(image)
@@ -1174,24 +1183,28 @@ class ProcessToImages:
                 contours = self.search_contours(dilate)
                 
                 # Filtrar los contornos que corresponden a títulos válidos
-                valid_titles = self.filter_column_title_contours(image, contours)
+                valid_titles = self.filter_columns_title_contours(image, contours)
 
-                # Guardar las posiciones de los títulos
+                # Si se encuentran títulos válidos, dibujarlos y guardar posiciones
                 if valid_titles:
-                    positions = [{'x': x, 'y': y, 'width': w, 'height': h} for x, y, w, h in valid_titles]
-                    titles_position[page_num] = positions
-                    print(f"Títulos extraídos con éxito en la página {page_num}")
+                    image_with_titles_page = np.array(image)
+                    positions = []
 
                     # Dibujar los rectángulos en los contornos de títulos
                     for x, y, w, h in valid_titles:
-                        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                        cv2.rectangle(image_with_titles_page, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                        positions.append({'x': x, 'y': y, 'width': w, 'height': h})
 
-                    # Guardar la imagen con los contornos dibujados
-                    self.save_single_image(image, f"titles_page_{page_num}.png")
+                    # Guardar las imágenes y las posiciones de los títulos
+                    image_with_titles[page_num] = image_with_titles_page
+                    titles_position[page_num] = positions
+                    self.save_single_image(image_with_titles_page, f"column_{page_num}_with_titles")
+                    print(f"Títulos extraídos con éxito en la página {page_num}")
                 else:
                     print(f"No se encontraron contornos válidos en la página {page_num}.")
             
-            return titles_position
+            print(titles_position)
+            return image_with_titles, titles_position
 
         except TypeError as te:
             print(f"Error de tipo: {te}")
@@ -1206,64 +1219,192 @@ class ProcessToImages:
             raise
 
         except Exception as ex:
-            print(f"Error inesperado durante la extracción de posiciones de títulos: {ex}")
+            print(f"Error inesperado durante el procesamiento de la imagen: {ex}")
             raise
 
-    
-    def draw_rectangles_on_titles(self, column_images, titles_position):
+    def filter_columns_paragraph_contours(self, image, contours, min_x=70, min_y=50):
         """
-        Draws rectangles around the titles in the column images.
+        Filtra los contornos de una imagen para extraer aquellos que probablemente correspondan a párrafos,
+        basándose en su tamaño y posición dentro de la imagen.
 
         Args:
-            column_images (dict): Dictionary of column images in NumPy array format.
-            titles_position (dict): Dictionary with positions of the title contours.
+            image (np.ndarray or Image.Image): Imagen en la que se detectaron los contornos.
+            contours (list): Lista de contornos detectados en la imagen.
+            min_x (int, optional): Ancho mínimo que debe tener un contorno para ser considerado válido. Valor por defecto es 150.
+            min_y (int, optional): Alto mínimo que debe tener un contorno para ser considerado válido. Valor por defecto es 80.
 
         Returns:
-            list: List of images with rectangles drawn around the titles.
+            list: Lista de contornos válidos, donde cada contorno es una tupla (x, y, w, h) que indica la posición y tamaño del contorno.
+
+        Raises:
+            TypeError: Si la imagen no es un numpy.ndarray o una imagen PIL.
+            ValueError: Si las dimensiones de la imagen no son válidas.
+            Exception: Para cualquier otro error inesperado.
         """
-        images_with_rectangles = []
-
-        for (page_num, column_side), image in column_images.items():
-            # Verify that the image is a numpy.ndarray
+        try:
+            # Convertir la imagen a NumPy array si es una imagen PIL
+            if isinstance(image, Image.Image):
+                image = np.array(image)
+            
+            # Verificar si la imagen es válida
             if not isinstance(image, np.ndarray):
-                raise TypeError(f"La imagen en la columna {column_side} de la página {page_num} no es un numpy.ndarray.")
+                raise TypeError("La imagen debe ser un numpy.ndarray o PIL.Image.")
 
-            # Create a copy of the image to draw rectangles
-            image_with_rects = np.array(image)
+            # Verificar si la imagen tiene las dimensiones correctas
+            if len(image.shape) < 2:
+                raise ValueError("La imagen proporcionada tiene dimensiones inválidas.")
 
-            # Get title positions for this column if any
-            positions = titles_position.get((page_num, column_side), [])
+            # Obtener las dimensiones de la imagen
+            image_h, image_w = image.shape[:2]
+            margen_x_left = 0.02 * image_w
+            margen_x_right = 0.98 * image_w
+            margen_y_top = 0.05 * image_h
+            margen_y_bot = 0.95 * image_h
+            
+            valid_contours = []
 
-            # Draw rectangles around titles
-            for title_position in positions:
-                x = title_position['x']
-                y = title_position['y']
-                w = title_position['width']
-                h = title_position['height']
-                cv2.rectangle(image_with_rects, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            # Filtrar contornos por tamaño y posición en la imagen
+            for contour in contours:
+                x, y, w, h = cv2.boundingRect(contour)
 
-            # Optionally save or process the image
-            self.save_single_image(image_with_rects, f"titles_page_{page_num}_{column_side}")
+                # Verificar si el contorno está dentro de los márgenes
+                if x > margen_x_left and (x + w) < margen_x_right and y > margen_y_top and (y + h) < margen_y_bot:
+                    # Verificar si el contorno tiene un tamaño mínimo
+                    if w > min_x and h > min_y:
+                        valid_contours.append((x, y, w, h))
+                        print(f"Contorno válido: ({x}, {y}), ancho: {w}, alto: {h}")
+                    else:
+                        print(f"Contorno descartado por tamaño insuficiente (w={w}, h={h}).")
+                else:
+                    print(f"Contorno descartado por no estar en la zona central.")
 
-            images_with_rectangles.append(image_with_rects)
+            return valid_contours
 
-        return images_with_rectangles
+        except TypeError as te:
+            print(f"Error de tipo: {te}")
+            raise
 
+        except ValueError as ve:
+            print(f"Error de valor: {ve}")
+            raise
 
+        except Exception as ex:
+            print(f"Error inesperado: {ex}")
+            raise
+
+    def extract_columns_image_with_contours(self, images):
+        """
+        Extrae y dibuja los contornos de párrafos en cada imagen del documento.
+
+        Args:
+            images (dict): Diccionario de imágenes en formato NumPy array, donde las claves son los números de página.
+
+        Returns:
+            tuple:
+                dict: Diccionario de imágenes con contornos dibujados, donde las claves son los números de página.
+                dict: Diccionario de posiciones de contornos, donde cada clave es el número de página, y los valores son 
+                    listas de posiciones de los contornos ({'x', 'y', 'width', 'height'}).
+
+        Raises:
+            TypeError: Si alguno de los valores de `images` no es un numpy.ndarray.
+            ValueError: Si las imágenes están vacías o no pueden ser procesadas.
+            cv2.error: Si ocurre un error con OpenCV durante el procesamiento.
+            Exception: Para cualquier otro error inesperado.
+        """
+        try:
+            if not images:
+                raise ValueError("El diccionario de imágenes no puede estar vacío")
+            
+            images_with_contours = {}
+            contours_positions = {}
+
+            for page_num, image in images.items():
+                # Verificar que la imagen es un numpy.ndarray
+                if not isinstance(image, np.ndarray):
+                    raise TypeError(f"La imagen en la página {page_num} no es un numpy.ndarray.")
+
+                # Convertir la imagen a escala de grises
+                gray_img = self.convert_to_gray(image)
+
+                # Aplicar desenfoque y umbralización
+                blur_img = self.blur_image(gray_img)
+                thresh_img = self.thresh_otsu(blur_img)
+
+                # Invertir la imagen binaria
+                inv_img = self.invert_image(thresh_img)
+
+                # Crear el kernel para la operación de dilatación
+                kernel = self.kernel_image(inv_img)
+
+                # Aplicar dilatación a la imagen
+                dilate = self.dilate_image(inv_img, kernel)
+
+                # Buscar los contornos en la imagen dilatada
+                contours = self.search_contours(dilate)
+
+                # Filtrar los contornos que probablemente correspondan a párrafos
+                valid_contours = self.filter_columns_paragraph_contours(image, contours)
+
+                # Si se encuentran contornos válidos, dibujarlos y guardar posiciones
+                if valid_contours:
+                    image_with_rects = np.array(image)
+                    positions = []
+
+                    for x, y, w, h in valid_contours:
+                        cv2.rectangle(image_with_rects, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                        positions.append({'x': x, 'y': y, 'width': w, 'height': h})
+
+                    images_with_contours[page_num] = image_with_rects
+                    contours_positions[page_num] = positions
+                    self.save_single_image(image_with_rects, f"page_{page_num}_with_contours")
+                else:
+                    print(f"No se encontraron contornos válidos en la página {page_num}.")
+
+            return images_with_contours, contours_positions
+
+        except TypeError as te:
+            print(f"Error de tipo: {te}")
+            raise
+
+        except ValueError as ve:
+            print(f"Error de valor: {ve}")
+            raise
+
+        except cv2.error as e:
+            print(f"Error de OpenCV durante el procesamiento de la imagen: {e}")
+            raise
+
+        except Exception as ex:
+            print(f"Error inesperado durante el procesamiento de la imagen: {ex}")
+            raise
+
+    def process_columnas_document(self, images):
+        if not images:
+            raise ValueError("El diccionario de imágenes está vacío.")
+        print("Procesando títulos en las imágenes...")
+        column_images = self.extract_column_images(images)
+        print("Dibujando contornos de títulos en las columnas...")
+        images_with_titles, titles_position = self.dibujar_titulos_columnas(column_images)
+        print("Dibujando contornos de párrafos en las columnas...")
+        images_with_paragraphs, paragraphs_position = self.extract_columns_image_with_contours(images_with_titles)
+        return images_with_paragraphs, titles_position, paragraphs_position
+    
+    
+        
+
+    
 
 if __name__ == '__main__':
     pti = ProcessToImages()
     ocr = OCRProducer()
-    doc1 = './docs_pruebas/doc_scan2.pdf'
+    doc1 = './docs_pruebas/doc2.pdf'
     images = pti.convert_pdf_to_image_from_file(doc1)
     """image_parrafos, positions = pti.extract_image_with_contours(images)
     images, titulos = pti.extraer_titulos(images)
     titulos_y_parrafos_images = pti.extraer_texto_titulos(images, titulos)
     images, t_pos, p_pos = pti.process_document(images)
     bloques = pti.extraer_bloques_secuenciales(images, t_pos, p_pos)"""
-    column_images = pti.extract_column_images(images)
-    titles_position = pti.extract_title_positions(column_images)
-    pti.draw_rectangles_on_titles(column_images, titles_position)
-    
-    
-
+    images_paragraphs, titles_position, paragraphs_positions = pti.process_columnas_document(images)
+    bloques = pti.extraer_bloques_secuenciales(images_paragraphs, titles_position, paragraphs_positions)
+    print(bloques)
+ 

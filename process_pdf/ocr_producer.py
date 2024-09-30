@@ -1,4 +1,5 @@
 import logging
+import cv2
 import numpy as np
 import pytesseract
 import os
@@ -67,7 +68,7 @@ class OCRProducer:
             TesseractError: Si ocurre un error en el procesamiento de pytesseract.
         """
         try:
-            # Verificar si la imagen es un NumPy array
+            # Verificar si la imagen es un NumPy array o PIL Image
             if not isinstance(image, (np.ndarray, Image.Image)):
                 # Si la imagen no es ni NumPy array ni PIL Image, lanzar una excepción
                 raise TypeError("La imagen debe estar en formato NumPy array o PIL Image para el procesamiento.")
@@ -75,11 +76,7 @@ class OCRProducer:
             # Aplicar OCR usando pytesseract
             img_txt = pytesseract.image_to_string(image)
 
-            # Verificar si el texto es vacío o inválido
-            if not img_txt:
-                raise ValueError(f"No se pudo extraer texto de la imagen. Verifique la calidad de la imagen o el formato.")
-
-            return img_txt.strip()
+            return img_txt
 
         except TypeError as te:
             print(f"Error de tipo: {str(te)}")
