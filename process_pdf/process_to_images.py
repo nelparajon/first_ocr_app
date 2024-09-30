@@ -1020,7 +1020,7 @@ class ProcessToImages:
 
     def is_column_non_empty(self, image, threshold=10):
         """
-        Checks if the column image contains text by analyzing the pixel values.
+        Comprueba si una columna tiene texto o está vacía.
         
         Args:
             image (np.ndarray): The column image to check.
@@ -1048,13 +1048,13 @@ class ProcessToImages:
 
     def extract_column_images(self, images):
         """
-        Extracts the column images from the provided images sequentially, skipping empty columns.
+        Extrae las columnas de texto de las imágenes proporcionadas de manera secuencial, omitiendo las columnas vacías.
 
         Args:
-            images (dict): Dictionary of images in NumPy array format, where keys are the page numbers.
+            images (dict): Diccionario de imágenes en formato NumPy array, donde las claves son los números de página.
 
         Returns:
-            dict: Dictionary of non-empty column images, with keys as sequential integers.
+            dict: Diccionario de columnas de texto extraídas, con las claves como enteros secuenciales.
         """
         column_images = {}
         column_index = 0
@@ -1093,7 +1093,7 @@ class ProcessToImages:
     def filter_columns_title_contours(self, image, contours, min_width_ratio=0.08, max_height_ratio=0.07, density_threshold=0.15):
         """
         Filtra los contornos que corresponden a títulos según su tamaño relativo y densidad de píxeles negros.
-        Se ha ajustado el ratio de ancho y altura para detectar mejor los títulos.
+        Las imagenes son las columnas de los textos de la imagen original.
         
         Args:
             image: La imagen original en la que se buscan los títulos.
@@ -1103,7 +1103,7 @@ class ProcessToImages:
             density_threshold: Umbral de densidad de píxeles negros para identificar títulos.
         
         Returns:
-            valid_titles: Lista de contornos que corresponden a títulos válidos.
+            valid_titles: Lista de contornos que corresponden a títulos válidos dentro de las columnas de la imagen origina.
         """
         if isinstance(image, Image.Image):
             image = np.array(image)
@@ -1134,7 +1134,8 @@ class ProcessToImages:
     def dibujar_titulos_columnas(self, column_images):
         """
         Procesa cada página de la lista de imágenes para extraer las posiciones de los títulos mediante
-        técnicas de procesamiento de imágenes y detección de contornos.
+        técnicas de procesamiento de imágenes y detección de contornos. Dibuja los contornos de manera rectangular alrededor 
+        de los títulos.
 
         Args:
             images (dict): Diccionario donde las claves son los números de página y los valores son las imágenes 
@@ -1224,14 +1225,14 @@ class ProcessToImages:
 
     def filter_columns_paragraph_contours(self, image, contours, min_x=70, min_y=50):
         """
-        Filtra los contornos de una imagen para extraer aquellos que probablemente correspondan a párrafos,
+        Filtra los contornos de una imagen para extraer aquellos que correspondan a párrafos,
         basándose en su tamaño y posición dentro de la imagen.
 
         Args:
             image (np.ndarray or Image.Image): Imagen en la que se detectaron los contornos.
             contours (list): Lista de contornos detectados en la imagen.
-            min_x (int, optional): Ancho mínimo que debe tener un contorno para ser considerado válido. Valor por defecto es 150.
-            min_y (int, optional): Alto mínimo que debe tener un contorno para ser considerado válido. Valor por defecto es 80.
+            min_x (int, optional): Ancho mínimo que debe tener un contorno para ser considerado válido. Valor por defecto es 70.
+            min_y (int, optional): Alto mínimo que debe tener un contorno para ser considerado válido. Valor por defecto es 50.
 
         Returns:
             list: Lista de contornos válidos, donde cada contorno es una tupla (x, y, w, h) que indica la posición y tamaño del contorno.
@@ -1294,7 +1295,7 @@ class ProcessToImages:
 
     def extract_columns_image_with_contours(self, images):
         """
-        Extrae y dibuja los contornos de párrafos en cada imagen del documento.
+        Extrae y dibuja los contornos de párrafos en cada imagen de las columnas del documento.
 
         Args:
             images (dict): Diccionario de imágenes en formato NumPy array, donde las claves son los números de página.
